@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024.04.02-9.2.29 更新详情 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="方法更新——贝叶斯加权孟德尔随机化BWMR，用于因果推断的贝叶斯加权孟德尔随机化（BWMR）方法​Bayesian weighted Mendelian randomization，（BWMR）可以帮助确定风险因素（暴露）对复杂性状或疾病（结果）的因果效应。当随机对照试验（RCT）的证据缺乏时，孟…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>版本更新记录</span>
+  </div>
+  <h1 class="page-title">2024.04.02-9.2.29 更新详情</h1>
+  <div class="article-meta">
+    <span>所属章节：版本更新记录</span>
+    <span>字数：674</span>
+    <span>代码块：1</span>
+    <span>更新时间：2024-04-02</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>版本更新记录</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="2025.08.02-9.2.38更新详情">
+  <a href="tcbdtx4a66nnfxgd.html">2025.08.02-9.2.38更新详情</a>
+</li><li class="filter-item" data-search-text="2024.11.27-9.2.37更新详情">
+  <a href="mv2lgp6d7zvsfgrz.html">2024.11.27-9.2.37更新详情</a>
+</li><li class="filter-item" data-search-text="2024.04.05-9.2.30更新详情">
+  <a href="cxwkfmb9n9a5ec6o.html">2024.04.05-9.2.30更新详情</a>
+</li><li class="filter-item current" data-search-text="2024.04.02-9.2.29 更新详情">
+  <a href="dnlzxq804eckou1n.html">2024.04.02-9.2.29 更新详情</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="2024.03.12-9.2.28更新详情">
+  <a href="udpaei2o2d9ml2hs.html">2024.03.12-9.2.28更新详情</a>
+</li><li class="filter-item" data-search-text="2024.02.26-9.2.27更新详细记录">
+  <a href="iixmye5ktmob4quc.html">2024.02.26-9.2.27更新详细记录</a>
+</li><li class="filter-item" data-search-text="2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级">
+  <a href="nka88433ln0vzxas.html">2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级</a>
+</li><li class="filter-item" data-search-text="2024.02.22-9.2.25更新详细记录">
+  <a href="qs2gx1ucyt5ed11m.html">2024.02.22-9.2.25更新详细记录</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：版本更新记录</span>
+        <span class="pill gold">代码块 1</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><strong><span>方法更新——贝叶斯加权孟德尔随机化</span></strong></p><p><strong><span>BWMR</span></strong><span>，用于因果推断的贝叶斯加权孟德尔随机化（BWMR）方法</span></p><p><span>​</span><br></p><p><span>Bayesian weighted Mendelian randomization，（BWMR）可以帮助确定风险因素（暴露）对复杂性状或疾病（结果）的因果效应。</span></p><p><span>当随机对照试验（RCT）的证据缺乏时，孟德尔随机化（MR）可以使用自然遗传变异来模拟RCT进行因果推断。然而，由于人类遗传的复杂性（如多基因性、多效性和人类基因组中的连锁不平衡）以及复杂的数据处理和共享（例如多个GWAS中的样本重叠），MR比传统的工具变量方法面临更多的独特挑战。</span></p><p><span>BWMR的优势如下：</span></p><ol><li><span>通过贝叶斯加权处理因多效性导致的工具变量假设违反问题，使得因果推断在存在多效性的情况下仍能进行。</span></li><li><span>该模型还考虑了因多基因性导致的弱效应的不确定性，进一步增强了因果推断的稳健性。</span></li><li><span>研究者开发了一个变分期望最大化（VEM）算法，使得基于BWMR的因果推断计算稳定且高效。还推导出了一个精确的闭式公式，用于修正在变分推断中常常被低估的后验协方差。</span></li></ol><p><span>​</span><br></p><p><span>我们的MendelR代码包现在新增了这个BWMR的功能。</span></p><p><span>这个新功能不仅可以帮助我们更准确地确定风险因素对复杂性状或疾病的因果效应，而且还可以帮助我们发现新的因果关系，从而在生物医学和社会科学中加强因果推断。这将使得大家的分析更加高级，结果更可信，更容易在高水平的期刊上发表。</span></p><p><span>​</span><br></p><p><span>在原文中，应用BWMR对130种代谢物和93种复杂的人类性状进行因果推断，揭示了暴露与结果性状之间的新因果关系。</span></p><p><span>​</span><br></p><p><strong><span>MendelR代码包如何使用</span></strong><strong><span>贝叶斯加权孟德尔随机化</span></strong><strong><span>？</span></strong></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+mr_method_list() #查看具体由哪些mr分析方法 按照格式传入参数即可
+#将BWMR方法传入到method_list参数
+mr_common("ieu-a-2", "ieu-b-2", p1=5e-8, p2=5e-5, r2=0.001, kb=10000, 
+          method_list=c("mr_ivw", "mr_ivw_fe", "mr_egger_regression", "BWMR"))</code></pre></figure><p><span>​</span><br></p><p><span>使用该方法需要引用原文</span><a href="https://academic.oup.com/bioinformatics/article/36/5/1501/5583736?login=false" target="_blank" rel="noreferrer"><span>https://academic.oup.com/bioinformatics/article/36/5/1501/5583736?login=false</span></a></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712024121546-261682c1-9d2a-4c36-acf7-e7d047c903c7.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_77%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712024121546-261682c1-9d2a-4c36-acf7-e7d047c903c7.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_77%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>更多详细用法可以看这个文档</span></p><p><a href="qr1xzemwxnffexwb.html" class="link-card"><strong>常用mr分析方法，以及如何让代码包跑对应的方法</strong><span>站内引用</span><small>更新中...使用mr_method_list() 查看具体可用mr分析方法使用method_list 设置mr分析方法library(MendelR) mr_method_list() #查看具体由哪些mr分析方法 按照格式传入参数即可 #传入到method_list参数 mr_common(...</small></a></p><p><span>​</span><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="cxwkfmb9n9a5ec6o.html"><em>上一篇</em><strong>2024.04.05-9.2.30更新详情</strong></a><a class="nav-card" href="udpaei2o2d9ml2hs.html"><em>下一篇</em><strong>2024.03.12-9.2.28更新详情</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

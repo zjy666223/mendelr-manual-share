@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>003.一键GET 火山图 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="主要用于呈现批量MR分析的结果注意：只支持多个暴露对一个结局，或者一个暴露对多个结局相比一些森林图，环状热图，可以呈现结果的风险情况注意：报错，请只筛选单一的mr方法结果出来画图，不然会重复的。。。单snp只有1个的时候=wald ratio 2个以上=ivw，所以只筛选ivw+wald rati…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>图表呈现</span>
+  </div>
+  <h1 class="page-title">003.一键GET 火山图</h1>
+  <div class="article-meta">
+    <span>所属章节：图表呈现</span>
+    <span>字数：691</span>
+    <span>代码块：2</span>
+    <span>更新时间：2025-03-12</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>图表呈现</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="留一图LeaveOneOut">
+  <a href="bd8n7pytx19gbm3u.html">留一图LeaveOneOut</a>
+</li><li class="filter-item" data-search-text="000.FastPlotR的安装以及常见问题">
+  <a href="ag7sl2ymp3yoz0wo.html">000.FastPlotR的安装以及常见问题</a>
+</li><li class="filter-item" data-search-text="001.一键GET Scatter散点趋势图">
+  <a href="kw6mq9u88w3umkq0.html">001.一键GET Scatter散点趋势图</a>
+</li><li class="filter-item" data-search-text="002.一键GET leaveoneout 散点误差图">
+  <a href="vl14qy26bccxhdn0.html">002.一键GET leaveoneout 散点误差图</a>
+</li><li class="filter-item current" data-search-text="003.一键GET 火山图">
+  <a href="hy5g20s38975pma9.html">003.一键GET 火山图</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="004.一键GET 适用phewas的曼哈顿散点图">
+  <a href="ga1r34a7b3wm5923.html">004.一键GET 适用phewas的曼哈顿散点图</a>
+</li><li class="filter-item" data-search-text="005.一键GET GWAS曼哈顿图">
+  <a href="gvsw3xz6dtls0cvl.html">005.一键GET GWAS曼哈顿图</a>
+</li><li class="filter-item" data-search-text="006.热图/环状热图">
+  <a href="xf55dckqi2hnodpm.html">006.热图/环状热图</a>
+</li><li class="filter-item" data-search-text="007.一键GET 精美共定位散点图">
+  <a href="xmgy9lf6z8l6fmpz.html">007.一键GET 精美共定位散点图</a>
+</li><li class="filter-item" data-search-text="008. 3D 散点曼哈顿图">
+  <a href="sggam2194hbqsecw.html">008. 3D 散点曼哈顿图</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：图表呈现</span>
+        <span class="pill gold">代码块 2</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>主要用于呈现批量MR分析的结果</span></p><p><strong><span>注意：只支持多个暴露对一个结局，或者一个暴露对多个结局</span></strong></p><p><strong><span>相比一些森林图，环状热图，可以呈现结果的风险情况</span></strong></p><p><strong><span>注意：报错，请只筛选单一的mr方法结果出来画图，不然会重复的。。。</span></strong></p><p><strong><span>单snp只有1个的时候=wald ratio 2个以上=ivw，所以只筛选ivw+wald ratio 可以保证数据每个暴露+结局的mr结果，有且只有一个点，就不会在图中重复出现。</span></strong></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1723382578946-db689fbb-a23b-4c06-a5a4-af22f5e9cafd.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_37%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1723382578946-db689fbb-a23b-4c06-a5a4-af22f5e9cafd.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_37%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>x轴代表beta/or值，y轴代表pval，标签代表id</span></p><p><span>可以呈现批量分析mr结果，主要是可以呈现正负相关，以及显著的id</span></p><p><span>​</span><br></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1711809500697-599c8185-7288-4761-9aea-c1f052ee862e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1711809500697-599c8185-7288-4761-9aea-c1f052ee862e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><br></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(FastPlotR)
+plot_volcano("文本文件名.csv",
+             id_col= "id.exposure",
+             effect_col = "b",
+             effect_col_val = 0,
+             pval_col = "pval",
+             p_threshold=0.05,
+             data_type="", x_title="",plot_title="Volcano Plot",
+             coloc_list=c("#df2089", "#1FDF76", "gray"),
+             highlight=T, xlim=NULL,
+             point_size=3, point_shape=c(16,16,16),point_alpha=0.5,max.overlaps=10)</code></pre></figure><p><span>dat: 传入文件名，一般是批量分析后的mr结果文件。</span></p><p><span>id_col： 以数据中的哪个列作为唯一id数据，如果是多个暴露，则是id.exposure，多个结局，则是id.outcome</span></p><p><span>effect_col: 以哪个列数据作为左右分界数据，看结局的类型，如果是二分类则是 or，如果是连续变量则是b</span></p><p><span>effect_col_val:根据effect_col的情况，如果是or值，则是以1为分界线，b则是0</span></p><p><span>pval_col：需要显示的pval列数据</span></p><p><span>x_title：x轴的标题</span></p><p><span>plot_title：图的标题</span></p><p><span>coloc_list：三个点的颜色，分别是风险因素，保护因素，以及不显著的点的颜色</span></p><p><span>highlight： T则代表会标记显著的点的标签</span></p><p><span>xlim ： 可以限定x轴的范围，有些数据效应值过大，可以用这个截断</span></p><p><span>格式是：</span><strong><span>c(0, 1) </span></strong></p><p><strong><span>代表限定x轴范围0~1</span></strong></p><p><span>point_size：点的大小</span></p><p><span>point_shape：点的形状</span></p><p><span>point_alpha：点的透明度</span></p><p><span>max.overlaps: 显示的显著阈值的标签的最大数量</span></p><p><u><span>以上参数都可以尝试着调整</span></u></p><p><br></p><p><span>data_type：可选，ukb-ppp/</span><span>finngen_R10等，只支持云上GWAS的编号信息，其他的留空，则显示id_col的数据（如果有自己先要显示的标签，可以更改id_col的具体数据）</span></p><p><strong><u><span>非云上编号的数据，设置data_type=""，然后森林图显示的标签，就是id_col列的数据，然后自己按需改自己的数据。（非云上编号数据，无法自动匹配trait，因为没有信息，所以自己编辑自己的数据。。。）</span></u></strong></p><p><span>ukbppp与BMI的火山图数据</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">plot_volcano("test_volcano_ukbppp.csv", data_type = "ukb-ppp")</code></pre></figure><p><span>示例数据：</span></p><a href="https://flash0926.yuque.com/attachments/yuque/0/2024/csv/26903514/1711809609434-36ad3756-f6ab-44c1-b866-92378ec6e0bb.csv" class="link-card" target="_blank" rel="noreferrer"><strong>localdoc</strong><span>localdoc</span></a><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1711809500697-599c8185-7288-4761-9aea-c1f052ee862e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1711809500697-599c8185-7288-4761-9aea-c1f052ee862e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="vl14qy26bccxhdn0.html"><em>上一篇</em><strong>002.一键GET leaveoneout 散点误差图</strong></a><a class="nav-card" href="ga1r34a7b3wm5923.html"><em>下一篇</em><strong>004.一键GET 适用phewas的曼哈顿散点图</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01.MendelR安装和激活方法 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="安装前请确认正确安装好了R的所有软件安装R的具体教程引用链接一、需要安装的内容安装的是R版本在4.3.0以上，本身电脑高于此版本不用重新安装如果电脑本身安装了低于此版本的，需要先卸载，重新按照以下流程安装安装的位置建议在C盘以外的盘（比如D:/R/），建一个R的目录，存放所有的安装程序，这样不会占…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>安装与更新</span>
+  </div>
+  <h1 class="page-title">01.MendelR安装和激活方法</h1>
+  <div class="article-meta">
+    <span>所属章节：安装与更新</span>
+    <span>字数：487</span>
+    <span>代码块：4</span>
+    <span>更新时间：2024-11-25</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>安装与更新</h3>
+    <ul class="section-nav"><li class="filter-item current" data-search-text="01.MendelR安装和激活方法">
+  <a href="lu6m6katfthhu45h.html">01.MendelR安装和激活方法</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="02.MendelR更新方法">
+  <a href="qwt1icmf6xpgyq2k.html">02.MendelR更新方法</a>
+</li><li class="filter-item" data-search-text="03.MendelR示例工程">
+  <a href="vfgk5662ngd6d3oi.html">03.MendelR示例工程</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：安装与更新</span>
+        <span class="pill gold">代码块 4</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>安装前请确认正确安装好了R的所有软件</span><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/dpgl2kik5fd4qh7x" class="link-card" target="_blank" rel="noreferrer"><strong>安装R的具体教程</strong><span>引用链接</span><small>一、需要安装的内容安装的是R版本在4.3.0以上，本身电脑高于此版本不用重新安装如果电脑本身安装了低于此版本的，需要先卸载，重新按照以下流程安装安装的位置建议在C盘以外的盘（比如D:/R/），建一个R的目录，存放所有的安装程序，这样不会占用C系统盘的位置所有的安装包安装到同一个目录！！！！！！...</small></a></p><p><span>以下代码都是复制到RStudio窗口，然后回车执行</span></p><p><figure class="image-card"><a href="../assets/media/bbbe0a9e6c5e2454b867.png"><img src="../assets/media/bbbe0a9e6c5e2454b867.png" alt="image插图" loading="lazy"></a></figure></p><p><a href="https://www.bilibili.com/video/BV16P411k7fC" class="link-card" target="_blank" rel="noreferrer"><strong>孟德尔前期准备(1)-部署R环境和MendelR安装实操演示_哔哩哔哩_bilibili</strong><span>引用链接</span><small>安装R的流程：https://flash0926.github.io/2022/12/26/R%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/MendelR安装方法：https://flash0926.github.io/2022/12/04/mr%E4%BB%A3%E7%A0%81%E5%8C%85%E5%AE%89%E8%A3%8…</small></a></p><h1><span>一、安装代码</span></h1><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">devtools::install_github("flash0926/mrhelp",force = T)
+mrhelp::install_mr()</code></pre></figure><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">remotes::install_git("https://gitcode.com/flash0926/mrhelp",force = T)
+mrhelp::install_mr()</code></pre></figure><p><span>以上方法二选一即可，github方法有时候因为国内网络有墙的原因，有可能访问不了，用方法二即可安装(方法二需要先注册账号</span><a href="https://gitcode.com/" target="_blank" rel="noreferrer"><span>https://gitcode.com/</span></a><span>)</span></p><p><strong><span>如果都无法安装，请移步第三点离线安装教程</span></strong></p><h1><span>二、激活代码</span></h1><p><span>安装完成MendelR后，向咨询的老师获取激活码，激活成功后，才能使用完整的R包功能</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+mr_register("把老师给的激活码填在这里") #注意填上自己的激活码 双引号不要删掉</code></pre></figure><p><span>注：激活码是一机一码的，请选择自己常用且性能高的电脑激活</span></p><p><span>注：安装和激活都只需要进行一次即可，不用重复执行</span></p><p><span>注：使用代码包功能前，需要先执行library(MendelR)</span></p><p><span><u><span>注：激活码需要个人自己保存好，不要泄露。激活码是学员的重要凭证，后续功能会和激活码息息相关。</span></u></span></p><h1><span>三、本地安装的方法</span></h1><p><span>有些同学可能会出现链接不上github的情况，需要使用本地安装的方法安装</span></p><p><figure class="image-card"><a href="../assets/media/dbb6ae439ef24410f972.png"><img src="../assets/media/dbb6ae439ef24410f972.png" alt="image插图" loading="lazy"></a></figure></p><p><span>0.先批量安装好所有的离线依赖包</span></p><p><span>看文档第七点方法：</span><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/wpvsu3ecx9olofop#FWddv" class="link-card" target="_blank" rel="noreferrer"><strong>安装R包的方法</strong><span>引用链接</span><small>分析过程有时候会出现缺少某个R包的提示，可以使用以下步骤安装注意，"R包名字"，这个是带着双引号的，不要删掉。注意：下载太慢，下载超时，可以切换下载源一、安装一个R包install.packages("R包名字") #安装一个R包，替换R包名字为自己想安装的R包二、安装多个R包install....</small></a></p><p><span>1.安装好mrhelp.zip，链接：</span><a href="https://pan.baidu.com/s/1XjU95BOyGY5dEdhyVx6Zig?pwd=8888" target="_blank" rel="noreferrer"><span>https://pan.baidu.com/s/1XjU95BOyGY5dEdhyVx6Zig?pwd=8888</span></a><span> </span></p><p><figure class="image-card"><a href="../assets/media/df0b9f438ecfba43bdd8.png"><img src="../assets/media/df0b9f438ecfba43bdd8.png" alt="image插图" loading="lazy"></a></figure></p><p><span>2.执行mrhelp::install_mr()，耐心等待剩下的依赖包安装完成即可。</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">mrhelp::install_mr()</code></pre></figure><p><span>以上可以保证MendelR顺利安装</span></p><p><span>3.回到第二点激活代码部分文档，激活MendelR包</span></p><p><br></p><p><span>​</span><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="sbx1tkssbbd5lon1.html"><em>上一篇</em><strong>13.关于GWAS版本问题的总结</strong></a><a class="nav-card" href="qwt1icmf6xpgyq2k.html"><em>下一篇</em><strong>02.MendelR更新方法</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

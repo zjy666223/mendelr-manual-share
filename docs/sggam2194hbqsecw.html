@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>008. 3D 散点曼哈顿图 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="当有多个暴露对n个结局的结果需要呈现时，如果是2D的图，势必会非常长所有可以做成3D的，xz坐标分别是暴露+分类，y坐标是pval的具体数据rlibrary(FastPlotR) plot_manhattan_mrphewasres_3d(dat=&quot;画图数据.csv&quot;, data_type=NUL…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>图表呈现</span>
+  </div>
+  <h1 class="page-title">008. 3D 散点曼哈顿图</h1>
+  <div class="article-meta">
+    <span>所属章节：图表呈现</span>
+    <span>字数：221</span>
+    <span>代码块：1</span>
+    <span>更新时间：2024-06-20</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>图表呈现</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="留一图LeaveOneOut">
+  <a href="bd8n7pytx19gbm3u.html">留一图LeaveOneOut</a>
+</li><li class="filter-item" data-search-text="000.FastPlotR的安装以及常见问题">
+  <a href="ag7sl2ymp3yoz0wo.html">000.FastPlotR的安装以及常见问题</a>
+</li><li class="filter-item" data-search-text="001.一键GET Scatter散点趋势图">
+  <a href="kw6mq9u88w3umkq0.html">001.一键GET Scatter散点趋势图</a>
+</li><li class="filter-item" data-search-text="002.一键GET leaveoneout 散点误差图">
+  <a href="vl14qy26bccxhdn0.html">002.一键GET leaveoneout 散点误差图</a>
+</li><li class="filter-item" data-search-text="003.一键GET 火山图">
+  <a href="hy5g20s38975pma9.html">003.一键GET 火山图</a>
+</li><li class="filter-item" data-search-text="004.一键GET 适用phewas的曼哈顿散点图">
+  <a href="ga1r34a7b3wm5923.html">004.一键GET 适用phewas的曼哈顿散点图</a>
+</li><li class="filter-item" data-search-text="005.一键GET GWAS曼哈顿图">
+  <a href="gvsw3xz6dtls0cvl.html">005.一键GET GWAS曼哈顿图</a>
+</li><li class="filter-item" data-search-text="006.热图/环状热图">
+  <a href="xf55dckqi2hnodpm.html">006.热图/环状热图</a>
+</li><li class="filter-item" data-search-text="007.一键GET 精美共定位散点图">
+  <a href="xmgy9lf6z8l6fmpz.html">007.一键GET 精美共定位散点图</a>
+</li><li class="filter-item current" data-search-text="008. 3D 散点曼哈顿图">
+  <a href="sggam2194hbqsecw.html">008. 3D 散点曼哈顿图</a><span class="badge">当前</span>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：图表呈现</span>
+        <span class="pill gold">代码块 1</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>当有多个暴露对n个结局的结果需要呈现时，如果是2D的图，势必会非常长</span></p><p><span>所有可以做成3D的，xz坐标分别是暴露+分类，y坐标是pval的具体数据</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(FastPlotR)
+plot_manhattan_mrphewasres_3d(dat="画图数据.csv", data_type=NULL)
+
+#结局的类型可以按照云上GWAS的编号分类
+plot_manhattan_mrphewasres_3d(dat="自己的数据", data_type="ukb-saige",
+                             id_col="id.outcome", gene_col="id.exposure")
+#id_col代表需要分类的列名
+#gene_col这里代表暴露的列名</code></pre></figure><p><span>示例数据：</span><a href="https://flash0926.yuque.com/attachments/yuque/0/2024/csv/26903514/1712653525517-48271c9f-a0e0-434a-9af7-6543d1b05ce7.csv" class="link-card" target="_blank" rel="noreferrer"><strong>file</strong><span>file</span></a></p><p><span>如图，是可以缩放，平移，把鼠标放上去还可以有详细的交互信息</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712652775835-3ced9452-c839-4775-ae30-4c7348d0338c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_57%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712652775835-3ced9452-c839-4775-ae30-4c7348d0338c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_57%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>出图后，将其导出成index.html的格式，还可以自己部署到服务器，或者放到附件中，以浏览器的形式打开</span></p><p><a href="https://flash0926.yuque.com/attachments/yuque/0/2024/html/26903514/1712653387304-04a225dc-6355-4726-80bd-0926e6c3ebc3.html" class="link-card" target="_blank" rel="noreferrer"><strong>file</strong><span>file</span></a><span>示例导出，下载后用浏览器打开</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712652977063-e1d824ac-cdd3-45aa-a868-4e0ea84781d8.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_43%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712652977063-e1d824ac-cdd3-45aa-a868-4e0ea84781d8.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_43%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="xmgy9lf6z8l6fmpz.html"><em>上一篇</em><strong>007.一键GET 精美共定位散点图</strong></a><a class="nav-card" href="dy8ugn0istg4g124.html"><em>下一篇</em><strong>方法学部分的权威参考文献引用</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

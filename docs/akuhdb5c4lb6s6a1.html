@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4.芬兰数据库超详细介绍以及重叠率计算 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👉汇总文件大收集：（可以直接从这里找到汇总的详情表和数据下载链接）​👉链接：https://pan.baidu.com/s/1WMzQ0jQFzQeXo0vSZdsVow?pwd=or8a 👉提取码：or8a 👉--来自百度网…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>数据准备与处理</span>
+  </div>
+  <h1 class="page-title">4.芬兰数据库超详细介绍以及重叠率计算</h1>
+  <div class="article-meta">
+    <span>所属章节：数据准备与处理</span>
+    <span>字数：868</span>
+    <span>代码块：0</span>
+    <span>更新时间：2024-11-17</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>数据准备与处理</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="针对IEU在线数据服务的问题的全方位解决方案">
+  <a href="nvtcexkgrhs5tvv8.html">针对IEU在线数据服务的问题的全方位解决方案</a>
+</li><li class="filter-item" data-search-text="00.OpenGWAS项目Token申请流程">
+  <a href="gxocspnfe6s6glbw.html">00.OpenGWAS项目Token申请流程</a>
+</li><li class="filter-item" data-search-text="紧急！IEU升级账号等级登记！">
+  <a href="mh8g24itfeepx9qz.html">紧急！IEU升级账号等级登记！</a>
+</li><li class="filter-item" data-search-text="0. 必看！常见GWAS数据来源汇总目录">
+  <a href="oipyh10uyxzuovce.html">0. 必看！常见GWAS数据来源汇总目录</a>
+</li><li class="filter-item" data-search-text="1.GWAS Catalog">
+  <a href="rst7w7hcm4kti3mg.html">1.GWAS Catalog</a>
+</li><li class="filter-item" data-search-text="2.UKB 2018Round2英国生物银行的汇总数据集">
+  <a href="fso9suo1zwkk9w0e.html">2.UKB 2018Round2英国生物银行的汇总数据集</a>
+</li><li class="filter-item" data-search-text="3.ieu--opengwas--mrbase收录的在线数据">
+  <a href="bd6kgzqs7bxvek9g.html">3.ieu--opengwas--mrbase收录的在线数据</a>
+</li><li class="filter-item current" data-search-text="4.芬兰数据库超详细介绍以及重叠率计算">
+  <a href="akuhdb5c4lb6s6a1.html">4.芬兰数据库超详细介绍以及重叠率计算</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="光速获取芬兰R12数据库!">
+  <a href="ltxzn4udtlge3rxi.html">光速获取芬兰R12数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R11数据库!">
+  <a href="qrbnfh8t1bgl21md.html">光速获取芬兰R11数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R10数据库!">
+  <a href="tr0t1gs7bdtxivcq.html">光速获取芬兰R10数据库!</a>
+</li><li class="filter-item" data-search-text="5.MiBioGen肠道菌群">
+  <a href="vqowppo1w81fowab.html">5.MiBioGen肠道菌群</a>
+</li><li class="filter-item" data-search-text="6.UKB的35个血尿标志物">
+  <a href="stqshobilao148i9.html">6.UKB的35个血尿标志物</a>
+</li><li class="filter-item" data-search-text="7.The Within Family Consortium">
+  <a href="gwotcny75txn86r5.html">7.The Within Family Consortium</a>
+</li><li class="filter-item" data-search-text="8.血细胞联盟">
+  <a href="ltbg5duhfioika16.html">8.血细胞联盟</a>
+</li><li class="filter-item" data-search-text="9.Stroke数据库">
+  <a href="iyxbwll1zf1zv6sz.html">9.Stroke数据库</a>
+</li><li class="filter-item" data-search-text="10.高血压数据库">
+  <a href="kg8taz9tx3grgyq9.html">10.高血压数据库</a>
+</li><li class="filter-item" data-search-text="11.不同白细胞、红细胞GWAS">
+  <a href="nz9o70x8pxbnqklx.html">11.不同白细胞、红细胞GWAS</a>
+</li><li class="filter-item" data-search-text="12.房颤数据库">
+  <a href="qwh6cutmpht1uqhm.html">12.房颤数据库</a>
+</li><li class="filter-item" data-search-text="云上GWAS数据详细信息说明">
+  <a href="bd0lu9aeu108adl0.html">云上GWAS数据详细信息说明</a>
+</li><li class="filter-item" data-search-text="干货-GWAS人群队列？详情信息？样本重叠？">
+  <a href="zxxcflxrz3sgwxl5.html">干货-GWAS人群队列？详情信息？样本重叠？</a>
+</li><li class="filter-item" data-search-text="02.本地数据模板SNP表头">
+  <a href="bgfy40bu3b3x7ykm.html">02.本地数据模板SNP表头</a>
+</li><li class="filter-item" data-search-text="03.本地数据增加samplesize">
+  <a href="kgduo4uakrgg0kzq.html">03.本地数据增加samplesize</a>
+</li><li class="filter-item" data-search-text="04.本地数据beta,se,or互相转换，置信区间公式">
+  <a href="hzg5igd65t4zcbzs.html">04.本地数据beta,se,or互相转换，置信区间公式</a>
+</li><li class="filter-item" data-search-text="05.本地数据无eaf补充">
+  <a href="rk0z9q37ey5qpad9.html">05.本地数据无eaf补充</a>
+</li><li class="filter-item" data-search-text="06.本地数据无rsid数据转换">
+  <a href="mhrxm56dwh0tx9i1.html">06.本地数据无rsid数据转换</a>
+</li><li class="filter-item" data-search-text="07.使用代码改表头">
+  <a href="gb2z99wy8icc1qua.html">07.使用代码改表头</a>
+</li><li class="filter-item" data-search-text="08.IEU上下载的VCF文件转换">
+  <a href="mzkfbwqgogphc127.html">08.IEU上下载的VCF文件转换</a>
+</li><li class="filter-item" data-search-text="09.样本重叠率的相关问题">
+  <a href="ybcs9e0g7kqzwi75.html">09.样本重叠率的相关问题</a>
+</li><li class="filter-item" data-search-text="10.如何从文献里找到其使用的GWAS数据？">
+  <a href="dvlrftlzmwhno7av.html">10.如何从文献里找到其使用的GWAS数据？</a>
+</li><li class="filter-item" data-search-text="11.pval -log10转换注意">
+  <a href="cfrt522wqa7k9v56.html">11.pval -log10转换注意</a>
+</li><li class="filter-item" data-search-text="12.数据标准化">
+  <a href="szfv01l9azl2bhvn.html">12.数据标准化</a>
+</li><li class="filter-item" data-search-text="13.LD环境的准备">
+  <a href="rhnk2rr6vze469gf.html">13.LD环境的准备</a>
+</li><li class="filter-item" data-search-text="XX.MendelR可用数据来源">
+  <a href="an6awimp01322vgh.html">XX.MendelR可用数据来源</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：数据准备与处理</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇</span></p><p><strong><span>👉</span></strong><strong><span>汇总文件大收集：（可以直接从这里找到汇总的详情表和数据下载链接）</span></strong><strong><span>​</span></strong></p><p><strong><span>👉</span></strong><span>链接：</span><a href="https://pan.baidu.com/s/1WMzQ0jQFzQeXo0vSZdsVow?pwd=or8a" target="_blank" rel="noreferrer"><span>https://pan.baidu.com/s/1WMzQ0jQFzQeXo0vSZdsVow?pwd=or8a</span></a><span> </span></p><p><strong><span>👉</span></strong><span>提取码：or8a </span></p><p><strong><span>👉</span></strong><span>--来自百度网盘超级会员V10的分享</span></p><p><span>👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆</span></p><p><strong><u><span>特别注意：R12版本的汇总详情文件，请自行提取。</span></u></strong></p><p><strong><u><span>特别注意：R11版本的汇总详情文件，无法下载，医工科研团队已自行整理放到上面的网盘里了，请自行提取。</span></u></strong></p><p><span>👆👆👆👆</span></p><p><span>​</span><br></p><p><strong><span>医工科研团队</span></strong><span>-</span><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/gpa1ys" class="link-card" target="_blank" rel="noreferrer"><strong>孟德尔随机化修炼手册</strong><span>引用链接</span></a><span>  </span><span>👈👈👈</span><span> 点击这里可以进去查看呕心力作，高质量佳作，涵盖MR基础到进阶高级的完整知识库！欢迎报名医工科研团队高质量孟德尔课程！</span><a href="kez49lguhpz2u5gk.html" class="link-card"><strong>01.孟德尔随机化课程目录</strong><span>站内引用</span><small>具体课程目录可以登录我们团队的在线网站浏览：孟德尔训练营所有代码专人维护，不需要有R语言基础都可以入门，详细版本迭代介绍：02.MendelR介绍与版本说明 · 医工科研部分MendelR包实操视频可以观看b站往期视频：会敲代码的科研人-MendelR理论实操合集以往孟德尔随机化之旅，各种经验...</small></a></p><a href="https://player.bilibili.com/player.html?bvid=BV1Xk4y1s7kL&amp;autoplay=0" class="link-card" target="_blank" rel="noreferrer"><strong>thirdparty</strong><span>外部内容</span></a><h2><span>一、介绍</span></h2><p><span>芬兰数据库属于一个比较新的欧洲样本数据库</span></p><p><span>使用path_https的链接可以直接下载</span></p><p><span>注意：R8以后的数据基本都是以38版本为主的注释SNP格式，可以利用转换rsid软件转换出SNP使用</span></p><p><strong><span>R12版本已经更新!!!</span></strong><a href="ltxzn4udtlge3rxi.html" class="link-card"><strong>光速获取芬兰R12数据库!</strong><span>站内引用</span><small>继芬兰R1版本2444个表型在2024年6月发布后，芬兰数据库再次给力地发布了新的数据出来，2024年11月4号发布了R12版本2469个表型，大家可以用最新数据发文章啦！详情可见芬兰官网链接（打不开的话需要用梯子）：https://www.finngen.fi/en/access_resul...</small></a></p><p><strong><span>R11版本已经更新!!!</span></strong><a href="qrbnfh8t1bgl21md.html" class="link-card"><strong>光速获取芬兰R11数据库!</strong><span>站内引用</span><small>继芬兰R10版本2408个表型在2023年5月发布后，芬兰数据库再次给力地发布了新的数据出来，2024年6月24号（美国时间）发布了R11版本2447个表型，大家可以用最新数据发文章啦！（实际上能下载的只有2444个数据，且官网没给出汇总的下载链接，医工科研kim老师花了时间整理好所有数据的汇...</small></a></p><p><strong><span>R10版本已经更新!!!</span></strong><a href="tr0t1gs7bdtxivcq.html" class="link-card"><strong>光速获取芬兰R10数据库!</strong><span>站内引用</span><small>继芬兰R9版本2272个表型在2023年5月发布后，芬兰数据库再次给力地发布了新的数据出来，2023年12月18号（美国时间）发布了R10版本2408个表型，大家可以用最新数据发文章啦！详情可见芬兰官网链接（打不开的话需要用梯子）：https://r10.finngen.fi/医工科研团队已经...</small></a></p><p><a href="https://www.finngen.fi/en/access_results" target="_blank" rel="noreferrer"><span>https://www.finngen.fi/en/access_results</span></a></p><p><figure class="image-card"><a href="../assets/media/4c246cb8e029ad14d797.png"><img src="../assets/media/4c246cb8e029ad14d797.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><br></p><p><figure class="image-card"><a href="../assets/media/97ab64e62b291007fb0f.png"><img src="../assets/media/97ab64e62b291007fb0f.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><figure class="image-card"><a href="../assets/media/f5a08ae691934a6e4e51.png"><img src="../assets/media/f5a08ae691934a6e4e51.png" alt="image插图" loading="lazy"></a></figure></p><p><span>表头详情</span></p><p><figure class="image-card"><a href="../assets/media/5bf80f95bd796268b01a.png"><img src="../assets/media/5bf80f95bd796268b01a.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><span>​</span><br></p><p><span>以上步骤可能也需要梯子，也可以用下载好的的数据汇总</span></p><h2><span>二、数据详情</span></h2><p><span>risteys查询R1-11的病例具体情况，如ICD编码</span></p><p><a href="https://risteys.finregistry.fi/" target="_blank" rel="noreferrer"><span>https://risteys.finregistry.fi/</span></a></p><p><span>以Malignant neoplasm of kidney, except renal pelvis为例查找对应的数据详情</span></p><p><figure class="image-card"><a href="../assets/media/7156673e0e03c4c7bc9d.png"><img src="../assets/media/7156673e0e03c4c7bc9d.png" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="../assets/media/bb015c52686b2ddc8c40.png"><img src="../assets/media/bb015c52686b2ddc8c40.png" alt="image插图" loading="lazy"></a></figure></p><h2><span>三、数据汇总</span></h2><p><span>R9版本：</span></p><a href="https://flash0926.yuque.com/attachments/yuque/0/2023/csv/26903514/1684378932619-3a0a4527-2d0f-469d-aacc-e55b29ec4100.csv" class="link-card" target="_blank" rel="noreferrer"><strong>localdoc</strong><span>localdoc</span></a><p><br></p><a href="https://flash0926.yuque.com/attachments/yuque/0/2023/csv/26903514/1684900062111-cb669da7-3cac-4dac-bbf0-a1bc4a5b9f8c.csv" class="link-card" target="_blank" rel="noreferrer"><strong>localdoc</strong><span>localdoc</span></a><p><br></p><p><br></p><p><br></p><p><br></p><p><span>​</span><br></p><p><span>R8版本：</span></p><a href="https://flash0926.yuque.com/attachments/yuque/0/2023/csv/26903514/1684378923062-209524a2-c05f-4771-bbb2-498e68c0e377.csv" class="link-card" target="_blank" rel="noreferrer"><strong>localdoc</strong><span>localdoc</span></a><a href="https://flash0926.yuque.com/attachments/yuque/0/2023/csv/26903514/1684900089471-9bdbcf51-3682-4c7c-8963-ba6edcc7d034.csv" class="link-card" target="_blank" rel="noreferrer"><strong>localdoc</strong><span>localdoc</span></a><p><br></p><h2><span>四、数据定义</span></h2><p><figure class="image-card"><a href="../assets/media/46eaf1af59278f6cf14b.png"><img src="../assets/media/46eaf1af59278f6cf14b.png" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="../assets/media/06e69d591202d3e55753.png"><img src="../assets/media/06e69d591202d3e55753.png" alt="image插图" loading="lazy"></a></figure></p><p><a href="https://flash0926.yuque.com/attachments/yuque/0/2023/xlsx/35523102/1693113442062-9948c099-b576-4e16-9e80-b3ed028279d1.xlsx" class="link-card" target="_blank" rel="noreferrer"><strong>file</strong><span>file</span></a></p><p><figure class="image-card"><a href="../assets/media/1483f31a61f76702f807.png"><img src="../assets/media/1483f31a61f76702f807.png" alt="image插图" loading="lazy"></a></figure></p><p><span>根据表格的ICD-10编码，到ICD-10的网站查询对应信息，</span><a href="https://icd.who.int/browse10/2019/en" target="_blank" rel="noreferrer"><span>https://icd.who.int/browse10/2019/en</span></a></p><p><figure class="image-card"><a href="../assets/media/bfb8a36b2925042f103a.png"><img src="../assets/media/bfb8a36b2925042f103a.png" alt="image插图" loading="lazy"></a></figure></p><h2><span>五、重叠率</span></h2><p><span>当暴露和结局同时来源于芬兰数据库的时候，需要注意重叠率的计算，要求重叠率不要超过10%，同时需要在文章中描述重叠率overlap的局限性。</span></p><p><figure class="image-card"><a href="../assets/media/c283615bd4a404e23f77.png"><img src="../assets/media/c283615bd4a404e23f77.png" alt="image插图" loading="lazy"></a></figure></p><h2><span>六、关于引用和致谢的规定</span></h2><p><figure class="image-card"><a href="../assets/media/1ad52c86fee72a2bea68.png"><img src="../assets/media/1ad52c86fee72a2bea68.png" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>ACKNOWLEDGEMENTS:</span></strong></p><p><span>When using these results in publications, please remember to:</span></p><ol><li><span>Acknowledge the FinnGen study. You can use the following text:</span></li></ol><p><em><span>“We want to acknowledge the participants and investigators of the FinnGen study”</span></em></p><ol><li><span>C</span><span>ite our latest publication</span><span>:</span></li></ol><p><span>Kurki, M.I., Karjalainen, J., Palta, P. </span><em><span>et al.</span></em><span> FinnGen provides genetic insights from a well-phenotyped isolated population. </span><em><span>Nature</span></em><span> </span><strong><span>613</span></strong><span>, 508–518 (2023). https://doi.org/10.1038/s41586-022-05473-8</span></p><p><span>Furthermore, if possible, include "FinnGen" as a keyword for your publication.</span></p><h2><span>七、数据质控</span></h2><p><span>In </span><strong><span>sample-wise</span></strong><span> quality control steps, individuals with ambiguous gender, high genotype missingness (&gt;5%), excess heterozygosity (+-4SD) and non-Finnish ancestry were excluded. In </span><strong><span>variant-wise</span></strong><span> quality control steps, variants with high missingness (&gt;2%), low HWE P-value (&lt;1e-6) and low minor allele count (MAC&lt;3) were excluded.<br></span><span>在样本质量控制步骤中，排除了性别不明确、基因型缺失率高 （&gt;5%）、杂合性过高 （+-4SD） 和非芬兰血统的个体。在变异质量控制步骤中，排除了高缺失 （&gt;2%）、低 HWE P 值 （&lt;1e-6） 和低次要等位基因计数 （MAC&lt;3） 的变异。</span></p><p><figure class="image-card"><a href="../assets/media/73bc2c5b1549def58bb6.png"><img src="../assets/media/73bc2c5b1549def58bb6.png" alt="image插图" loading="lazy"></a></figure></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="bd6kgzqs7bxvek9g.html"><em>上一篇</em><strong>3.ieu--opengwas--mrbase收录的在线数据</strong></a><a class="nav-card" href="ltxzn4udtlge3rxi.html"><em>下一篇</em><strong>光速获取芬兰R12数据库!</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

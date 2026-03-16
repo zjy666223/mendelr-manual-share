@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09.样本重叠率的相关问题 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="两样本孟德尔分析时如果出现了暴露和结局有一定的重叠情况则称为子样本孟德尔随机化（Subsample Mendelian randomization），因此这种情况需要计算或者估计样本重叠的大小和可能的偏移，尽量不要用有重叠的数据8.5.2 Subsample Mendelian randomiza…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>数据准备与处理</span>
+  </div>
+  <h1 class="page-title">09.样本重叠率的相关问题</h1>
+  <div class="article-meta">
+    <span>所属章节：数据准备与处理</span>
+    <span>字数：1167</span>
+    <span>代码块：0</span>
+    <span>更新时间：2024-08-23</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>数据准备与处理</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="针对IEU在线数据服务的问题的全方位解决方案">
+  <a href="nvtcexkgrhs5tvv8.html">针对IEU在线数据服务的问题的全方位解决方案</a>
+</li><li class="filter-item" data-search-text="00.OpenGWAS项目Token申请流程">
+  <a href="gxocspnfe6s6glbw.html">00.OpenGWAS项目Token申请流程</a>
+</li><li class="filter-item" data-search-text="紧急！IEU升级账号等级登记！">
+  <a href="mh8g24itfeepx9qz.html">紧急！IEU升级账号等级登记！</a>
+</li><li class="filter-item" data-search-text="0. 必看！常见GWAS数据来源汇总目录">
+  <a href="oipyh10uyxzuovce.html">0. 必看！常见GWAS数据来源汇总目录</a>
+</li><li class="filter-item" data-search-text="1.GWAS Catalog">
+  <a href="rst7w7hcm4kti3mg.html">1.GWAS Catalog</a>
+</li><li class="filter-item" data-search-text="2.UKB 2018Round2英国生物银行的汇总数据集">
+  <a href="fso9suo1zwkk9w0e.html">2.UKB 2018Round2英国生物银行的汇总数据集</a>
+</li><li class="filter-item" data-search-text="3.ieu--opengwas--mrbase收录的在线数据">
+  <a href="bd6kgzqs7bxvek9g.html">3.ieu--opengwas--mrbase收录的在线数据</a>
+</li><li class="filter-item" data-search-text="4.芬兰数据库超详细介绍以及重叠率计算">
+  <a href="akuhdb5c4lb6s6a1.html">4.芬兰数据库超详细介绍以及重叠率计算</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R12数据库!">
+  <a href="ltxzn4udtlge3rxi.html">光速获取芬兰R12数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R11数据库!">
+  <a href="qrbnfh8t1bgl21md.html">光速获取芬兰R11数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R10数据库!">
+  <a href="tr0t1gs7bdtxivcq.html">光速获取芬兰R10数据库!</a>
+</li><li class="filter-item" data-search-text="5.MiBioGen肠道菌群">
+  <a href="vqowppo1w81fowab.html">5.MiBioGen肠道菌群</a>
+</li><li class="filter-item" data-search-text="6.UKB的35个血尿标志物">
+  <a href="stqshobilao148i9.html">6.UKB的35个血尿标志物</a>
+</li><li class="filter-item" data-search-text="7.The Within Family Consortium">
+  <a href="gwotcny75txn86r5.html">7.The Within Family Consortium</a>
+</li><li class="filter-item" data-search-text="8.血细胞联盟">
+  <a href="ltbg5duhfioika16.html">8.血细胞联盟</a>
+</li><li class="filter-item" data-search-text="9.Stroke数据库">
+  <a href="iyxbwll1zf1zv6sz.html">9.Stroke数据库</a>
+</li><li class="filter-item" data-search-text="10.高血压数据库">
+  <a href="kg8taz9tx3grgyq9.html">10.高血压数据库</a>
+</li><li class="filter-item" data-search-text="11.不同白细胞、红细胞GWAS">
+  <a href="nz9o70x8pxbnqklx.html">11.不同白细胞、红细胞GWAS</a>
+</li><li class="filter-item" data-search-text="12.房颤数据库">
+  <a href="qwh6cutmpht1uqhm.html">12.房颤数据库</a>
+</li><li class="filter-item" data-search-text="云上GWAS数据详细信息说明">
+  <a href="bd0lu9aeu108adl0.html">云上GWAS数据详细信息说明</a>
+</li><li class="filter-item" data-search-text="干货-GWAS人群队列？详情信息？样本重叠？">
+  <a href="zxxcflxrz3sgwxl5.html">干货-GWAS人群队列？详情信息？样本重叠？</a>
+</li><li class="filter-item" data-search-text="02.本地数据模板SNP表头">
+  <a href="bgfy40bu3b3x7ykm.html">02.本地数据模板SNP表头</a>
+</li><li class="filter-item" data-search-text="03.本地数据增加samplesize">
+  <a href="kgduo4uakrgg0kzq.html">03.本地数据增加samplesize</a>
+</li><li class="filter-item" data-search-text="04.本地数据beta,se,or互相转换，置信区间公式">
+  <a href="hzg5igd65t4zcbzs.html">04.本地数据beta,se,or互相转换，置信区间公式</a>
+</li><li class="filter-item" data-search-text="05.本地数据无eaf补充">
+  <a href="rk0z9q37ey5qpad9.html">05.本地数据无eaf补充</a>
+</li><li class="filter-item" data-search-text="06.本地数据无rsid数据转换">
+  <a href="mhrxm56dwh0tx9i1.html">06.本地数据无rsid数据转换</a>
+</li><li class="filter-item" data-search-text="07.使用代码改表头">
+  <a href="gb2z99wy8icc1qua.html">07.使用代码改表头</a>
+</li><li class="filter-item" data-search-text="08.IEU上下载的VCF文件转换">
+  <a href="mzkfbwqgogphc127.html">08.IEU上下载的VCF文件转换</a>
+</li><li class="filter-item current" data-search-text="09.样本重叠率的相关问题">
+  <a href="ybcs9e0g7kqzwi75.html">09.样本重叠率的相关问题</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="10.如何从文献里找到其使用的GWAS数据？">
+  <a href="dvlrftlzmwhno7av.html">10.如何从文献里找到其使用的GWAS数据？</a>
+</li><li class="filter-item" data-search-text="11.pval -log10转换注意">
+  <a href="cfrt522wqa7k9v56.html">11.pval -log10转换注意</a>
+</li><li class="filter-item" data-search-text="12.数据标准化">
+  <a href="szfv01l9azl2bhvn.html">12.数据标准化</a>
+</li><li class="filter-item" data-search-text="13.LD环境的准备">
+  <a href="rhnk2rr6vze469gf.html">13.LD环境的准备</a>
+</li><li class="filter-item" data-search-text="XX.MendelR可用数据来源">
+  <a href="an6awimp01322vgh.html">XX.MendelR可用数据来源</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：数据准备与处理</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><strong><span>两样本孟德尔分析时如果出现了暴露和结局有一定的重叠情况则称为子样本孟德尔随机化（</span></strong><span>Subsample Mendelian randomization</span><strong><span>），因此这种情况需要计算或者估计样本重叠的大小和可能的偏移，</span></strong><strong><span>尽量不要用有重叠的数据</span></strong></p><p><span>8.5.2 Subsample Mendelian randomization</span><strong><span><br></span></strong><span>Especially when the outcome is binary, the sample size required in a Mendelian</span><strong><span> </span></strong><span>randomization experiment may be prohibitively large due to the expense of</span><strong><span> </span></strong><span>collecting data on the exposure. In this case, a subsample IV approach may be</span><strong><span> </span></strong><span>a cost-effective approach. Rather than collecting data on the exposure from the entire study sample, exposure data can be measured for a random subsample</span><strong><span> </span></strong><span>of (control) participants. As the association between the IV and the exposure</span><strong><span> </span></strong><span>is typically stronger than that between the IV and the outcome, the precision</span><strong><span><br></span></strong><span>of the IV estimate may not be noticeably affected by reducing the sample size on which the exposure is measured. Simulations have shown that a subsample</span><strong><span> </span></strong><span>IV analysis with exposure data on only 10% of participants may retain 90% of</span><strong><span> </span></strong><span>the power of the full-sample IV analysis [Pierce and Burgess, 2013]. Estimates</span><strong><span><br></span></strong><span>and confidence intervals with a single IV can be calculated using the ratio</span><strong><span> </span></strong><span>method and Fieller’s theorem (Section 4.1.5). With multiple IVs, a modified</span><strong><span> </span></strong><span>version of the two-stage least squares method can be used [Inoue and Solon,</span><strong><span> </span></strong><span>2010]</span></p><p><figure class="image-card"><a href="../assets/media/f84ca21eb0cc1cdbd428.png"><img src="../assets/media/f84ca21eb0cc1cdbd428.png" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>两样本孟德尔随机化的样本重叠如何计算？</span></strong></p><p><span>其实孟德尔随机化我们使用的都是汇总数据，直接的样本重叠率是无法计算的，只能通过一些方法间接解决这个问题。</span></p><p><span>1、估算</span></p><p><span>例子1：以下面的都为UKB的数据进行2样本MR分析为例：</span></p><p><span>暴露为甲减：编号ukb-b-4226</span></p><p><figure class="image-card"><a href="../assets/media/7ca04ed196dd621b474d.png"><img src="../assets/media/7ca04ed196dd621b474d.png" alt="image插图" loading="lazy"></a></figure></p><p><span>结局为心衰，编号ukb-d-I50</span></p><p><figure class="image-card"><a href="../assets/media/ec992dbacd9f30b2d9b9.png"><img src="../assets/media/ec992dbacd9f30b2d9b9.png" alt="image插图" loading="lazy"></a></figure></p><p><span>假设在暴露和结局的都是UKB的话，属于同一个队列，这种最大的重叠率是100%</span></p><p><span>​</span><br></p><p><span>例子2：</span><span>暴露中有部分的UKB的数据，结局为UKB数据，进行2样本MR分析为例：</span></p><p><span>某个暴露有20万人，其中样本量里的5万人是UKB的 (自己从数据的描述查看有没有UKB的来源)</span></p><p><span>而结局是UKB的，总的样本量有有36万人</span></p><p><span>此时是最大的重叠情况，那么就是样本里的5万人与结局的36万人是有5万人的重叠，这时候重叠率是5/36=13.67%</span></p><p><br></p><p><br></p><p><br></p><p><strong><span>两样本孟德尔随机化有样本重叠怎么办？</span></strong></p><p><span>(仅供参考，实际情况自己分析看文献）</span></p><p><span>解释样本重叠程度的大小，样本重叠带来的弱工具偏倚取决于样本重叠程度的大小，可以计算样本重叠的影响（https://sb452.shinyapps.io/overlap/),，结局是二分类或连续性变量是略有不同的，结果分了10段从0-10%，到90%-100%，我们只需要关注我们重叠的比例就可以了，看对应比例的偏移和1类错误的百分比，可以写在文章里，</span><span>参考文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5082560/</span><span><br> </span><figure class="image-card"><a href="../assets/media/0cf2fac67435ffc0cc0f.png"><img src="../assets/media/0cf2fac67435ffc0cc0f.png" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="../assets/media/af386f414a56324d6ee3.png"><img src="../assets/media/af386f414a56324d6ee3.png" alt="image插图" loading="lazy"></a></figure></p><p><span>参数</span><span>1</span><span>：</span><span>outcome</span><span>类型（连续型，分类型）；</span></p><p><span>参数</span><span>2</span><span>：基因解释比，在统计学上也可叫决定系数，就是纳入的SNP的R2之和；</span></p><p><span>参数</span><span>3</span><span>：暴露的样本量；</span></p><p><span>参数</span><span>4</span><span>：结局的样本量；</span></p><p><span>参数</span><span>5</span><span>：最终纳入研究的工具变量个数</span></p><p><span>参数</span><span>6</span><span>：观察性研究估计值的偏倚（看文献， 观察性估计应以标准偏差单位(即每SD暴露增加)为单位。例如：找暴露和结局的观察性研究（队列研究或者RCT研究）文献里说， 每个单位的血压增加导致心脏病的风险是OR1.2, 那就是写1.2）</span></p><p><span>参数</span><span>7</span><span>：case有con的比例，对于结果为二分类的变量， 如果病例与对照组的比例为 1:1，则比例为 0.5</span></p><p><span>​</span><br></p><p><span>下面这个研究中说到：使用10%的参与者的暴露数据进行亚群分析，可以保留全样本亚群分析90%的统计功效[Pierce和Burgess，2013]，可以作为自己论证结果可信性的参考文献</span></p><p><figure class="image-card"><a href="../assets/media/035cd9504b068e5f2bc3.png"><img src="../assets/media/035cd9504b068e5f2bc3.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><span>此外，21年Nat. Com上的《Mendelian randomization analyses support causal relationships between brain imaging-derived phenotypes and risk of psychiatric disorders》它使用暴露是来源于纯UKB（N=33224）的IDP，结局之一神经性厌食症Anorexia nervosa【16,992 case and 55,525 control， N=72517】是多个队列的meta，其中涉及到768 case and 3,065 control 来自于UKBB，它最后得出的重叠率是5% 左右，（768+3065 = 3833）/ 72517 ≈ 5%</span></p><p><figure class="image-card"><a href="../assets/media/5024e3e2c2d9a8e6ec6e.png"><img src="../assets/media/5024e3e2c2d9a8e6ec6e.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><strong><span>解决办法：</span></strong></p><p><span>使用不重叠的数据，尽量使用强的工具变量（F statistics）</span></p><p><span>​</span><br></p><p><br></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="mzkfbwqgogphc127.html"><em>上一篇</em><strong>08.IEU上下载的VCF文件转换</strong></a><a class="nav-card" href="dvlrftlzmwhno7av.html"><em>下一篇</em><strong>10.如何从文献里找到其使用的GWAS数据？</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

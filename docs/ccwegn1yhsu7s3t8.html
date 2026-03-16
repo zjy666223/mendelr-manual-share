@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02.云上GWAS积分是如何扣除的 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="以下扣取积分的缓存规则只针对MendelR自动缓存功能Tips:如果是非MendelR用户直接使用FastGWASR的相关接口提取数据后可以自己写到本地硬盘，下次自己再次分析重新读取拿来二次使用就行。​需要知道积分是如何扣除的，先了解数据是怎么获取的云上GWAS的数据都是通过FastGWASR包来…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>代码分析</span>
+  </div>
+  <h1 class="page-title">02.云上GWAS积分是如何扣除的</h1>
+  <div class="article-meta">
+    <span>所属章节：代码分析</span>
+    <span>字数：1726</span>
+    <span>代码块：2</span>
+    <span>更新时间：2025-04-10</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>代码分析</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="00.各个方法的参数说明">
+  <a href="gtbeuc1vmubwqz01.html">00.各个方法的参数说明</a>
+</li><li class="filter-item" data-search-text="两样本孟德尔MR一键GET方法">
+  <a href="nbempd49k6rchv7g.html">两样本孟德尔MR一键GET方法</a>
+</li><li class="filter-item" data-search-text="两样本孟德尔MR批量一键GET分析">
+  <a href="zu0rli9lisrto8wg.html">两样本孟德尔MR批量一键GET分析</a>
+</li><li class="filter-item" data-search-text="挖掘数据库+快速查找阳性结果">
+  <a href="fxxvr1exse9x4svr.html">挖掘数据库+快速查找阳性结果</a>
+</li><li class="filter-item" data-search-text="去除离群值-MRPresso及批量执行方法">
+  <a href="ox4702300muqetbt.html">去除离群值-MRPresso及批量执行方法</a>
+</li><li class="filter-item" data-search-text="如何去除混杂">
+  <a href="zmqq85xzz2snw123.html">如何去除混杂</a>
+</li><li class="filter-item" data-search-text="去除混杂备选方案一：LDLink--LDTrait">
+  <a href="mkt9it9fhc8wvybo.html">去除混杂备选方案一：LDLink--LDTrait</a>
+</li><li class="filter-item" data-search-text="去除混杂替代方案二：原生GWAS Catalog">
+  <a href="kr4rp80daqd8imye.html">去除混杂替代方案二：原生GWAS Catalog</a>
+</li><li class="filter-item" data-search-text="本地连锁不平衡Clump以及更改人群">
+  <a href="bnf4ehszlm8x5guh.html">本地连锁不平衡Clump以及更改人群</a>
+</li><li class="filter-item" data-search-text="FDR校正和Bonferroni校正">
+  <a href="geua8x2umbb7hbxu.html">FDR校正和Bonferroni校正</a>
+</li><li class="filter-item" data-search-text="F值计算公式与R2变异度">
+  <a href="kbbl08mggn9v4vge.html">F值计算公式与R2变异度</a>
+</li><li class="filter-item" data-search-text="如何去除rs号再次分析？">
+  <a href="nrfapuvtd0io275c.html">如何去除rs号再次分析？</a>
+</li><li class="filter-item" data-search-text="如何利用01文件暴露数据重复分析">
+  <a href="wx1snq8w33onrgvb.html">如何利用01文件暴露数据重复分析</a>
+</li><li class="filter-item" data-search-text="批量去除离群值后分析或删除某些rsid后再次分析">
+  <a href="lrxdnwogod2gqarx.html">批量去除离群值后分析或删除某些rsid后再次分析</a>
+</li><li class="filter-item" data-search-text="批量数据作为结局分析的具体方法">
+  <a href="tc4xgv8nq12h0a84.html">批量数据作为结局分析的具体方法</a>
+</li><li class="filter-item" data-search-text="解决样本重叠MRlap与批量MRlap">
+  <a href="ggcx9qoyhzsr1dgc.html">解决样本重叠MRlap与批量MRlap</a>
+</li><li class="filter-item" data-search-text="常用mr分析方法，以及如何让代码包跑对应的方法">
+  <a href="qr1xzemwxnffexwb.html">常用mr分析方法，以及如何让代码包跑对应的方法</a>
+</li><li class="filter-item" data-search-text="新MR分析方法cML,ConMix,mr_raps,mr_divw 副本">
+  <a href="ylryxxrw07ao191y.html">新MR分析方法cML,ConMix,mr_raps,mr_divw 副本</a>
+</li><li class="filter-item" data-search-text="最全肠道菌群GWAS（196/412/473/430）分析知识点总结">
+  <a href="ut5akg3th8g4mec8.html">最全肠道菌群GWAS（196/412/473/430）分析知识点总结</a>
+</li><li class="filter-item" data-search-text="02.多变量分析方法">
+  <a href="wwhc5qbqb6v4x3ee.html">02.多变量分析方法</a>
+</li><li class="filter-item" data-search-text="03.中介孟德尔分析">
+  <a href="cdmy6b5zbffps5v7.html">03.中介孟德尔分析</a>
+</li><li class="filter-item" data-search-text="通用批量中介流程">
+  <a href="nh9u0gtg3c4hdk4t.html">通用批量中介流程</a>
+</li><li class="filter-item" data-search-text="药靶中介分析">
+  <a href="fu5w4ky820lghlor.html">药靶中介分析</a>
+</li><li class="filter-item" data-search-text="药物靶点分析基础知识">
+  <a href="oqxg4poecngpi82a.html">药物靶点分析基础知识</a>
+</li><li class="filter-item" data-search-text="药靶中介分析">
+  <a href="htfcgg19h86nox84.html">药靶中介分析</a>
+</li><li class="filter-item" data-search-text="药靶SMR分析一键GET方法（通用SMR文档）">
+  <a href="fmgeaihg2k5s5o3r.html">药靶SMR分析一键GET方法（通用SMR文档）</a>
+</li><li class="filter-item" data-search-text="一键提取QTL子集数据(用于限定目标基因集合）">
+  <a href="lelqgoso4t4dapso.html">一键提取QTL子集数据(用于限定目标基因集合）</a>
+</li><li class="filter-item" data-search-text="各种qtl(GWAS格式)数据制作SMR标准besd文件">
+  <a href="emuge1kq1iugs0ak.html">各种qtl(GWAS格式)数据制作SMR标准besd文件</a>
+</li><li class="filter-item" data-search-text="FastMethR的使用文档--甲基化数据注释包（甲基化探针与基因相互注释）">
+  <a href="ko1groxz6kz0xw9d.html">FastMethR的使用文档--甲基化数据注释包（甲基化探针与基因相互注释）</a>
+</li><li class="filter-item" data-search-text="SMR合并besd文件，方便SMR全基因组分析">
+  <a href="gtcbbe1hcgk2ailo.html">SMR合并besd文件，方便SMR全基因组分析</a>
+</li><li class="filter-item" data-search-text="SMR在线分析">
+  <a href="bf0eux582go6i20g.html">SMR在线分析</a>
+</li><li class="filter-item" data-search-text="药靶MR分析一键GET方法（单个数据单个基因MR分析）">
+  <a href="zllgsg8lwg9baz3f.html">药靶MR分析一键GET方法（单个数据单个基因MR分析）</a>
+</li><li class="filter-item" data-search-text="用SMR格式besd的数据进行cis-qtl的MR批量分析">
+  <a href="co7d08y5hurhaud4.html">用SMR格式besd的数据进行cis-qtl的MR批量分析</a>
+</li><li class="filter-item" data-search-text="通用的一键cis-qtl提取数据并做MR分析（批量数据批量基因MR分析）">
+  <a href="hba4agh3c24gzitg.html">通用的一键cis-qtl提取数据并做MR分析（批量数据批量基因MR分析）</a>
+</li><li class="filter-item" data-search-text="批量药靶对结局MR分析">
+  <a href="vydsuiiqtquqppya.html">批量药靶对结局MR分析</a>
+</li><li class="filter-item" data-search-text="个性化分析1：UKBPPP全蛋白组药靶cis-pqtl-MR分析">
+  <a href="zzcv1hec9kany40x.html">个性化分析1：UKBPPP全蛋白组药靶cis-pqtl-MR分析</a>
+</li><li class="filter-item" data-search-text="个性化分析2：deCode 4907全血浆蛋白组pqtl-MR分析">
+  <a href="dpbsx019g01gmmg2.html">个性化分析2：deCode 4907全血浆蛋白组pqtl-MR分析</a>
+</li><li class="filter-item" data-search-text="多组学差异表达分析">
+  <a href="zg2zeq9m6ywepimp.html">多组学差异表达分析</a>
+</li><li class="filter-item" data-search-text="单细胞eqtl联合">
+  <a href="vqa8ewnfu2kre575.html">单细胞eqtl联合</a>
+</li><li class="filter-item" data-search-text="06.多样化最新GWAS批量分析（免疫细胞-肠道菌群-pqtl-代谢组-炎症因子-血细胞-MRI-等）">
+  <a href="vc3uq3suu5t328n5.html">06.多样化最新GWAS批量分析（免疫细胞-肠道菌群-pqtl-代谢组-炎症因子-血细胞-MRI-等）</a>
+</li><li class="filter-item" data-search-text="各组学批量孟德尔分析">
+  <a href="yxtvv3u45ugrrdvg.html">各组学批量孟德尔分析</a>
+</li><li class="filter-item" data-search-text="41个炎症因子（细胞因子）批量分析">
+  <a href="ew818c4n8e2zqrod.html">41个炎症因子（细胞因子）批量分析</a>
+</li><li class="filter-item" data-search-text="肠道菌群批量分析方法">
+  <a href="ezsg13uk9uqu4grd.html">肠道菌群批量分析方法</a>
+</li><li class="filter-item" data-search-text="新肠道菌群，荷兰412个菌群数据一键分析">
+  <a href="ttfesvch3xt3346h.html">新肠道菌群，荷兰412个菌群数据一键分析</a>
+</li><li class="filter-item" data-search-text="全身731个免疫细胞">
+  <a href="qrvqh0z794ez312h.html">全身731个免疫细胞</a>
+</li><li class="filter-item" data-search-text="1400代谢物分析">
+  <a href="yh7o2ewcgkl9xiai.html">1400代谢物分析</a>
+</li><li class="filter-item" data-search-text="91炎症蛋白pqtl数据一键分析">
+  <a href="ttb6gwyglsb0xzgh.html">91炎症蛋白pqtl数据一键分析</a>
+</li><li class="filter-item" data-search-text="循环白细胞特征">
+  <a href="gqr39r2fgk6o6aok.html">循环白细胞特征</a>
+</li><li class="filter-item" data-search-text="179脂质数据 2023年10月Nature数据一键分析">
+  <a href="ygbbvngws59h7vhs.html">179脂质数据 2023年10月Nature数据一键分析</a>
+</li><li class="filter-item" data-search-text="4907血浆蛋白数据分析">
+  <a href="dpbsx019g01gmmg2.html">4907血浆蛋白数据分析</a>
+</li><li class="filter-item" data-search-text="各qtl数据预处理流程">
+  <a href="rdg2ptmaq58943wz.html">各qtl数据预处理流程</a>
+</li><li class="filter-item" data-search-text="冰岛4907顺式cis-pqtl制作与使用方法">
+  <a href="mb0tmy7g1zvtggux.html">冰岛4907顺式cis-pqtl制作与使用方法</a>
+</li><li class="filter-item" data-search-text="70老年人炎症蛋白">
+  <a href="rp9wgib63otxdigy.html">70老年人炎症蛋白</a>
+</li><li class="filter-item" data-search-text="克隆血GWAS">
+  <a href="fx5r843i2pkbyy0o.html">克隆血GWAS</a>
+</li><li class="filter-item" data-search-text="743 pqtl数据">
+  <a href="hxzzz2nhe1ikbrq9.html">743 pqtl数据</a>
+</li><li class="filter-item" data-search-text="010-35个血尿标志物数据-UKB 副本">
+  <a href="rc53gvuwtym7yvaq.html">010-35个血尿标志物数据-UKB 副本</a>
+</li><li class="filter-item" data-search-text="00.云上GWAS的介绍">
+  <a href="lpc08uyt0k1m3l4s.html">00.云上GWAS的介绍</a>
+</li><li class="filter-item" data-search-text="01.如何激活云上GWAS">
+  <a href="bixgq1rxxcglbigs.html">01.如何激活云上GWAS</a>
+</li><li class="filter-item current" data-search-text="02.云上GWAS积分是如何扣除的">
+  <a href="ccwegn1yhsu7s3t8.html">02.云上GWAS积分是如何扣除的</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="03.云上GWAS通用实操方法">
+  <a href="aeidg23111k4i660.html">03.云上GWAS通用实操方法</a>
+</li><li class="filter-item" data-search-text="04.云上GWAS数据库批量分析方法">
+  <a href="ey8by96nb8cva4yr.html">04.云上GWAS数据库批量分析方法</a>
+</li><li class="filter-item" data-search-text="05.云上GWAS两个批量数据的分析方法">
+  <a href="eohbsgho1bi116ka.html">05.云上GWAS两个批量数据的分析方法</a>
+</li><li class="filter-item" data-search-text="云上GWAS-轻松进行MR-PheWAS">
+  <a href="xaum3o44ksuyskc6.html">云上GWAS-轻松进行MR-PheWAS</a>
+</li><li class="filter-item" data-search-text="UKB-PPP全蛋白组GWAS数据冲击一区！">
+  <a href="zzcv1hec9kany40x.html">UKB-PPP全蛋白组GWAS数据冲击一区！</a>
+</li><li class="filter-item" data-search-text="云上GWAS分析示例代码">
+  <a href="zghwdu6eg0meedy8.html">云上GWAS分析示例代码</a>
+</li><li class="filter-item" data-search-text="云上GWAS数据详细信息说明">
+  <a href="bd0lu9aeu108adl0.html">云上GWAS数据详细信息说明</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R12数据库! 副本">
+  <a href="dw4krzocp40xce90.html">光速获取芬兰R12数据库! 副本</a>
+</li><li class="filter-item" data-search-text="001-150皮肤菌群">
+  <a href="sqgs0ggpb91drf8z.html">001-150皮肤菌群</a>
+</li><li class="filter-item" data-search-text="002-473肠道菌群欧洲人群（芬兰）">
+  <a href="ghzflrhkru1c6ght.html">002-473肠道菌群欧洲人群（芬兰）</a>
+</li><li class="filter-item" data-search-text="003-430肠道菌群欧洲人群（德国）">
+  <a href="tzz6iozg43wiptsn.html">003-430肠道菌群欧洲人群（德国）</a>
+</li><li class="filter-item" data-search-text="004--338脑脊液代谢组">
+  <a href="gfoa9759zpxqy8ul.html">004--338脑脊液代谢组</a>
+</li><li class="filter-item" data-search-text="005-3117口腔菌群亚洲人群（中国）">
+  <a href="qgukzgr8ykkoybt1.html">005-3117口腔菌群亚洲人群（中国）</a>
+</li><li class="filter-item" data-search-text="006-亚洲人群表型数据0积分使用">
+  <a href="xgd966i8s25dau2v.html">006-亚洲人群表型数据0积分使用</a>
+</li><li class="filter-item" data-search-text="007-14种冲动行为特征的GWAS">
+  <a href="irlu99n5lpf5t6lx.html">007-14种冲动行为特征的GWAS</a>
+</li><li class="filter-item" data-search-text="008-83个UKB大脑形态数据">
+  <a href="zwzar4ey8m48slaa.html">008-83个UKB大脑形态数据</a>
+</li><li class="filter-item" data-search-text="009-UKB的脑MRI 3935个数据">
+  <a href="zh87i7d9axk6w3b2.html">009-UKB的脑MRI 3935个数据</a>
+</li><li class="filter-item" data-search-text="010-35个血尿标志物数据-UKB">
+  <a href="nfyp411mqpm371e3.html">010-35个血尿标志物数据-UKB</a>
+</li><li class="filter-item" data-search-text="011-大脑表面积与厚度数据">
+  <a href="ggx9gy61w5tgz1sa.html">011-大脑表面积与厚度数据</a>
+</li><li class="filter-item" data-search-text="012.Nature正刊233代谢组GWAS">
+  <a href="kr7pv7r2do3vr8qt.html">012.Nature正刊233代谢组GWAS</a>
+</li><li class="filter-item" data-search-text="013-32个心脏磁共振功能指标 来自Science子刊">
+  <a href="npnzk01fgdoihxw5.html">013-32个心脏磁共振功能指标 来自Science子刊</a>
+</li><li class="filter-item" data-search-text="014-2821个蛋白质比值rQTL数据（2024年）">
+  <a href="nrgwqhgg6352aex8.html">014-2821个蛋白质比值rQTL数据（2024年）</a>
+</li><li class="filter-item" data-search-text="015-来自 nature子刊的ukb的21个社会行为特征数据">
+  <a href="ggpks1dhwsn9kdd2.html">015-来自 nature子刊的ukb的21个社会行为特征数据</a>
+</li><li class="filter-item" data-search-text="016. 4个体力活动和久坐行为数据">
+  <a href="lb7ubwmnugnzp5fg.html">016. 4个体力活动和久坐行为数据</a>
+</li><li class="filter-item" data-search-text="017.48个儿童的大脑皮层GWAS数据">
+  <a href="tukgm2pt610inewz.html">017.48个儿童的大脑皮层GWAS数据</a>
+</li><li class="filter-item" data-search-text="018- 44个人类脑沟形态数据">
+  <a href="xwuhn7we7yd78dgq.html">018- 44个人类脑沟形态数据</a>
+</li><li class="filter-item" data-search-text="019-42个血液金属元素的GWAS数据（东亚）">
+  <a href="uzkddki3gq9r3vkm.html">019-42个血液金属元素的GWAS数据（东亚）</a>
+</li><li class="filter-item" data-search-text="020-11个胎盘重量水平GWAS数据">
+  <a href="mesw7h3kgyioalc5.html">020-11个胎盘重量水平GWAS数据</a>
+</li><li class="filter-item" data-search-text="021-2024年nature最新256个无监督机器学习脑MRI数据">
+  <a href="bwu2unm0vhqtr9n3.html">021-2024年nature最新256个无监督机器学习脑MRI数据</a>
+</li><li class="filter-item" data-search-text="022-Nature 191个 大脑静息态MRI数据(2022年)">
+  <a href="ez7agwslemvei4w0.html">022-Nature 191个 大脑静息态MRI数据(2022年)</a>
+</li><li class="filter-item" data-search-text="023-Science 215个大脑白质数据(2022年)">
+  <a href="snqb9wwue21esv99.html">023-Science 215个大脑白质数据(2022年)</a>
+</li><li class="filter-item" data-search-text="024-2024年nature 206个大脑网络结构连通性">
+  <a href="nx4vyir0kiiu43uw.html">024-2024年nature 206个大脑网络结构连通性</a>
+</li><li class="filter-item" data-search-text="025-芬兰蛋白组学数据Olink">
+  <a href="ku2q8bwv10ssbhbh.html">025-芬兰蛋白组学数据Olink</a>
+</li><li class="filter-item" data-search-text="026.UKBPPP全蛋白组药靶cis-pqtl-MR分析">
+  <a href="zzcv1hec9kany40x.html">026.UKBPPP全蛋白组药靶cis-pqtl-MR分析</a>
+</li><li class="filter-item" data-search-text="027-ukbppp东亚蛋白组学数据">
+  <a href="ak1h057lnghz522b.html">027-ukbppp东亚蛋白组学数据</a>
+</li><li class="filter-item" data-search-text="028-1602东亚蛋白组学数据 2023年Nature子刊（中国人群 ）">
+  <a href="oidu2n5bmsv5h1av.html">028-1602东亚蛋白组学数据 2023年Nature子刊（中国人群 ）</a>
+</li><li class="filter-item" data-search-text="029-187个饮食组GWAS数据">
+  <a href="ld0umoumbol55h7s.html">029-187个饮食组GWAS数据</a>
+</li><li class="filter-item" data-search-text="030-饮食组数据2-38个数据">
+  <a href="dclh8pa9t1hy6cc3.html">030-饮食组数据2-38个数据</a>
+</li><li class="filter-item" data-search-text="031-UKB-2018年Round2数据全收集">
+  <a href="edyxw2zacphqgoqf.html">031-UKB-2018年Round2数据全收集</a>
+</li><li class="filter-item" data-search-text="032.179脂质数据 2023年10月Nature数据一键分析 副本">
+  <a href="sty2dza0pcui9ofk.html">032.179脂质数据 2023年10月Nature数据一键分析 副本</a>
+</li><li class="filter-item" data-search-text="033.全身731个免疫细胞批量分析">
+  <a href="skc8d2iyy3h9g2lt.html">033.全身731个免疫细胞批量分析</a>
+</li><li class="filter-item" data-search-text="034 .光速获取芬兰R11数据库! 所有数据快速分析！">
+  <a href="gx241rg9wig80udd.html">034 .光速获取芬兰R11数据库! 所有数据快速分析！</a>
+</li><li class="filter-item" data-search-text="035.快速获取decode 冰岛4907 pqtl数据，助力高分SCI!">
+  <a href="tw8et00d68y7lipr.html">035.快速获取decode 冰岛4907 pqtl数据，助力高分SCI!</a>
+</li><li class="filter-item" data-search-text="036.肾病方向必备数据CKDGen联盟GWAS!">
+  <a href="wp6ybgccqzsr1htr.html">036.肾病方向必备数据CKDGen联盟GWAS!</a>
+</li><li class="filter-item" data-search-text="036.肾病方向必备数据CKDGen联盟GWAS! 副本">
+  <a href="ukfa1wazl2nlevu0.html">036.肾病方向必备数据CKDGen联盟GWAS! 副本</a>
+</li><li class="filter-item" data-search-text="037.中国人群-500肠道菌群来啦">
+  <a href="kwbaog3r8ougci3y.html">037.中国人群-500肠道菌群来啦</a>
+</li><li class="filter-item" data-search-text="038. 中国人群-112代谢组数据">
+  <a href="lss53bdt95l8dn3y.html">038. 中国人群-112代谢组数据</a>
+</li><li class="filter-item" data-search-text="039芬兰蛋白组学数据Somascan">
+  <a href="xaghrbkihzs5h1gk.html">039芬兰蛋白组学数据Somascan</a>
+</li><li class="filter-item" data-search-text="040-ukbppp欧洲人群蛋白组学数据">
+  <a href="vhk9s3egzrwsa25u.html">040-ukbppp欧洲人群蛋白组学数据</a>
+</li><li class="filter-item" data-search-text="041-91个血细胞分析（可联合731免疫细胞进行双细胞MR分析）">
+  <a href="bwu85d9h1fbxpxyb.html">041-91个血细胞分析（可联合731免疫细胞进行双细胞MR分析）</a>
+</li><li class="filter-item" data-search-text="042-61个素食主义人群的生物标志物">
+  <a href="dwksy31axb0mq7l4.html">042-61个素食主义人群的生物标志物</a>
+</li><li class="filter-item" data-search-text="043-325种核磁共振（NMR）生物标志物">
+  <a href="lx5650x9geq4uo70.html">043-325种核磁共振（NMR）生物标志物</a>
+</li><li class="filter-item" data-search-text="044-2083种全基因组循环miRNA数据">
+  <a href="qfytw5pprmz399ze.html">044-2083种全基因组循环miRNA数据</a>
+</li><li class="filter-item" data-search-text="045-UKB性别分层大脑结构数据">
+  <a href="tdzng38gktwyh6kl.html">045-UKB性别分层大脑结构数据</a>
+</li><li class="filter-item" data-search-text="无标题文档">
+  <a href="ku1hc2h5ugwsdwmo.html">无标题文档</a>
+</li><li class="filter-item" data-search-text="046-芬兰R12版本383个实验室指标登录云上GWAS！">
+  <a href="mmf3z6w5b6w0m4wq.html">046-芬兰R12版本383个实验室指标登录云上GWAS！</a>
+</li><li class="filter-item" data-search-text="ukb round2 性别分层数据补齐">
+  <a href="vsq7dpyc98z2fi82.html">ukb round2 性别分层数据补齐</a>
+</li><li class="filter-item" data-search-text="共定位基本原理">
+  <a href="ukgk051307672k48.html">共定位基本原理</a>
+</li><li class="filter-item" data-search-text="共定位数据和环境准备">
+  <a href="cwaey6gfeidslk1s.html">共定位数据和环境准备</a>
+</li><li class="filter-item" data-search-text="共定位一：QTL-GWAS（针对QTL是SMR格式数据的方法）">
+  <a href="cq9vx7wr2lfe1ih5.html">共定位一：QTL-GWAS（针对QTL是SMR格式数据的方法）</a>
+</li><li class="filter-item" data-search-text="共定位二：通用GWAS-GWAS">
+  <a href="zneyxxhxdugznqce.html">共定位二：通用GWAS-GWAS</a>
+</li><li class="filter-item" data-search-text="SuSiE共定位">
+  <a href="ma799l9slegkm8o6.html">SuSiE共定位</a>
+</li><li class="filter-item" data-search-text="LDSC基因评分">
+  <a href="fn3lg5wfie00m18s.html">LDSC基因评分</a>
+</li><li class="filter-item" data-search-text="RadialMR新离群值方法">
+  <a href="zwac54rekah668mq.html">RadialMR新离群值方法</a>
+</li><li class="filter-item" data-search-text="CAUSE水平多效性">
+  <a href="elrwhlotaucmdfwb.html">CAUSE水平多效性</a>
+</li><li class="filter-item" data-search-text="新MR分析方法cML,ConMix,mr_raps,mr_divw">
+  <a href="vg9gg5d8z4i8c80e.html">新MR分析方法cML,ConMix,mr_raps,mr_divw</a>
+</li><li class="filter-item" data-search-text="贝叶斯加权孟德尔随机化">
+  <a href="pgi9yblnf0v5gxtl.html">贝叶斯加权孟德尔随机化</a>
+</li><li class="filter-item" data-search-text="多GWAS联合meta分析">
+  <a href="iwzx7g5i9tlk1gax.html">多GWAS联合meta分析</a>
+</li><li class="filter-item" data-search-text="Steiger Test避免反向因果关系">
+  <a href="ud6fzc7z0tz58vg2.html">Steiger Test避免反向因果关系</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：代码分析</span>
+        <span class="pill gold">代码块 2</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><strong><span>以下扣取积分的缓存规则只针对MendelR自动缓存功能</span></strong></p><p><u><span>Tips:如果是非MendelR用户直接使用FastGWASR的相关接口提取数据后可以自己写到本地硬盘，下次自己再次分析重新读取拿来二次使用就行。</span></u></p><p><span>​</span><br></p><p><span>需要知道积分是如何扣除的，先了解数据是怎么获取的</span></p><p><span>云上GWAS的数据都是通过FastGWASR包来进行提取的</span></p><p><span>1.提取显著性数据（暴露）</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">FastGWASR::extract_tophist_iv()</code></pre></figure><p><span>2.提取关联性工具变量数据（结局）</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">FastGWASR::extract_associated_iv()</code></pre></figure><p><span>以上两个接口都是会扣除消耗积分的，每调用一次，就会扣除对应提取的id的数据的具体积分</span></p><p><span>注意：扣除积分是提取数据的行为扣除，即只要通过接口提取数据，就会扣除该次提取数据的积分</span></p><p><span>后续的分析等操作是否成功，是后续的业务逻辑，无法进行管理，是不管的。</span></p><p><span>​</span><br></p><p><strong><span>那么使用MendelR来分析是每次都会消耗积分吗？</span></strong></p><h2><span>MendelR内嵌了FastGWASR的数据提取接口</span></h2><h3><span>1.</span><span>作为暴露</span><span>，提取一次后，会自动将数据缓存到本地电脑，下次使用相同的暴露id和相同的阈值条件（p1,r2,kb）就不会扣除积分，当然如果你的阈值改成了其他的再重新提取，是要重新消耗积分的</span></h3><h3><span>2.</span><span>作为结局</span><span>，只要提取了，就需要扣除相应的结局id的数据的具体积分</span></h3><p><span>暴露和结局的积分不会相互干扰，暴露算暴露的积分，结局算结局的积分。</span></p><h2><span>疑问：</span></h2><h3><span>1.为什么暴露有缓存，不会重复扣除积分？</span></h3><p><strong><span>因为暴露在相同条件下，每次提取的工具变量数据是一样的，MendelR自动缓存后，不会重新通过接口获取，而是通过本地缓存直接提取</span></strong></p><p><strong><span>​</span></strong><br></p><h3><span>2.为什么结局每次都需要积分？</span></h3><p><strong><span>结局的数据，是根据暴露的工具变量数据变化的，不同的暴露，会提取结局中不同的工具变量数据，无法缓存，因此，每次都提取需要经过接口，所以每次都需要积分</span></strong></p><h3><span>3.缓存什么时候会失效？</span></h3><p><strong><span>卸载了R重新安装，重装了电脑，会使缓存失效。</span></strong></p><h3><span>4.积分怎么计算？</span></h3><p><a href="https://gwas.medicineitlab.com/" class="link-card" target="_blank" rel="noreferrer"><strong>阈上医学·云上GWAS</strong><span>引用链接</span></a></p><p><strong><span>云上GWAS上已经标注了不同id的数据的获取积分</span></strong></p><p><strong><span>每次分析的积分=暴露的数量x暴露自己的积分+结局的数量x结局自己的积分</span></strong></p><p><strong><span>暴露和结局的积分是分别扣除的，两者没有逻辑关联</span></strong><strong><span>👈👈👈</span></strong></p><p><strong><span>​</span></strong><br></p><h3><span>5.我用云上gwas分析了cfb233整个系列 为什么单独分析cfb233-中的某一个还要单独扣积分呢</span></h3><p><strong><span>缓存的机制是按照传入的id来进行的，批量的传入（一整个列表id），和单个id的存入会分别缓存。所以会重复扣除积分。</span></strong></p><p><strong><span>那怎么单独分析又不扣除积分呢？其实跑分析后，已经有对应暴露的工具变量存下来的，就在结果文件夹里的暴露工具变量文件内，可以自己筛选出来，做成本地数据，用mr_common分析，具体可以参考</span></strong><a href="nrfapuvtd0io275c.html" class="link-card"><strong>怎么去除rs号再次分析？</strong><span>站内引用</span><small>一旦确认需要去除rs号，怎么去除重新分析呢？有两种方式，自己二选一：一.代码直接利用rm_snps参数去除library(MendelR) a = c("rs123", "rs456") #注意每个rs号要用双引号单独隔开 mr_common("暴露.csv", "结局.csv", p1=5e...</small></a><strong><span> 这里是介绍去除rs号再次分析的例子，可以实现和任意的结局进行mr分析。</span></strong></p><p><strong><span>​</span></strong><br></p><p><strong><span>例子：</span></strong></p><p><strong><span>一个暴露，对应的积分是2；一个结局，对应的积分1；那么就是2+1=3</span></strong></p><p><strong><span>一个暴露，对应的积分是2；一个结局，不需要积分；那么就是2+0=2</span></strong></p><p><strong><span>一个暴露，不需要积分；一个结局，需要积分1；那么就是0+1=1</span></strong></p><p><strong><span>一个暴露，不需要积分；一个结局，不需要积分；那么就是0+0=0</span></strong></p><p><strong><span>​</span></strong><br></p><p><strong><span>两个暴露，分别对应的积分是1和2；一个结局，对应的积分1；那么就是（1+2）+1=4</span></strong></p><p><strong><span>一个暴露，对应的积分是1；n个结局，每个结局对应的积分1；那么就是1+(nx1) = 1+n</span></strong></p><p><strong><span>​</span></strong><br></p><p><strong><span>具体的，ukbppp一个数据积分是5，总共有2940个数据，那么就是5x2940=14700</span></strong></p><p><strong><span>总之，就是你的暴露对应的积分+结局对应的积分=消耗的积分</span></strong></p><p><strong><span>​</span></strong><br></p><p><strong><span>5.我第一次做了分析，第二次做去混杂和去离群值，去除不满F值等操作，暴露会重复扣除积分吗</span></strong></p><p><strong><span>不用，第一次分析的时候，暴露已经缓存到本地</span></strong></p><p><strong><span>去除混杂和离群值等操作，是后续步骤，不会影响暴露的提取</span></strong></p><p><strong><span>​</span></strong><br></p><p><strong><span>暴露和结局之间的积分没有直接关联，暴露是暴露，结局是结局，只会分别扣积分，不会相互影响。</span></strong></p><h2><span>例子：</span></h2><p><strong><span>1.473肠道菌群作为暴露</span></strong></p><p><strong><span>使用MendelR相同条件和某一个结局分析一次后，第二次使用另外的结局再次分析，不会再扣除暴露积分</span></strong></p><p><strong><span>2.473肠道菌群作为结局</span></strong></p><p><strong><span>如果暴露已经缓存过了，只会扣除作为结局的积分</span></strong></p><p><strong><span>3.473肠道菌群作为中介</span></strong></p><p><strong><span>中介分析分为三步，暴露-结局、暴露-中介、中介-结局</span></strong></p><p><strong><span>暴露-中介（结局）的时候，需要扣除中介的积分</span></strong></p><p><strong><span>中介（此时是作为暴露的，只是说成中介）-结局，需要扣除相同条件下第一次的积分</span></strong></p><p><strong><span>4.换不同的暴露和需要扣积分的结局重复分析，会不断扣除结局的积分吗？</span></strong></p><p><strong><span>需要的，结局无法缓存，每次提取结局的数据，都需要经过接口，都需要积分</span></strong></p><p><br></p><h2><span>总的来说：</span></h2><p><span>1.作为暴露，相同条件提取过一次，缓存成功后，再次用作暴露分析不会扣除积分</span></p><p><span>2.作为结局，只要是参与分析，就需要扣除积分</span></p><p><strong><span>​</span></strong><br></p><p><strong><span>​</span></strong><br></p><p><strong><span>注意：云上GWAS只提供api提取接口服务，所有的积分扣除，都是调用接口产生的服务扣除。</span></strong></p><p><strong><span>温馨提示：云上GWAS数据所有权仍然只属于原组织，使用对应数据的时候，需要引用原文。</span></strong></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="bixgq1rxxcglbigs.html"><em>上一篇</em><strong>01.如何激活云上GWAS</strong></a><a class="nav-card" href="aeidg23111k4i660.html"><em>下一篇</em><strong>03.云上GWAS通用实操方法</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

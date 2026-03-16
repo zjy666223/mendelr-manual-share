@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>004.一键GET 适用phewas的曼哈顿散点图 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="x轴是id的类别，y轴是点的pval负对数（越显著越大），点的标签是表型名可以一键获得MR-Phewas后，1-5个暴露（最多不要超过10个）对n个结局的pval散点图rlibrary(FastPlotR) plot_manhattan_mrphewasres(&quot;MR-phewas.csv&quot;, d…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>图表呈现</span>
+  </div>
+  <h1 class="page-title">004.一键GET 适用phewas的曼哈顿散点图</h1>
+  <div class="article-meta">
+    <span>所属章节：图表呈现</span>
+    <span>字数：663</span>
+    <span>代码块：1</span>
+    <span>更新时间：2025-02-03</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>图表呈现</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="留一图LeaveOneOut">
+  <a href="bd8n7pytx19gbm3u.html">留一图LeaveOneOut</a>
+</li><li class="filter-item" data-search-text="000.FastPlotR的安装以及常见问题">
+  <a href="ag7sl2ymp3yoz0wo.html">000.FastPlotR的安装以及常见问题</a>
+</li><li class="filter-item" data-search-text="001.一键GET Scatter散点趋势图">
+  <a href="kw6mq9u88w3umkq0.html">001.一键GET Scatter散点趋势图</a>
+</li><li class="filter-item" data-search-text="002.一键GET leaveoneout 散点误差图">
+  <a href="vl14qy26bccxhdn0.html">002.一键GET leaveoneout 散点误差图</a>
+</li><li class="filter-item" data-search-text="003.一键GET 火山图">
+  <a href="hy5g20s38975pma9.html">003.一键GET 火山图</a>
+</li><li class="filter-item current" data-search-text="004.一键GET 适用phewas的曼哈顿散点图">
+  <a href="ga1r34a7b3wm5923.html">004.一键GET 适用phewas的曼哈顿散点图</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="005.一键GET GWAS曼哈顿图">
+  <a href="gvsw3xz6dtls0cvl.html">005.一键GET GWAS曼哈顿图</a>
+</li><li class="filter-item" data-search-text="006.热图/环状热图">
+  <a href="xf55dckqi2hnodpm.html">006.热图/环状热图</a>
+</li><li class="filter-item" data-search-text="007.一键GET 精美共定位散点图">
+  <a href="xmgy9lf6z8l6fmpz.html">007.一键GET 精美共定位散点图</a>
+</li><li class="filter-item" data-search-text="008. 3D 散点曼哈顿图">
+  <a href="sggam2194hbqsecw.html">008. 3D 散点曼哈顿图</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：图表呈现</span>
+        <span class="pill gold">代码块 1</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712462694127-a516bf29-faa4-4965-9c82-db1e41306969.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_49%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712462694127-a516bf29-faa4-4965-9c82-db1e41306969.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_49%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>x轴是id的类别，y轴是点的pval负对数（越显著越大），点的标签是表型名</span></p><p><span>可以一键获得MR-Phewas后，1-5个暴露（最多不要超过10个）对n个结局的pval散点图</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(FastPlotR)
+plot_manhattan_mrphewasres("MR-phewas.csv", 
+                           data_type = "ukb-saige",
+                           title="MR-Phewas manhattan",
+                           pval_col="pval",
+                           id_col="id.outcome",
+                           gene_col = "id.exposure",
+                           top_trait_num = 2,
+                           pdf_width=12,
+                           pdf_height = 8,
+                           dot_size=1,
+                           dot_interval=0.3,
+                           colors = c("#f8766d", "#00bfc4"))</code></pre></figure><p><span>示例数据：</span><a href="https://flash0926.yuque.com/attachments/yuque/0/2024/csv/26903514/1712463562563-3be3807f-13dc-4e22-9951-b8130eea7e80.csv" class="link-card" target="_blank" rel="noreferrer"><strong>file</strong><span>file</span></a></p><p><span>data_type可以根据</span><a href="https://gwas.medicineitlab.com/gwaslist" target="_blank" rel="noreferrer"><span>云上GWAS的编号规则</span></a><span>确认，</span><strong><span>如果不是云上的数据，可以设置成data_type = NULL，然后数据中自己增加trait列，和category列</span></strong><span>，这样代码就可以根据对应的信息进行分类画图了	</span></p><p><strong><span>注意：如果data_type设置了编号前缀，代码会自动去云上GWAS系统查询前缀的Category信息</span></strong></p><p><strong><span>注意：这个data_type编号前缀一定要云上有的才行，否则无法查询到信息，需要自己准备</span></strong></p><p><strong><span>注意：id_col="id.outcome"  这代表前缀是针对id.outcome的id的，如果你的批量数据是暴露，请改成id.exposure</span></strong></p><p><strong><span>比如，示例代码是ukb-saige，同时对应 id_col="id.outcome"，且这编号是云上的id</span></strong></p><p><strong><span>代码就会自动查询对应的表型详情分类信息，然后提供给画图代码。</span></strong></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1719722951945-3ee5e5d4-6977-4fd8-a5cb-5a02b33baa7e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_29%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1719722951945-3ee5e5d4-6977-4fd8-a5cb-5a02b33baa7e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_29%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><span>pval_col 代表p值数据所在的列名</span></p><p><span>id_col 代表需要根据category分类的id列，一般是结局的id</span></p><p><span>gene_col 代表暴露id所在的列，比如用蛋白组为暴露的时候</span></p><p><span>top_trait_num 代表需要在图上标注最显著的trait的数量</span></p><p><span>dot_size 点的大小</span></p><p><span>dot_interval 每列点的间隔</span></p><p><span>colors 区分每个Gene的颜色定义，可以自己根据自己的文章色系修改</span></p><p><span>​</span><br></p><p><strong><span>注意：准备的数据中，如果是MR的分析结果，只筛选ivw+wald ratio的结果来呈现。</span></strong></p><p><strong><span>请将筛选好的数据单独复制出来（只呈现每个暴露一种MR结果的意思，不然一个暴露有几个点（几种mr结果在图上），你们说几个意思呢。）</span></strong></p><p><strong><span>snp只有1个的时候，只有wald ratio结果 2个以上用ivw的结果，</span></strong></p><p><strong><span>所以只筛选ivw+wald ratio </span></strong></p><p><strong><span>可以保证数据每个暴露+结局的mr结果，有且只有一个点，就不会在图中重复出现。</span></strong></p><p><span>​</span><br></p><p><span>曼哈顿散点图，适用于1-10个暴露对n个结局的pval呈现。</span></p><p><span>当然，如果category分类过多，也有可能会导致图太过拥挤，这时候可以考虑适用环形的</span></p><p><br></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="hy5g20s38975pma9.html"><em>上一篇</em><strong>003.一键GET 火山图</strong></a><a class="nav-card" href="gvsw3xz6dtls0cvl.html"><em>下一篇</em><strong>005.一键GET GWAS曼哈顿图</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

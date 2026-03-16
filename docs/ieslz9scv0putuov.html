@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MendelR榨干性能版本更新 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="孟德尔随机化最难的一步是选题，最重要的一步也是选题，很多时候需要花费大量的时间才能选到一个好题，不过，有可能会被别人抢发的，因为你做分析花费的时间太多了，将大量的时间浪费在没有太多必要的分析上。选到了好题，剩下的就是看速度的，而不是看你内容多不多，图够不够漂亮，因为先发表为王才是硬道理。无论是热点…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>其他</span>
+  </div>
+  <h1 class="page-title">MendelR榨干性能版本更新</h1>
+  <div class="article-meta">
+    <span>所属章节：其他</span>
+    <span>字数：1023</span>
+    <span>代码块：4</span>
+    <span>更新时间：2024-06-06</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>其他</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="01复现文章代码">
+  <a href="sabklghx4g9mdo96.html">01复现文章代码</a>
+</li><li class="filter-item" data-search-text="02维生素D与下腰痛复现">
+  <a href="nbcbggaeu5o0e296.html">02维生素D与下腰痛复现</a>
+</li><li class="filter-item" data-search-text="MR投稿期刊推荐">
+  <a href="mg80bm50r1wxbkuq.html">MR投稿期刊推荐</a>
+</li><li class="filter-item" data-search-text="如何判断选题是否可以实现">
+  <a href="mq2zg0nylpeufd1e.html">如何判断选题是否可以实现</a>
+</li><li class="filter-item current" data-search-text="MendelR榨干性能版本更新">
+  <a href="ieslz9scv0putuov.html">MendelR榨干性能版本更新</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="关于R 4.3以上识别不了本地文件">
+  <a href="yvsu74mzms7b0ne2.html">关于R 4.3以上识别不了本地文件</a>
+</li><li class="filter-item" data-search-text="干货分享-如何批量下载Catalog数据">
+  <a href="uzy9sf1h6puh7452.html">干货分享-如何批量下载Catalog数据</a>
+</li><li class="filter-item" data-search-text="关于MendelR结果与自己写代码结果不一致的问题解读">
+  <a href="xnvv5lusvr76g14h.html">关于MendelR结果与自己写代码结果不一致的问题解读</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：其他</span>
+        <span class="pill gold">代码块 4</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>孟德尔随机化最难的一步是选题，最重要的一步也是选题，很多时候需要花费大量的时间才能选到一个好题，不过，有可能会被别人抢发的，因为你做分析花费的时间太多了，将大量的时间浪费在没有太多必要的分析上。</span></p><p><strong><span>选到了好题，剩下的就是看速度的，而不是看你内容多不多，图够不够漂亮，因为先发表为王才是硬道理。</span></strong><span>无论是热点也好，还是自己选题也好，谁的速度快，谁就能获得发表优势，被抢发了，后面自己基本发不了。</span></p><p><strong><span>总之分析周期越长，被抢发的风险就越大</span></strong><span>，很多人觉得普通MR分析简单，而往往自己在追求工作量大的分析时候被别人抢发了，于是就拍大腿说道：早知就不整这些了，赶紧投稿就不会被抢发了。可惜这个世界上没有早知，被别人抢发了就已经晚了，没有办法补救。</span></p><p><span>医工科研团队孟德尔随机化分析的MendelR包一直以便捷好用著称，已经帮助学员发表110篇SCI, 数十篇中文核心文章！</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1717649239027-b2399423-952f-43e9-b57e-955830d71472.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_21%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1717649239027-b2399423-952f-43e9-b57e-955830d71472.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_21%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1717649278224-907e773e-d4cb-4b61-80b1-605d89e5cc2c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_15%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1717649278224-907e773e-d4cb-4b61-80b1-605d89e5cc2c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_15%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1717649347906-8c4e68fe-f1f5-4ee5-896f-df6807a5ed8a.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_15%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1717649347906-8c4e68fe-f1f5-4ee5-896f-df6807a5ed8a.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_15%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><span>为了更好的帮助大家快速完成分享，现在MendelR 10.0版本即将上线！</span></p><p><span>特别开启</span><strong><span>多线程模式 现在面向所有学员进行测试</span></strong></p><p><span>榨干CPU+内存，可以将大批量的分析时间</span><strong><span>缩短到原本的三分之一，甚至十分之一！<br></span></strong><span>注意，具体速度具体取决于电脑的性能。</span></p><p><span>推荐有大内存，多核的电脑或者服务器打开使用。</span></p><p><span>其中一名学员的反馈：</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1717647509563-f1939a65-7acf-406b-938d-167e3d40295c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_21%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1717647509563-f1939a65-7acf-406b-938d-167e3d40295c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_21%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1717649440134-b52f459e-068b-4a55-a703-2548a247828d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_13%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1717649440134-b52f459e-068b-4a55-a703-2548a247828d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_13%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>下方测试部分，测试电脑32核，内存64G</span></strong></p><h2><span>一、MR分析部分</span></h2><p><span>测试环境1047个id 的数据，未开启前104秒，开启后36秒</span></p><p><span>1.普通分析</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705379376923-9b7575f2-347c-4994-af29-79c592c2020e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705379376923-9b7575f2-347c-4994-af29-79c592c2020e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>2.全核分析</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705379638896-d0164024-56b8-43f5-ae5a-372db277deae.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_34%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705379638896-d0164024-56b8-43f5-ae5a-372db277deae.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_34%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><h2><span>二、MRPresso部分</span></h2><p><span>1.普通</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705398823016-238c2b11-8fca-4d0a-ac46-b0e086fe1112.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_26%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705398823016-238c2b11-8fca-4d0a-ac46-b0e086fe1112.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_26%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>2.开多线程</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705399203168-fd8b9aa3-960a-4409-ade6-e72989b4912d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_23%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705399203168-fd8b9aa3-960a-4409-ade6-e72989b4912d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_23%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><h2><span>三、输出图部分</span></h2><p><span>画图部分因为R语言特性问题，无法多核进行。</span></p><p><span>​</span><br></p><p><span>如下图，CPU可以全部利用（13900K）</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705401626681-0f54b7cc-8359-4258-bfe7-4a4547636587.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_41%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1705401626681-0f54b7cc-8359-4258-bfe7-4a4547636587.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_41%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><h2><span>四、如何打开多线程模式</span></h2><p><span>需要先将版本升级到9.2.36，如果已经是最新版本，可以忽略更新</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+mr_update()</code></pre></figure><p><span>使用config_mutil_core 配置多线程模式</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">config_mutil_core(is_open=T, mode="All",
+                  parallel_core = 1,
+                  dat_threshold=10)</code></pre></figure><p><span>参数说明：</span></p><p><strong><span>is_open=T</span></strong><span> 则为打开 is_open=F为关闭</span></p><p><strong><span>mode="All"</span></strong><span>  可选</span></p><p><span>All 为根据cpu的核数全开</span></p><p><span>Custom 为自定义核数</span></p><p><strong><span>parallel_core=1</span></strong><span>  可选设置，当mode="Custom"时，可以设置这个自定义数量</span></p><p><strong><span>dat_threshold = 10</span></strong><span> 可选设置，当分析的数量超过这个阈值的时候，才会自动开启多线程</span></p><p><span>（比如批量分析超过10个暴露的时候才会打开，因为开启线程需要时间，如果批量的数量不大的话，开线程的时间都可以完成分析了，所以，一般超过一定数量后才会开启，这里默认10即可）</span></p><p><span>​</span><br></p><p><strong><span>如果电脑配置好，内存有32G以上的，可以</span></strong><strong><u><span>直接开启All模式</span></u></strong></p><p><strong><span>如果电脑配置一般，或者不想跑数据影响电脑使用，则可以开启Custom模式，自己定义线程数</span></strong></p><p><span>​</span><br></p><p><span>判断自定义线程数可以开启多少个，可以从内存出发，一般一个线程会占用500M内存左右</span></p><p><u><span>500x线程数，不超过电脑的可用内存，比较合理</span></u></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">config_mutil_core(is_open=T, mode="Custom",
+                  parallel_core = 10,
+                  dat_threshold=10)</code></pre></figure><p><strong><span>开启多线程分析后，可能会占用大量的电脑资源，建议谨慎使用</span></strong></p><p><span>​</span><br></p><p><span>可以从下方的操作，找到可用内存数量，然后自定义计算</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1717647408508-70dc195b-2cbd-4acf-939e-db2cd40ba665.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1717647408508-70dc195b-2cbd-4acf-939e-db2cd40ba665.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><br></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">config_mutil_core(is_open=F)</code></pre></figure><h2><span>五、问题反馈</span></h2><p><span>待测试反馈</span></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>​</span><br></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="mq2zg0nylpeufd1e.html"><em>上一篇</em><strong>如何判断选题是否可以实现</strong></a><a class="nav-card" href="yvsu74mzms7b0ne2.html"><em>下一篇</em><strong>关于R 4.3以上识别不了本地文件</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

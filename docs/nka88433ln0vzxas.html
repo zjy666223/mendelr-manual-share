@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="MendelR代码包药物靶点SMR功能再次贴心升级！​为了更好的帮助大家进行药物靶点的分析，代码包再次的更新主要针对SMR分析方法的全兼容优化！主要分为以下三大部分：一、新增了甲基化探针cg ID的兼容：旧版本的SMR分析可以进行针对传入的基因名和ENSGID进行分析，可以满足大部分数据的分析，但…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>版本更新记录</span>
+  </div>
+  <h1 class="page-title">2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级</h1>
+  <div class="article-meta">
+    <span>所属章节：版本更新记录</span>
+    <span>字数：914</span>
+    <span>代码块：2</span>
+    <span>更新时间：2024-02-23</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>版本更新记录</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="2025.08.02-9.2.38更新详情">
+  <a href="tcbdtx4a66nnfxgd.html">2025.08.02-9.2.38更新详情</a>
+</li><li class="filter-item" data-search-text="2024.11.27-9.2.37更新详情">
+  <a href="mv2lgp6d7zvsfgrz.html">2024.11.27-9.2.37更新详情</a>
+</li><li class="filter-item" data-search-text="2024.04.05-9.2.30更新详情">
+  <a href="cxwkfmb9n9a5ec6o.html">2024.04.05-9.2.30更新详情</a>
+</li><li class="filter-item" data-search-text="2024.04.02-9.2.29 更新详情">
+  <a href="dnlzxq804eckou1n.html">2024.04.02-9.2.29 更新详情</a>
+</li><li class="filter-item" data-search-text="2024.03.12-9.2.28更新详情">
+  <a href="udpaei2o2d9ml2hs.html">2024.03.12-9.2.28更新详情</a>
+</li><li class="filter-item" data-search-text="2024.02.26-9.2.27更新详细记录">
+  <a href="iixmye5ktmob4quc.html">2024.02.26-9.2.27更新详细记录</a>
+</li><li class="filter-item current" data-search-text="2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级">
+  <a href="nka88433ln0vzxas.html">2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="2024.02.22-9.2.25更新详细记录">
+  <a href="qs2gx1ucyt5ed11m.html">2024.02.22-9.2.25更新详细记录</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：版本更新记录</span>
+        <span class="pill gold">代码块 2</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><strong><span>MendelR代码包药物靶点SMR功能再次贴心升级！</span></strong></p><p><strong><span>​</span></strong><br></p><p><span>为了更好的帮助大家进行药物靶点的分析，代码包再次的更新主要针对SMR分析方法的全兼容优化！主要分为以下三大部分：</span></p><p><strong><span>一、新增了甲基化探针cg ID的兼容：</span></strong><span>旧版本的SMR分析可以进行针对传入的基因名和ENSGID进行分析，可以满足大部分数据的分析，但是在教学和实践过程中，针对某些数据的特异性，我们进一步</span><strong><span>对SMR方法新增了甲基化探针cg ID的兼容！</span></strong></p><p><strong><span>二、新增智能化识别：</span></strong><span>当前的MendelR代码包功能可以</span><strong><span>智能识别：基因名、ENSGID、甲基化探针cg ID</span></strong><span>，不管用于分析的qtl文件格式有多么的不统一，都能够一键完成分析了！可以说是全网考虑最细致，最为学员着想的代码包了！</span></p><p><strong><span>三、针对共定位分析支持甲基化cg ID的数据了！！！</span></strong></p><p><strong><span>以上三大功能的示例代码如下，大家可以参考一下哦，如果不清楚的可以再咨询老师呢~</span></strong></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+#基因名
+smr_run("HMGCR", gwas_files = "COVID19_C2_gwas.ma", bfile = "1000G.EUR.QC/1000G.EUR.QC.5")
+#ENSG ID
+smr_run("ENSG00000113161", gwas_files = "COVID19_C2_gwas.ma", bfile = "1000G.EUR.QC/1000G.EUR.QC.5")
+#甲基化cg id
+smr_run("cg00001349", gwas_files = "COVID19_C2_gwas.ma", beqtl_file = "bl_mqtl_chr1")
+#共定位
+mr_coloc_eqtl2gwas("cg00001349", "ieu-a-2", beqtl_file = "bl_mqtl_chr1")</code></pre></figure><p><br></p><p><strong><span>四、新增合并染色体数据的方法：smr_merge_besd</span></strong></p><p><span>用于将分散的染色体数据合并成一个完整的besd文件，这样在smr分析的时候，就不用再一个一个指向不同的染色体文件啦！详细请看这个文档：</span><a href="gtcbbe1hcgk2ailo.html" class="link-card"><strong>药靶SMR合并besd文件</strong><span>站内引用</span><small>做这个步骤，主要是SMR官网提供了部分besd文件是分了染色体的（比如一些甲基化的mqtl等数据）分了染色体的besd文件，对于我们分析来说不是很明确，因为要先找到基因名对应的染色体，然后又要修改smr分析中的beqtl_file文件进行指向。所以提供了一个新的方法，可以先对besd文件进行合...</small></a></p><p><span>以下为详细介绍：</span></p><p><span>做这个步骤，主要是SMR官网提供了部分besd文件是分了染色体的（比如一些甲基化的mqtl等数据）<br></span><span>旧方法是需要先找到基因名对应的染色体，再修改smr分析中的beqtl_file文件进行指向。<br></span><strong><span>现在9.2.26版本的新的方法，可以先对besd文件进行合并，大大节约时间和精力。</span></strong><span><br></span><span>注意：需要更新到9.2.26版本以上才能使用</span></p><p><span>​</span><br></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+smr_merge_besd("LBC_BSGS_meta_lite", "LBC_BSGS_meta_lite")</code></pre></figure><p><span><br></span><span>示例代码说明：<br></span><span>第一个参数，LBC_BSGS_meta_lite是一个文件夹，放在了工作目录下，代表需要对这个目录下的besd文件进行合并<br></span><span>第二个参数，LBC_BSGS_meta_lite，可以自己任意命名，不要有空格，代表输出到工作目录/smr文件夹内一个文件<br></span><span>等待程序输出完成，就合并完成一个新的besd文件，这样在smr分析的时候，可以直接利用beqtl_file参数指向对应的单个文件了，就不用根据染色体指向不同的文件。<br></span><span>示例数据链接：</span><a href="https://yanglab.westlake.edu.cn/data/SMR/LBC_BSGS_meta_lite.tar.gz" target="_blank" rel="noreferrer"><span>https://yanglab.westlake.edu.cn/data/SMR/LBC_BSGS_meta_lite.tar.gz</span></a></p><p><span><br></span><strong><span>图文演示一、</span></strong><span>下面的截图，就是准备了一个文件夹，里面是分了染色体的smr格式文件，进行合并成一个新的文件</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1708661676213-6a202d5c-aba1-4419-abcf-dcb8b8ae8f92.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_41%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fresize%2Cw_825%2Climit_0%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_24%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1708661676213-6a202d5c-aba1-4419-abcf-dcb8b8ae8f92.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_41%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fresize%2Cw_825%2Climit_0%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_24%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span><br></span><strong><span>图文演示二、</span></strong><span>合并完成后，会在smr的目录内，新生成一个文件，后续的smr分析，可以指向这个文件进行分析。<br><br></span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1708661702787-25447982-b242-4038-b1c8-192f22585165.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1708661702787-25447982-b242-4038-b1c8-192f22585165.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span><br></span><span>注意：qtl的smr文件数据，可以从下面这个网站去选择下载。<br></span><span>下载后，如果需要进行合并，需要放到工作目录，新建一个文件夹<br></span><a href="https://yanglab.westlake.edu.cn/software/smr/#eQTLsummarydata" target="_blank" rel="noreferrer"><span>https://yanglab.westlake.edu.cn/software/smr/#eQTLsummarydata</span></a><span><br><br></span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1708661112831-bf16dae3-f151-4392-80d2-4ee07f502ecc.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_67%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fresize%2Cw_825%2Climit_0%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_24%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1708661112831-bf16dae3-f151-4392-80d2-4ee07f502ecc.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_67%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fresize%2Cw_825%2Climit_0%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_24%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span><br><br></span></p><p><br></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="iixmye5ktmob4quc.html"><em>上一篇</em><strong>2024.02.26-9.2.27更新详细记录</strong></a><a class="nav-card" href="qs2gx1ucyt5ed11m.html"><em>下一篇</em><strong>2024.02.22-9.2.25更新详细记录</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

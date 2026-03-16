@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09.常见报错解决方法 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="代码包优化完整，边界条件提示等都有对应的中文提示，大家可以自行判断。没法判断的报错，请截图找咨询的老师，截图要全面，不要只截一小部分，02.如何截图站内引用截图工具可以依赖微信，QQ，等有截图功能的软件这里推荐几个性能强大的截图软件，不仅有截图的功能，还可以将截图贴到屏幕上，以及其他扩展功能Sni…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>基础入门</span>
+  </div>
+  <h1 class="page-title">09.常见报错解决方法</h1>
+  <div class="article-meta">
+    <span>所属章节：基础入门</span>
+    <span>字数：1511</span>
+    <span>代码块：9</span>
+    <span>更新时间：2025-03-10</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>基础入门</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="00.安装R语言">
+  <a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/dpgl2kik5fd4qh7x" target="_blank" rel="noreferrer">00.安装R语言</a><span class="badge external">外链</span>
+</li><li class="filter-item" data-search-text="01.怎么提问">
+  <a href="zb3ryr6mba9p413f.html">01.怎么提问</a>
+</li><li class="filter-item" data-search-text="02.如何截图">
+  <a href="fxt4tnhcm9bc1xi6.html">02.如何截图</a>
+</li><li class="filter-item" data-search-text="03.安装一个R包的方法">
+  <a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/brhhnt/wpvsu3ecx9olofop" target="_blank" rel="noreferrer">03.安装一个R包的方法</a><span class="badge external">外链</span>
+</li><li class="filter-item" data-search-text="04.R包函数与详细参数说明">
+  <a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/sm3tc5tcxlgomvie" target="_blank" rel="noreferrer">04.R包函数与详细参数说明</a><span class="badge external">外链</span>
+</li><li class="filter-item" data-search-text="05.使用R包里面函数的方法">
+  <a href="eoyep0u90e4kd9g0.html">05.使用R包里面函数的方法</a>
+</li><li class="filter-item" data-search-text="06.EmEditor的安装和使用">
+  <a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/gminqdlzvpgygmeg" target="_blank" rel="noreferrer">06.EmEditor的安装和使用</a><span class="badge external">外链</span>
+</li><li class="filter-item" data-search-text="07.常见文件格式">
+  <a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/om27b467xcleo31d" target="_blank" rel="noreferrer">07.常见文件格式</a><span class="badge external">外链</span>
+</li><li class="filter-item" data-search-text="08.怎么设置工作目录">
+  <a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/gdn4yng7y6g1rpys" target="_blank" rel="noreferrer">08.怎么设置工作目录</a><span class="badge external">外链</span>
+</li><li class="filter-item current" data-search-text="09.常见报错解决方法">
+  <a href="wgbbfldcr1ilsw5d.html">09.常见报错解决方法</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="10.如何进行文档搜索">
+  <a href="yii80def5dryi8zw.html">10.如何进行文档搜索</a>
+</li><li class="filter-item" data-search-text="11.如何进行远程协助">
+  <a href="bch4tc4dkz43zo79.html">11.如何进行远程协助</a>
+</li><li class="filter-item" data-search-text="12.基础术语">
+  <a href="vbkf70n682s74g8b.html">12.基础术语</a>
+</li><li class="filter-item" data-search-text="13.关于GWAS版本问题的总结">
+  <a href="sbx1tkssbbd5lon1.html">13.关于GWAS版本问题的总结</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：基础入门</span>
+        <span class="pill gold">代码块 9</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>代码包优化完整，边界条件提示等都有对应的中文提示，大家可以自行判断。</span></p><p><span>没法判断的报错，请截图找咨询的老师，</span><strong><span>截图要全面，不要只截一小部分</span></strong><span>，</span><a href="fxt4tnhcm9bc1xi6.html" class="link-card"><strong>02.如何截图</strong><span>站内引用</span><small>截图工具可以依赖微信，QQ，等有截图功能的软件这里推荐几个性能强大的截图软件，不仅有截图的功能，还可以将截图贴到屏幕上，以及其他扩展功能Snipaste - 截图 + 贴图PixPin 截图/贴图/长截图/文字识别/标注 | PixPin 截图/贴图/长截图/文字识别/标注回归到如何提问上面，...</small></a><span>方便判断问题。</span></p><p><strong><span>注意1：没有直接赋值的字符串，请用双引号括起来，否则语法错误（"字符串内容"）</span></strong></p><p><strong><span>！！！只要不是数值，或者你自己声明的变量，都是字符串类型，都要加双引号</span></strong></p><p><strong><span>什么是自己声明的变量？ a=1  这样a就是你自己声明的数值为1的变量</span></strong></p><p><strong><span>注意2：把本地文件的文件名尽量改短，且不要有空格，避免文件名过长过复杂，R语言抽风</span></strong></p><p><strong><span>注意3：R4.3以上，对中文路径或者文件名不是很兼容，容易抽风识别不了，请改成英文</span></strong></p><p><strong><span>特别注意：文件和文件夹名，路径，都不能有空格，+-*&amp;!@#$%^&amp;*()等特殊符号，路径不要太长，尽量简单。</span></strong></p><h4><span>1.提示不存在的包，没有这个DLL等 缺少依赖包的情况</span></h4><p><figure class="image-card"><a href="../assets/media/b9f6c1db70f60a7c3f5e.png"><img src="../assets/media/b9f6c1db70f60a7c3f5e.png" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="../assets/media/5f60f5d56a65aee4b9cc.png"><img src="../assets/media/5f60f5d56a65aee4b9cc.png" alt="image插图" loading="lazy"></a></figure></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">install.packages("缺少的包名") #用这个安装缺少的包 不要少了双引号
+install.packages("do") #比如提示缺少了do包，那就装上，缺什么补什么</code></pre></figure><p><span>缺少textshaping包，有可能是被360误删了的，重新装一下，不要让360清理这个文件</span></p><p><figure class="image-card"><a href="../assets/media/d0f0e83757ce85dbdefb.png"><img src="../assets/media/d0f0e83757ce85dbdefb.png" alt="image插图" loading="lazy"></a></figure></p><h4><span>2.could not find function， 尝试library(MendelR)，尝试更新，其他R包的方法也同理</span></h4><p><figure class="image-card"><a href="../assets/media/2f01d5517fcaa17c7575.png"><img src="../assets/media/2f01d5517fcaa17c7575.png" alt="image插图" loading="lazy"></a></figure></p><h4><span>3.自动更新时 提示是否更新其他的R 包 根据提示 输出 n 然后回车即可</span></h4><p><figure class="image-card"><a href="../assets/media/34c79b7cf059a8536279.png"><img src="../assets/media/34c79b7cf059a8536279.png" alt="image插图" loading="lazy"></a></figure></p><h4><span>4.网络错误码502 服务器没响应的返回 等代码包自动重试</span><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/brhhnt/sm4rsvqw3r3ubt0y" class="link-card" target="_blank" rel="noreferrer"><strong>5.IEU服务器502的解决方案</strong><span>引用链接</span><small>问题：最近大家在做孟德尔分析的时候，经常会遇到服务器502的错误，这是因为如果使用IEU的在线数据，是要通过对应的服务器访问的，而目前因为服务器无响应，连接过多等原因，导致出现502或者503错误。这个在网络错误中是一种比较常见的存在，俗称服务器挂了，原因可能是服务器残留的TCP访问链接过多，...</small></a></h4><p><figure class="image-card"><a href="../assets/media/cc6ffc89baa78469e0c7.png"><img src="../assets/media/cc6ffc89baa78469e0c7.png" alt="image插图" loading="lazy"></a></figure></p><h4><span>5.提示文件不存在等</span></h4><p><span>检查工作目录，或者提示的目录里面是否有对应的文件，将文件拖放到对应目录，或者修改工作目录</span></p><p><figure class="image-card"><a href="../assets/media/29dd4e5e987bb7bdc525.png"><img src="../assets/media/29dd4e5e987bb7bdc525.png" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="../assets/media/f9aa5818c8d3a6b93a0d.png"><img src="../assets/media/f9aa5818c8d3a6b93a0d.png" alt="image插图" loading="lazy"></a></figure></p><p><span>执行 list.files() 查看本地是否有这个文件，请对清楚文件名。</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">getwd() #查看当前工作目录
+list.files() #查看当前工作目录文件列表</code></pre></figure><h4><span>6.文件名中不能有非法字符，中文，空格，-横线</span></h4><p><figure class="image-card"><a href="../assets/media/5dbb9094b1827547e4df.png"><img src="../assets/media/5dbb9094b1827547e4df.png" alt="image插图" loading="lazy"></a></figure></p><h4><span>7.提示载入了名字空间 但是版本不对（依赖包版本需要更新）</span></h4><p><span>需要安装到特定版本以上的R包</span></p><p><figure class="image-card"><a href="../assets/media/0f51e86067240459c80f.png"><img src="../assets/media/0f51e86067240459c80f.png" alt="image插图" loading="lazy"></a></figure></p><p><span>原因：包相互依赖会限定依赖包的最低版本，如果版本不够，则会提示报错</span></p><p><span>例子：提示gdtools需要0.3.3版本以上</span></p><p><span>1.先卸载，搜索到这个包，卸载，重启RStudio</span></p><p><figure class="image-card"><a href="../assets/media/7bf5a0cddd417a058cd6.png"><img src="../assets/media/7bf5a0cddd417a058cd6.png" alt="image插图" loading="lazy"></a></figure></p><p><span>2.重新装</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">#重新装对应的包gdtools,这个是提示的包，其他的也是同理，改一下
+install.packages("gdtools")</code></pre></figure><p><span>特别的，如果无法安装成功，可以用另外的包来辅助安装</span></p><p><span>比如这个Matrix包，用常规的命令无法安装</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">BiocManager::install("Matrix")</code></pre></figure><h4><span>8.ppt画图引擎错误，无法输出</span></h4><p><figure class="image-card"><a href="../assets/media/25b69c50a4bedd44dfb9.png"><img src="../assets/media/25b69c50a4bedd44dfb9.png" alt="image插图" loading="lazy"></a></figure></p><p><span>在方法里面增加write_ppt=F 参数，将把图的输出改成pdf</span></p><h4><span>9.cannot alocate vector of size 219.0 Mb</span></h4><p><span>提示这个则表明电脑配置的内存不足，读取不了本地文件</span></p><p><span>1.提升配置，添加内存</span></p><p><span>2.更改系统设置中的虚拟内存数量，提供部分内存给R读取文件</span></p><p><figure class="image-card"><a href="../assets/media/4bed189131f7158ca50e.png"><img src="../assets/media/4bed189131f7158ca50e.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p><h4><span>10.Mac 系统环境依赖报错</span></h4><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">.onLoad failed in loadNamespace() for 'Cairo', details: call: dyn.load(file, DLLpath = DLLpath, ...)
+  error: unable to load shared object '/Library/Frameworks/R.framework/Versions/4.2/Resources/library/Cairo/libs/Cairo.so':
+  dlopen(/Library/Frameworks/R.framework/Versions/4.2/Resources/library/Cairo/libs/Cairo.so, 0x0006): Library not loaded: '/opt/X11/lib/libXrender.1.dylib'
+  Referenced from: '/Library/Frameworks/R.framework/Versions/4.2/Resources/library/Cairo/libs/Cairo.so'
+  Reason: tried: '/opt/X11/lib/libXrender.1.dylib' (no such file), '/Library/Frameworks/R.framework/Resources/lib/libXrender.1.dylib' (no such file), '/Users/am/lib/libXrender.1.dylib' (no such file), '/usr/local/lib/libXrender.1.dylib' (no such file), '/usr/lib/libXrender.1.dylib' (no such file), '/lib/libXrender.1.dylib' (no such file), '/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home/jre/lib/server/libXrender.1.dylib' (no</code></pre></figure><p><a href="https://www.xquartz.org/" target="_blank" rel="noreferrer"><span>https://www.xquartz.org/</span></a></p><p><span>下载这个软件安装后即可解决。</span></p><p><span>​</span><br></p><h4><span>11.读取文件提示乱码</span></h4><p><span>这种报错，就是准备的文件是excel等二进制文件，需要另存为csv等文本文件。</span></p><p><figure class="image-card"><a href="../assets/media/32161fac3fb8860d02f1.png"><img src="../assets/media/32161fac3fb8860d02f1.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p><h4><span>12.更新依赖包的提示</span></h4><p><figure class="image-card"><a href="../assets/media/1228ad8f4d743c373ab7.png"><img src="../assets/media/1228ad8f4d743c373ab7.png" alt="image插图" loading="lazy"></a></figure></p><p><span>提示这个，就输入a回车即可，让程序自动更新依赖包</span></p><p><span>​</span><br></p><h4><span>13.文件id错误提示</span></h4><p><figure class="image-card"><a href="../assets/media/4a2a47bb97f952f48487.png"><img src="../assets/media/4a2a47bb97f952f48487.png" alt="image插图" loading="lazy"></a></figure></p><p><span>根据提示检查，判断自己的情况</span></p><p><span>情况1：除了查看工作目录以及文件名对不对得上，还可以执行下方代码查看文件名列表，看看你传入的文件名到底在不在</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">list.files()</code></pre></figure><p><span>情况2：</span></p><p><span>自己上IEU的官网看看自己传入的id对不对，大小写要对应，</span><a href="https://gwas.mrcieu.ac.uk/" target="_blank" rel="noreferrer"><span>https://gwas.mrcieu.ac.uk/</span></a></p><p><span>情况3：</span></p><p><span>自己上云上的官网看看自己传入的id对不对，大小写要对应，</span><a href="https://gwas.medicineitlab.com/" target="_blank" rel="noreferrer"><span>https://gwas.medicineitlab.com/</span></a></p><p><span>​</span><br></p><h4><span>14.MAC 系统动态链接库错误</span></h4><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">ld: warning: -single_module is obsolete
+ld: warning: -multiply_defined is obsolete
+ld: warning: search path '/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0' not found
+ld: warning: search path '/usr/local/gfortran/lib' not found
+ld: library 'gfortran' not found
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Matrix.so] Error 1</code></pre></figure><p><span>1.终端安装好brew</span></p><p><span>/bin/bash -c "$(curl -fsSL </span><a href='https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"' target="_blank" rel="noreferrer"><span>https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"</span></a></p><p><span>2.终端 brew install gcc</span></p><p><span>3.配置好 gfortran的路径 注意可能会有多个目录 一般要找current 目录</span></p><p><span>xxx@192 current % pwd</span></p><p><span>/opt/homebrew/Cellar/gcc/14.1.0_2/lib/gcc/current</span></p><p><span>​</span><br></p><p><br></p><p><span>最近R语言相互依赖的报错挺多的，出现了一些典型的依赖报错问题。一些包要旧版本，一些包反而要新版本。也是服了这种机制问题。</span></p><h4><span>15.data.table包报错</span></h4><p><figure class="image-card"><a href="../assets/media/65f7b515f6a27726e99c.png"><img src="../assets/media/65f7b515f6a27726e99c.png" alt="image插图" loading="lazy"></a></figure></p><p><span>namespace:data.table'没有导出 __T__[:base'这个对象</span></p><p><span>​</span><br></p><p><span>重启RStudio后，不要做其他操作，马上执行这行代码，把data.table安装成旧版本。新版本有bug。</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">remotes::install_version("data.table", "1.15.4")</code></pre></figure><p><span>如果还不行，发生权限冲突等问题，在操作这个代码前，先卸载data.table</span><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/wpvsu3ecx9olofop#iyf5l" target="_blank" rel="noreferrer"><span>卸载一个包的方法</span></a></p><h4><span>16.systemfonts 报错</span></h4><p><figure class="image-card"><a href="../assets/media/fddabcd40549fa3f28e0.png"><img src="../assets/media/fddabcd40549fa3f28e0.png" alt="image插图" loading="lazy"></a></figure></p><p><span> Error: 'namespace:systemfonts'没有出口‘match_fonts’这个对象  </span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">install.packages("systemfonts") #执行这个可以将这个包更到最新版本</code></pre></figure><h4><span>17.IEU clump报错</span></h4><p><figure class="image-card"><a href="../assets/media/f8ddf03886fc9ecec51e.png"><img src="../assets/media/f8ddf03886fc9ecec51e.png" alt="image插图" loading="lazy"></a></figure></p><p><a href="gxocspnfe6s6glbw.html" class="link-card"><strong>00.OpenGWAS项目Token申请流程</strong><span>站内引用</span><small>根据IEU GWAS 数据库官方通知，该数据库的数据提取分析模式在2024年5月1号，调整成Token验证模式主要为了解决问题：（1）用户无限制的使用，服务器负载过高；（2）用户堵塞，502错误码的返回官方通知，如果您不进行Token申请并验证，OpenGWAS(IEU)将无法提取数据。配置完...</small></a></p><p><a href="bnf4ehszlm8x5guh.html" class="link-card"><strong>本地连锁不平衡Clump以及更改人群</strong><span>站内引用</span><small>做孟德尔随机化过程中，提取工具变量要去除连锁不平衡，保留一定区域内具有与性状显著相关的SNP但是有时候由于网络原因/服务器原因，或者你的暴露数据是本地数据，或者工具变量太多，网络带宽不足，在线clump会出现稳定性问题，即跑分析过程中容易超时中断。为了解决这个问题，专门增加了一个参数！使用这个...</small></a></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="eoyep0u90e4kd9g0.html"><em>上一篇</em><strong>05.使用R包里面函数的方法</strong></a><a class="nav-card" href="yii80def5dryi8zw.html"><em>下一篇</em><strong>10.如何进行文档搜索</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

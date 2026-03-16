@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>007.一键GET 精美共定位散点图 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="可以展示单个或多个数据的rsid分布情况，这里呈现的都是GWAS的数据注意：传入的数据，需要按照模板SNP的格式修改表头02.本地数据模板SNP表头站内引用打开此文档，务必全部仔细看完，认真学习，掌握数据清洗的秘籍10.模板snp.csv表头不一定都会相同，但是弄明白其含义，就能掌握所有GWAS修…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>图表呈现</span>
+  </div>
+  <h1 class="page-title">007.一键GET 精美共定位散点图</h1>
+  <div class="article-meta">
+    <span>所属章节：图表呈现</span>
+    <span>字数：247</span>
+    <span>代码块：4</span>
+    <span>更新时间：2024-06-21</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>图表呈现</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="留一图LeaveOneOut">
+  <a href="bd8n7pytx19gbm3u.html">留一图LeaveOneOut</a>
+</li><li class="filter-item" data-search-text="000.FastPlotR的安装以及常见问题">
+  <a href="ag7sl2ymp3yoz0wo.html">000.FastPlotR的安装以及常见问题</a>
+</li><li class="filter-item" data-search-text="001.一键GET Scatter散点趋势图">
+  <a href="kw6mq9u88w3umkq0.html">001.一键GET Scatter散点趋势图</a>
+</li><li class="filter-item" data-search-text="002.一键GET leaveoneout 散点误差图">
+  <a href="vl14qy26bccxhdn0.html">002.一键GET leaveoneout 散点误差图</a>
+</li><li class="filter-item" data-search-text="003.一键GET 火山图">
+  <a href="hy5g20s38975pma9.html">003.一键GET 火山图</a>
+</li><li class="filter-item" data-search-text="004.一键GET 适用phewas的曼哈顿散点图">
+  <a href="ga1r34a7b3wm5923.html">004.一键GET 适用phewas的曼哈顿散点图</a>
+</li><li class="filter-item" data-search-text="005.一键GET GWAS曼哈顿图">
+  <a href="gvsw3xz6dtls0cvl.html">005.一键GET GWAS曼哈顿图</a>
+</li><li class="filter-item" data-search-text="006.热图/环状热图">
+  <a href="xf55dckqi2hnodpm.html">006.热图/环状热图</a>
+</li><li class="filter-item current" data-search-text="007.一键GET 精美共定位散点图">
+  <a href="xmgy9lf6z8l6fmpz.html">007.一键GET 精美共定位散点图</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="008. 3D 散点曼哈顿图">
+  <a href="sggam2194hbqsecw.html">008. 3D 散点曼哈顿图</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：图表呈现</span>
+        <span class="pill gold">代码块 4</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>可以展示单个或多个数据的rsid分布情况，这里呈现的都是GWAS的数据</span></p><p><span>注意：传入的数据，需要按照模板SNP的格式修改表头</span><a href="bgfy40bu3b3x7ykm.html" class="link-card"><strong>02.本地数据模板SNP表头</strong><span>站内引用</span><small>打开此文档，务必全部仔细看完，认真学习，掌握数据清洗的秘籍10.模板snp.csv表头不一定都会相同，但是弄明白其含义，就能掌握所有GWAS修改成模板SNP表头的秘籍！除了特别说明的格式，MendelR中使用的表头格式，都统一为模板snp的表头注意，表头的顺序没有要求，不影响数据分析，有就行只...</small></a></p><p><span>注意：如果数据的版本是hg38的，那么build_version也要跟着改成hg38</span></p><p><span>1.单个数据单个基因的呈现</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(FastPlotR)
+plot_locuszoom(file="finngen_R9_M13_SCOLIOSIS", 
+               gene = "HMGCR",chr=5, build_version="hg19")</code></pre></figure><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712636381146-10d5c665-bf11-4c40-842f-d8aa19f1ea4b.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_47%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712636381146-10d5c665-bf11-4c40-842f-d8aa19f1ea4b.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_47%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>2.两个数据 相同基因段呈现</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(FastPlotR)
+plot_locuszoom(file=c("finngen_R9_M13_SCOLIOSIS", "finngen_R9_M13_SCOLIOSIS"), 
+               gene = c("HMGCR", "HMGCR"),chr=c(5, 22), is_vertical = T)</code></pre></figure><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712636776275-3d519eda-1b9d-4183-87af-8e8c9b87e2f3.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_45%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712636776275-3d519eda-1b9d-4183-87af-8e8c9b87e2f3.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_45%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>3.两个数据不同的基因端呈现（可以用作共定位散点图）</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(FastPlotR)
+plot_locuszoom(file=c("finngen_R9_M13_SCOLIOSIS", "finngen_R9_M13_SCOLIOSIS"), 
+               gene = c("HMGCR", "UBE2L3"),chr=c(5, 22), is_vertical = T)</code></pre></figure><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712639193896-8bc3ba45-a54f-4cf8-84e5-7d909d987208.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_39%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712639193896-8bc3ba45-a54f-4cf8-84e5-7d909d987208.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_39%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>4.三个数据 不同基因端呈现</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(FastPlotR)
+plot_locuszoom(file=c("finngen_R9_M13_SCOLIOSIS", "finngen_R9_M13_SCOLIOSIS", "finngen_R9_M13_SCOLIOSIS"), 
+               gene = c("HMGCR", "UBE2L3", "UBE2L3"),chr=c(5, 22, 2), is_vertical = F)</code></pre></figure><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712635964372-3eff7439-63b6-4978-8504-28cd12579223.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_54%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1712635964372-3eff7439-63b6-4978-8504-28cd12579223.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_54%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><br></p><p><strong><span>理论上满足n个数据，n个基因的图合并到一起</span></strong></p><p><strong><span>​</span></strong><br></p><p><strong><span>is_vertical 图的布局方式 T为垂直，F为水平</span></strong></p><p><strong><span>​</span></strong><br></p><p><strong><span>传入的GWAS数据，可以是同一个，也可以是不同的</span></strong></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="xf55dckqi2hnodpm.html"><em>上一篇</em><strong>006.热图/环状热图</strong></a><a class="nav-card" href="sggam2194hbqsecw.html"><em>下一篇</em><strong>008. 3D 散点曼哈顿图</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

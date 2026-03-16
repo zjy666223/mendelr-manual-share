@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>干货分享-如何批量下载Catalog数据 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="很多同学不知道怎么批量下载Catalog数据，这里出一个具体教程，大家如果有本地批量分析的需求的，可以参考使用，将数据下载到本地，清洗表头后再进行MR分析。tips：云上GWAS有很多Catalog的在线数据（ebi开头），也是使用了这个方法批量下载到本地电脑后再清洗的哦一、打开catalog官网…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>其他</span>
+  </div>
+  <h1 class="page-title">干货分享-如何批量下载Catalog数据</h1>
+  <div class="article-meta">
+    <span>所属章节：其他</span>
+    <span>字数：917</span>
+    <span>代码块：0</span>
+    <span>更新时间：2024-11-14</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>其他</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="01复现文章代码">
+  <a href="sabklghx4g9mdo96.html">01复现文章代码</a>
+</li><li class="filter-item" data-search-text="02维生素D与下腰痛复现">
+  <a href="nbcbggaeu5o0e296.html">02维生素D与下腰痛复现</a>
+</li><li class="filter-item" data-search-text="MR投稿期刊推荐">
+  <a href="mg80bm50r1wxbkuq.html">MR投稿期刊推荐</a>
+</li><li class="filter-item" data-search-text="如何判断选题是否可以实现">
+  <a href="mq2zg0nylpeufd1e.html">如何判断选题是否可以实现</a>
+</li><li class="filter-item" data-search-text="MendelR榨干性能版本更新">
+  <a href="ieslz9scv0putuov.html">MendelR榨干性能版本更新</a>
+</li><li class="filter-item" data-search-text="关于R 4.3以上识别不了本地文件">
+  <a href="yvsu74mzms7b0ne2.html">关于R 4.3以上识别不了本地文件</a>
+</li><li class="filter-item current" data-search-text="干货分享-如何批量下载Catalog数据">
+  <a href="uzy9sf1h6puh7452.html">干货分享-如何批量下载Catalog数据</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="关于MendelR结果与自己写代码结果不一致的问题解读">
+  <a href="xnvv5lusvr76g14h.html">关于MendelR结果与自己写代码结果不一致的问题解读</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：其他</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>很多同学不知道怎么批量下载Catalog数据，这里出一个具体教程，大家如果有本地批量分析的需求的，可以参考使用，将数据下载到本地，清洗表头后再进行MR分析。</span></p><p><span>tips：云上GWAS有很多Catalog的在线数据（ebi开头），也是使用了这个方法批量下载到本地电脑后再清洗的哦</span></p><h1><span>一、打开catalog官网</span></h1><p><a href="https://www.ebi.ac.uk/gwas/" target="_blank" rel="noreferrer"><span>https://www.ebi.ac.uk/gwas/</span></a></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554205074-656cfbb4-6e69-4329-9100-a05c0efe3fc2.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_34%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554205074-656cfbb4-6e69-4329-9100-a05c0efe3fc2.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_34%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>注意：如果打不开或者界面错乱之类的，请自行翻墙。</span></strong></p><p><span>以731免疫细胞为例子，pmid为32929287，搜索到对应的详情页面，一路点进去。</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554352022-cf9a6a79-b430-4fb4-81bf-f610321e7c3d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_48%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554352022-cf9a6a79-b430-4fb4-81bf-f610321e7c3d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_48%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><h1><span>二、导出对应文章的数据详情表</span></h1><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554413451-3261d29d-6c8c-4106-bf99-2105bf0ce28c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_58%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554413451-3261d29d-6c8c-4106-bf99-2105bf0ce28c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_58%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><h1><span>三、下载对应的详情表</span></h1><p><span>下载下来的一般是个tsv的文本文件，可以使用excel打开，另存为xlsx的二进制文件。</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554687576-7a1832d2-6f81-4b92-a653-c128427da6a2.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_9%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554687576-7a1832d2-6f81-4b92-a653-c128427da6a2.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_9%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554728946-699432ea-cf37-4bc7-a571-1e32aca079db.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_27%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554728946-699432ea-cf37-4bc7-a571-1e32aca079db.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_27%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>表里就是GWAS数据的常见信息，GCST id，表型，ftp下载地址等信息</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554761531-8ede4935-e092-469c-afba-6c9f83beba65.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_74%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554761531-8ede4935-e092-469c-afba-6c9f83beba65.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_74%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>我们要做的，就是打开其中的一两个数据下载的链接，</span><strong><span>去观察下载地址的规律</span></strong><span>，然后</span><strong><span>构建所有数据的下载链接</span></strong></p><p><strong><span>注意点</span></strong><span>：</span></p><p><span>1.有harmonised目录的，优先用harmonised目录里的.h.tsv.gz，这种数据是经过Catalog要求的数据协同再上传的，一般会有rsid信息</span></p><p><span>2.可以根据文件大小来判断是不是要下载的文件，一般GWAS数据都是上百M</span><span>到一G多不等的</span></p><p><span>3.ymal是当前的数据的信息，可能会存有表头信息，可以下载打开看看。</span></p><p><span>4.md5是文件的校验码，不用管。</span></p><p><span>5.下载的文件，一般是tsv，txt，tsv.gz这种数据文件，任意下载一个下来打开看看是不是符合gwas的表头就可以判断，是否是我们需要的文件。</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554860972-f53a856b-652e-452f-85c8-a058fa4ed3ad.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_46%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554860972-f53a856b-652e-452f-85c8-a058fa4ed3ad.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_46%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554879574-833a5739-4180-4770-ae4a-add4c9a7e5f3.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_56%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731554879574-833a5739-4180-4770-ae4a-add4c9a7e5f3.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_56%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><h1><span>四、观察下载链接，构建公式</span></h1><p><span>http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90001001-GCST90002000/GCST90001908/harmonised/32929287-GCST90001908-EFO_0007937.h.tsv.gz</span></p><p><span>像这个下载链接，是有规律的，我们可以把GCST90001908当作一个x变量，这个链接就变成了</span></p><p><br></p><p><span>http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90001001-GCST90002000/X</span><span>/harmonised/32929287-X-EFO_0007937.h.tsv.gz</span></p><p><span>黑色部分是详情文件中，本身就有的summaryStatistics表头的数据，就是L列</span></p><p><span>红色部分是需要根据下载规律，根据不同的GCST号新增的字符串</span></p><p><span>公式如下</span></p><p><span>=L2&amp;"/harmonised/"&amp;"32929287-"&amp;B2&amp;"-EFO_0007937.h.tsv.gz"</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731555532824-4b310ed1-a83a-46e4-a485-5fbeb9372f7a.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_66%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731555532824-4b310ed1-a83a-46e4-a485-5fbeb9372f7a.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_66%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><h1><span>五、判断这个公式正确</span></h1><p><span>简单，复制一下构建好的下载链接，看能不能下载。</span></p><p><span>如果没法下载，可以和原链接进行对比，看看哪里构建错了。</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731556647241-b3fe5d43-cc1a-4ace-a340-76d036a1a037.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731556647241-b3fe5d43-cc1a-4ace-a340-76d036a1a037.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>确认公式正确后，将这个公式应用到所有行中，简单点就是复制一下，粘贴到后面的所有的行中。公式就自动粘贴复用了。</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731555707638-85565fa8-fa8d-46dc-bd0e-e16cc150cb25.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_84%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731555707638-85565fa8-fa8d-46dc-bd0e-e16cc150cb25.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_84%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>这个是构建好的731免疫细胞的文件：</span><a href="https://flash0926.yuque.com/attachments/yuque/0/2024/xlsx/26903514/1731555781280-0c48bcaa-6d44-430e-8986-68e2f8083341.xlsx" class="link-card" target="_blank" rel="noreferrer"><strong>file</strong><span>file</span></a></p><p><span>最终将这些链接全选，复制，然后用下载工具新建下载就好了（推荐使用迅雷，开个会员，下载速度还是可以的。）</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731557295982-c8e36a60-12f5-4b1e-ae97-1eff53129262.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_26%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1731557295982-c8e36a60-12f5-4b1e-ae97-1eff53129262.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_26%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>​</span><br></p><p><span>其他的批量数据也是同理的。</span></p><p><span>关键是要</span><strong><span>观察下载链接的规律，构建好公式</span></strong><span>。</span></p><p><br></p><p><span>上面的操作就可以把大部分的数据批量下载好了。</span></p><p><span>但是有些批量数据，大部分下载链接符合拼接规律，小部分会有些变化的，这种情况下，直接打开这些小部分的数据的ftp链接，单独操作下载就好了。</span></p><p><br></p><p><span>​</span><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="yvsu74mzms7b0ne2.html"><em>上一篇</em><strong>关于R 4.3以上识别不了本地文件</strong></a><a class="nav-card" href="xnvv5lusvr76g14h.html"><em>下一篇</em><strong>关于MendelR结果与自己写代码结果不一致的问题解读</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

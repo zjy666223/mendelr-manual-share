@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power值计算教程-如何使用网页计算孟德尔随机化中的Power · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="1、什么是Power？Power是一个统计学概念，翻译成中文即统计功效，计算公式为1-β，是指假设检验中，当备择假设（H1）为真时正确地拒绝零假设（H0）的概率。简单的可以理解为真实效应发生的概率，Power越大，说明犯第二型错误的概率越小，我们就更有把握认为结果是显著的。Power常用百分数表示…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>结果解读</span>
+  </div>
+  <h1 class="page-title">Power值计算教程-如何使用网页计算孟德尔随机化中的Power</h1>
+  <div class="article-meta">
+    <span>所属章节：结果解读</span>
+    <span>字数：1109</span>
+    <span>代码块：0</span>
+    <span>更新时间：2025-04-25</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>结果解读</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="mr分析结果解读">
+  <a href="poeybcagbdfisrcl.html">mr分析结果解读</a>
+</li><li class="filter-item" data-search-text="孟德尔结果展示OR值和beta值选择说明">
+  <a href="wdqg0hzm4awgfyih.html">孟德尔结果展示OR值和beta值选择说明</a>
+</li><li class="filter-item" data-search-text="不同snp个数对MR结果的影响">
+  <a href="neyupg0gmhbfxrkh.html">不同snp个数对MR结果的影响</a>
+</li><li class="filter-item current" data-search-text="Power值计算教程-如何使用网页计算孟德尔随机化中的Power">
+  <a href="zkfd7vli6g12xk6i.html">Power值计算教程-如何使用网页计算孟德尔随机化中的Power</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="批量分析结果解读">
+  <a href="kecrhyz42cp4qm0v.html">批量分析结果解读</a>
+</li><li class="filter-item" data-search-text="中介分析结果解读">
+  <a href="qyxd3t2dmo71thpa.html">中介分析结果解读</a>
+</li><li class="filter-item" data-search-text="多变量分析结果解读">
+  <a href="ihth35wfgck8krrx.html">多变量分析结果解读</a>
+</li><li class="filter-item" data-search-text="药物靶点的smr结果怎么看">
+  <a href="gefoiy8vvuc05wp0.html">药物靶点的smr结果怎么看</a>
+</li><li class="filter-item" data-search-text="批量分析时FDR矫正结果如何解读？">
+  <a href="xlhgmo646vga856g.html">批量分析时FDR矫正结果如何解读？</a>
+</li><li class="filter-item" data-search-text="方法学部分的权威参考文献引用 副本">
+  <a href="guczotux6imuqtko.html">方法学部分的权威参考文献引用 副本</a>
+</li><li class="filter-item" data-search-text="各种mr分析方法优缺点局限性详细解读">
+  <a href="erz57eflp6lpemoz.html">各种mr分析方法优缺点局限性详细解读</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：结果解读</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><br></p><p><strong><span>1</span></strong><strong><span>、什么是</span></strong><strong><span>Power</span></strong><strong><span>？</span></strong></p><p><span>Power</span><span>是一个统计学概念，翻译成中文即</span><strong><span>统计功效</span></strong><span>，</span><span>计算公式为</span><strong><span>1-β</span></strong><span>，是指假设检验中，当备择假设（</span><span>H1</span><span>）为真时正确地拒绝零假设（</span><span>H0</span><span>）的概率。简单的可以理解为</span><span>真实效应发生的概率</span><span>，</span><span>Power</span><span>越大，说明犯第二型错误的概率越小，我们就更有把握认为结果是显著的。</span><span>Power</span><span>常用百分数表示，是一个</span><span>0~1 </span><span>的值。</span></p><p><span>​</span><br></p><p><span>假设检验结果与真实情况有以下四种情况：</span></p><div class="table-scroll"><table><colgroup><col><col><col><col></colgroup><tbody><tr><td rowspan="2" colspan="2"><p><span>​</span><br></p></td><td colspan="2"><p><span>假设检验</span></p></td></tr><tr><td><p><span>拒绝</span><span>H0</span></p></td><td><p><span>不拒绝</span><span>H0</span></p></td></tr><tr><td rowspan="2"><p><span>真实情况</span></p></td><td><p><span>H0</span><span>真</span></p></td><td><p><span>判断错误</span></p><p><span>（</span><strong><span>弃真</span></strong><span>、</span><span>I</span><span>型错误）、发生概率</span><span>α</span><span>（显著性水平）</span></p></td><td><p><span>判断正确</span></p><p><span>发生概率</span><span>1-β</span><span>（</span><strong><span>Power</span></strong><span>）</span></p></td></tr><tr><td><p><span>H1</span><span>真</span></p></td><td><p><span>判断正确</span></p></td><td><p><span>（</span><strong><span>存伪</span></strong><span>、</span><span>II</span><span>型错误）</span></p><p><span>发生概率</span><span>β</span></p></td></tr></tbody></table></div><p><strong><span>​</span></strong><br></p><p><strong><span>​</span></strong><br></p><p><strong><span>2</span></strong><strong><span>、如何用网页计算</span></strong><strong><span>Power</span></strong><strong><span>？</span></strong></p><p><span>Stephen Burgess</span><span>等于</span><span>2014</span><span>年提出基于分类结局的先验效能估计方法</span><span>[1]</span><span>，计算公式为：</span></p><p><strong><span>参数介绍：</span></strong></p><p><span>①</span><span>β</span><span>即</span><span>log(OR)</span><span>，代表暴露对结局的效应值。</span></p><p><span>②</span><span>n</span><span>为结局</span><span>GWAS</span><span>中包含的样本例数，</span><span>ncase</span><span>及</span><span>ncontrol</span><span>分别为相应的病例数及对照例数。</span></p><p><span>③</span><span>α</span><span>为显著性水平。</span></p><p><span>④</span><span>R</span><sup><span>2</span></sup><span>：由于实际研究中所选择的工具变量是相互独立的，在此情况下每个工具变量对于暴露变异的解释作用也是独立的，因此</span><span>MR</span><span>模型所对应的</span><span>R</span><sup><span>2</span></sup><span>可计算为每个工具变量所解释的暴露变异比例</span><span>之和</span><span>。</span></p><p><span>R</span><sup><span>2</span></sup><span>公式如下</span><span>[2]</span><span>，</span><span> </span><span>(</span><span>需要单个</span><span>R</span><sup><span>2</span></sup><span>相加</span><span>)</span></p><p><span>​</span><br></p><p><span>网址链接：</span><a href="https://sb452.shinyapps.io/power/" target="_blank" rel="noreferrer"><span>https://sb452.shinyapps.io/power/</span></a></p><p><span>此网站可以计算给定所需功效的</span><span>样本量</span><span>，或者计算给定所需样本量的</span><span>功效</span><span>。</span></p><p><span>可以计算</span><strong><span>二分类变量</span></strong><span>和</span><strong><span>连续型变量</span></strong><span>的</span><span>power</span><span>值。</span></p><p><span>​</span><br></p><p><strong><span>一、二分类变量</span></strong></p><p><span>如下图所示，需要</span><span>①</span><span>结局的</span><span>sample size</span><span>；</span><span>②</span><span>结局的病例对照之比（</span><span>Ratio of cases to controls</span><span>）；</span><span>③</span><span>R</span><sup><span>2</span></sup><span>，表型变异解释度；</span><span>④</span><span>因果估计效应（</span><span>OR</span><span>值）；</span><span>⑤</span><span>显著水平（</span><span>p</span><span>值）。</span></p><p><span>​</span><br></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754894860-77f828d4-8900-420b-83f8-8b6bdf836af9.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754894860-77f828d4-8900-420b-83f8-8b6bdf836af9.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>二、连续型变量</span></strong></p><p><span>如下图所示，需要</span><span>①</span><span>结局的</span><span>sample size</span><span>；</span><span>②</span><span>R</span><sup><span>2</span></sup><span>，表型变异解释度；</span><span>③</span><span>因果估计效应（</span><span>beta</span><span>值）；</span><span>④</span><span>显著水平（</span><span>p</span><span>值）。</span></p><p><span>​</span><br></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754883844-114e7c52-1e99-4fd8-9574-2020893d22fa.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754883844-114e7c52-1e99-4fd8-9574-2020893d22fa.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>3</span></strong><strong><span>、复现文献中结局二分类变量的</span></strong><strong><span>Power</span></strong><strong><span>计算</span></strong></p><p><strong><span>​</span></strong><br></p><p><span>文献题目：</span><span>Modifiable risk factors for intracranial aneurysms: Evidence from genetic studies [3]</span><span>，</span></p><p><span>文章可直接点击查看：</span><a href="https://flash0926.yuque.com/attachments/yuque/0/2025/pdf/35523102/1745584852056-bd689ef9-e508-4a02-ac63-584532c0913b.pdf" class="link-card" target="_blank" rel="noreferrer"><strong>file</strong><span>file</span></a></p><p><span>首先根据上面介绍需要的5个参数，在文章和附表中找到所需数据，接着就可以在网页中输入相应参数的数值计算power值。</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754860985-f5907f77-ce87-47bc-9605-fb74db1ad6e7.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_16%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754860985-f5907f77-ce87-47bc-9605-fb74db1ad6e7.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_16%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754867786-70026f4c-8cef-40f9-bf36-e91d37ccfc07.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_25%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754867786-70026f4c-8cef-40f9-bf36-e91d37ccfc07.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_25%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754874419-89acfe85-b3af-4064-986c-ecbd6f1a6f23.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_25%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754874419-89acfe85-b3af-4064-986c-ecbd6f1a6f23.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_25%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>Ps: </span><span>结局是连续型变量的</span><span>power</span><span>计算类似。</span></p><p><span>1)</span><span>        </span><span>首先根据结局的类型选择二分类变量（</span><span>IA: intracranial aneurysms, </span><span>颅内动脉瘤）。</span></p><p><span>2)</span><span>        </span><span>Sample size calculation given desired power, or power calculation given desired sample size? </span><span>根据你的需求计算所需要的指标，</span><span>①</span><span>有</span><span>power</span><span>计算</span><span>sample size</span><span>②</span><span>有</span><span>sample size</span><span>计算</span><span>power</span><span>。我们这里选择</span><span>Have sample size, want power</span><span>。</span></p><p><span>3)</span><span>        </span><span>Sample size (number of participants): </span><span>给出结局的</span><span>cases+controls</span><span>的总数，根据文章描述</span><span>7495+71934 = 79429</span><span>。</span></p><p><span>4)</span><span>        </span><span>Power (%): </span><span>我们需要计算的是</span><span>power</span><span>，因此这里不必理会。</span></p><p><span>5)</span><span>        </span><span>Ratio of cases to controls = 1:x </span><span>：指病例和对照的比值，</span><span>7495/71934 =</span><span>0.104192732</span><span>，填</span><span>0.104192732</span><span>。</span></p><p><span>6)</span><span>        </span><span>Coefficient of determination (R2) of exposure on genetic variants: </span><span>填</span><span>0.0007</span><span>。</span></p><p><span>7)</span><span>        </span><span>Causal effect (odds ratio, exp(β1)) per SD change in exposure: </span><span>这里是</span><span>OR</span><span>，填</span><span>0.49</span><span>。</span></p><p><span>8)</span><span>        </span><span>Significance level: </span><span>一般是</span><span>0.05</span><span>，因此默认即可</span></p><p><span>9)</span><span>        </span><span>最后点击</span><span>Update</span><span>。</span></p><p><span>Power</span><span>计算结果为</span><span>34.3%</span><span>，与文章附表的</span><span>0.34</span><span>一致。</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754835377-31bca548-bfdf-457d-9c94-6a8054d5cf43.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_25%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1719754835377-31bca548-bfdf-457d-9c94-6a8054d5cf43.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_25%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>好啦，本期的分享到此为止，大家有什么疑问，欢迎后台留言，与小编一起探讨。</span></p><p><span>​</span><br></p><p><span>​</span><br></p><p><strong><span>参考文献：</span></strong></p><p><span>[1]</span><span> Burgess S. Sample size and power calculations in Mendelian randomization with a single instrumental variable and a binary outcome. Int J Epidemiol. 2014 Jun;43(3):922-9. doi: 10.1093/ije/dyu005. PMID: 24608958.</span></p><p><span>[2] Burgess S, Thompson SG; CRP CHD Genetics Collaboration. Avoiding bias from weak instruments in Mendelian randomization studies. Int J Epidemiol. 2011 Jun;40(3):755-64. doi: 10.1093/ije/dyr036. PMID: 21414999.</span></p><p><span>[3]</span><span> Sun X, Liu B, Chen Y, Lv L, Ye D, Mao Y. Modifiable risk factors for intracranial aneurysms: Evidence from genetic studies. Int J Stroke. 2022 Dec;17(10):1107-1113. doi: 10.1177/17474930211065640. PMID: 36408635.</span></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="neyupg0gmhbfxrkh.html"><em>上一篇</em><strong>不同snp个数对MR结果的影响</strong></a><a class="nav-card" href="kecrhyz42cp4qm0v.html"><em>下一篇</em><strong>批量分析结果解读</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

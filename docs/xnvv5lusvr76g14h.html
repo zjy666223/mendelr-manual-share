@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于MendelR结果与自己写代码结果不一致的问题解读 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="主要解决学员以下两个问题：1.自己用了一些基础包，一行一行写代码，然后无法复现一键代码的结果2.无法复现别人的文章请自己确保分析条件一致，数据一致，流程一致MendelR 代码包严格按照流程进行分析，全部分析一键执行确保不会因为自己写代码过程中出现问题，导致最终的结果不正确代码包能够正确复现文章，…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>其他</span>
+  </div>
+  <h1 class="page-title">关于MendelR结果与自己写代码结果不一致的问题解读</h1>
+  <div class="article-meta">
+    <span>所属章节：其他</span>
+    <span>字数：775</span>
+    <span>代码块：0</span>
+    <span>更新时间：2024-06-26</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>其他</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="01复现文章代码">
+  <a href="sabklghx4g9mdo96.html">01复现文章代码</a>
+</li><li class="filter-item" data-search-text="02维生素D与下腰痛复现">
+  <a href="nbcbggaeu5o0e296.html">02维生素D与下腰痛复现</a>
+</li><li class="filter-item" data-search-text="MR投稿期刊推荐">
+  <a href="mg80bm50r1wxbkuq.html">MR投稿期刊推荐</a>
+</li><li class="filter-item" data-search-text="如何判断选题是否可以实现">
+  <a href="mq2zg0nylpeufd1e.html">如何判断选题是否可以实现</a>
+</li><li class="filter-item" data-search-text="MendelR榨干性能版本更新">
+  <a href="ieslz9scv0putuov.html">MendelR榨干性能版本更新</a>
+</li><li class="filter-item" data-search-text="关于R 4.3以上识别不了本地文件">
+  <a href="yvsu74mzms7b0ne2.html">关于R 4.3以上识别不了本地文件</a>
+</li><li class="filter-item" data-search-text="干货分享-如何批量下载Catalog数据">
+  <a href="uzy9sf1h6puh7452.html">干货分享-如何批量下载Catalog数据</a>
+</li><li class="filter-item current" data-search-text="关于MendelR结果与自己写代码结果不一致的问题解读">
+  <a href="xnvv5lusvr76g14h.html">关于MendelR结果与自己写代码结果不一致的问题解读</a><span class="badge">当前</span>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：其他</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>主要解决学员以下两个问题：</span></p><p><span>1.自己用了一些基础包，一行一行写代码，然后无法复现一键代码的结果</span></p><p><span>2.无法复现别人的文章</span></p><p><strong><span>请自己确保分析条件一致，数据一致，流程一致</span></strong></p><p><br></p><p><span>MendelR 代码包严格按照流程进行分析，全部分析一键执行</span></p><p><span>确保不会因为自己写代码过程中出现问题，导致最终的结果不正确</span></p><p><span>代码包能够正确复现文章，曾经也远程帮助学员复现</span></p><p><span>复现文章本身是一件吃力不讨好的事情（数据要完全一样，条件，处理流程要完全一样，很多文章根本就没有详细阐述各种处理细节，总会缺点什么），所以这个系列目前暂时只有一个视频，后续有时间会继续更新</span><a href="https://www.bilibili.com/video/BV18V4y117TE/" class="link-card" target="_blank" rel="noreferrer"><strong>孟德尔随机化MendelR高效文献复现01-维生素D与下腰痛（两样本）_哔哩哔哩_bilibili</strong><span>引用链接</span><small>文献讲解数据查找一行代码mr分析结果解读各种孟德尔分析方法所有都有专业强大的MendelR，成就一切可能！MendleR代码包，医工科研团队的杰作！保留关键参数，让您一键快速生成所有结果文件！可手动调整参数，批量分析阳性结果，可分析不同来源的数据，你想要的我们都有！医工科研致力于提高孟德尔分析效率，让您科研无忧！, 视频播放量 6736、弹幕量 15、点赞数 266、投硬币枚数 74、收藏人数…</small></a></p><p><span>​</span><br></p><p><span>下面是完整的数据处理流程：</span></p><p><span>1.根据p1进行暴露的SNP筛选(影响暴露工具变量)</span></p><p><span>2.进行clump去除连锁不平衡，r2默认0.001，kb=10000(影响暴露工具变量)</span></p><p><span>3.去除连锁不平衡后，这部分工具变量SNP，去提取结局中对应的GWAS数据（不会开启代理，代理的数据不是本身人群测序的数据，不推荐使用）</span></p><p><span>4.去除与结局中相关的SNP，pval.outcome &lt; 5e-5(默认数值)（排他性假设）</span></p><p><span>5.进行</span><a href="ud6fzc7z0tz58vg2.html"><span>steiger检查</span></a><span>，去除SNP在结局中的效应比暴露中还强的工具变量（排他性假设）</span></p><p><span>6.进行harmonise_data协同处理，去除回文，去除无法匹配的</span></p><p><span>7.最后进行mr分析，所有的工具变量变化情况，可以查看结果中的readme文件查看</span></p><p><span>8.进行结果解读</span><a href="poeybcagbdfisrcl.html" class="link-card"><strong>mr分析结果解读</strong><span>站内引用</span><small>本文档是mr_common结果解读：1.中介请移步https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/fh8cil/qyxd3t2dmo71thpa2.多变量请移步https://flash0926.yuque.com/org-wiki-...</small></a></p><p><br></p><p><span>以上1-6点都会影响工具变量数据的变化，对应结果01-04文件的数据</span></p><p><span>只要</span><strong><span>数据是同一个</span></strong><span>，</span><strong><span>数据处理流程相同</span></strong><span>，最终用于分析的</span><strong><span>工具变量数据就会一致</span></strong><span>，</span><strong><span>结果就会一致</span></strong><span>。</span></p><p><br></p><p><br></p><p><span>以上为MendelR代码的完整流程，还有数据异常处理，重复值去除等预处理</span></p><p><span>​</span><br></p><p><span>如果自己另外用</span><span>TwoSampleMR跑分析，请确认流程正确，否则无法保持和MendelR一样的结果</span></p><p><span>​</span><br></p><p><span>关于TwoSampleMR包的作用，其最为主要的功能是提取在线数据，并且数据整理，最终调用不同的mr分析算法来分析结果，具体架构流程可以查看</span><a href="km0nlunhp5gexpep.html" class="link-card"><strong>完整的IEU架构图</strong><span>站内引用</span><small>流程图大致讲解：Data storage 以vcf的格式存储GWAS数据，还包含LD的文件Data retrieval 数据接口 1.gwascvcf 用于vcf数据解析2.gwasglue 用于GWAS数据格式化，格式化成coloc，twosamplemr包，finemapr，等，然后再用...</small></a></p><p><span>有空也可以自己看源代码，核心是里面的mr分析算法，每个算法都可以自己去找对应的文献查看</span></p><p><span>​</span><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="uzy9sf1h6puh7452.html"><em>上一篇</em><strong>干货分享-如何批量下载Catalog数据</strong></a><a class="nav-card" href="tcbdtx4a66nnfxgd.html"><em>下一篇</em><strong>2025.08.02-9.2.38更新详情</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

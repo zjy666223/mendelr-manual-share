@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02.本地数据模板SNP表头 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="打开此文档，务必全部仔细看完，认真学习，掌握数据清洗的秘籍localdoclocaldoc表头不一定都会相同，但是弄明白其含义，就能掌握所有GWAS修改成模板SNP表头的秘籍！除了特别说明的格式，MendelR中使用的表头格式，都统一为模板snp的表头注意，表头的顺序没有要求，不影响数据分析，有就…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>数据准备与处理</span>
+  </div>
+  <h1 class="page-title">02.本地数据模板SNP表头</h1>
+  <div class="article-meta">
+    <span>所属章节：数据准备与处理</span>
+    <span>字数：1422</span>
+    <span>代码块：0</span>
+    <span>更新时间：2024-08-28</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>数据准备与处理</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="针对IEU在线数据服务的问题的全方位解决方案">
+  <a href="nvtcexkgrhs5tvv8.html">针对IEU在线数据服务的问题的全方位解决方案</a>
+</li><li class="filter-item" data-search-text="00.OpenGWAS项目Token申请流程">
+  <a href="gxocspnfe6s6glbw.html">00.OpenGWAS项目Token申请流程</a>
+</li><li class="filter-item" data-search-text="紧急！IEU升级账号等级登记！">
+  <a href="mh8g24itfeepx9qz.html">紧急！IEU升级账号等级登记！</a>
+</li><li class="filter-item" data-search-text="0. 必看！常见GWAS数据来源汇总目录">
+  <a href="oipyh10uyxzuovce.html">0. 必看！常见GWAS数据来源汇总目录</a>
+</li><li class="filter-item" data-search-text="1.GWAS Catalog">
+  <a href="rst7w7hcm4kti3mg.html">1.GWAS Catalog</a>
+</li><li class="filter-item" data-search-text="2.UKB 2018Round2英国生物银行的汇总数据集">
+  <a href="fso9suo1zwkk9w0e.html">2.UKB 2018Round2英国生物银行的汇总数据集</a>
+</li><li class="filter-item" data-search-text="3.ieu--opengwas--mrbase收录的在线数据">
+  <a href="bd6kgzqs7bxvek9g.html">3.ieu--opengwas--mrbase收录的在线数据</a>
+</li><li class="filter-item" data-search-text="4.芬兰数据库超详细介绍以及重叠率计算">
+  <a href="akuhdb5c4lb6s6a1.html">4.芬兰数据库超详细介绍以及重叠率计算</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R12数据库!">
+  <a href="ltxzn4udtlge3rxi.html">光速获取芬兰R12数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R11数据库!">
+  <a href="qrbnfh8t1bgl21md.html">光速获取芬兰R11数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R10数据库!">
+  <a href="tr0t1gs7bdtxivcq.html">光速获取芬兰R10数据库!</a>
+</li><li class="filter-item" data-search-text="5.MiBioGen肠道菌群">
+  <a href="vqowppo1w81fowab.html">5.MiBioGen肠道菌群</a>
+</li><li class="filter-item" data-search-text="6.UKB的35个血尿标志物">
+  <a href="stqshobilao148i9.html">6.UKB的35个血尿标志物</a>
+</li><li class="filter-item" data-search-text="7.The Within Family Consortium">
+  <a href="gwotcny75txn86r5.html">7.The Within Family Consortium</a>
+</li><li class="filter-item" data-search-text="8.血细胞联盟">
+  <a href="ltbg5duhfioika16.html">8.血细胞联盟</a>
+</li><li class="filter-item" data-search-text="9.Stroke数据库">
+  <a href="iyxbwll1zf1zv6sz.html">9.Stroke数据库</a>
+</li><li class="filter-item" data-search-text="10.高血压数据库">
+  <a href="kg8taz9tx3grgyq9.html">10.高血压数据库</a>
+</li><li class="filter-item" data-search-text="11.不同白细胞、红细胞GWAS">
+  <a href="nz9o70x8pxbnqklx.html">11.不同白细胞、红细胞GWAS</a>
+</li><li class="filter-item" data-search-text="12.房颤数据库">
+  <a href="qwh6cutmpht1uqhm.html">12.房颤数据库</a>
+</li><li class="filter-item" data-search-text="云上GWAS数据详细信息说明">
+  <a href="bd0lu9aeu108adl0.html">云上GWAS数据详细信息说明</a>
+</li><li class="filter-item" data-search-text="干货-GWAS人群队列？详情信息？样本重叠？">
+  <a href="zxxcflxrz3sgwxl5.html">干货-GWAS人群队列？详情信息？样本重叠？</a>
+</li><li class="filter-item current" data-search-text="02.本地数据模板SNP表头">
+  <a href="bgfy40bu3b3x7ykm.html">02.本地数据模板SNP表头</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="03.本地数据增加samplesize">
+  <a href="kgduo4uakrgg0kzq.html">03.本地数据增加samplesize</a>
+</li><li class="filter-item" data-search-text="04.本地数据beta,se,or互相转换，置信区间公式">
+  <a href="hzg5igd65t4zcbzs.html">04.本地数据beta,se,or互相转换，置信区间公式</a>
+</li><li class="filter-item" data-search-text="05.本地数据无eaf补充">
+  <a href="rk0z9q37ey5qpad9.html">05.本地数据无eaf补充</a>
+</li><li class="filter-item" data-search-text="06.本地数据无rsid数据转换">
+  <a href="mhrxm56dwh0tx9i1.html">06.本地数据无rsid数据转换</a>
+</li><li class="filter-item" data-search-text="07.使用代码改表头">
+  <a href="gb2z99wy8icc1qua.html">07.使用代码改表头</a>
+</li><li class="filter-item" data-search-text="08.IEU上下载的VCF文件转换">
+  <a href="mzkfbwqgogphc127.html">08.IEU上下载的VCF文件转换</a>
+</li><li class="filter-item" data-search-text="09.样本重叠率的相关问题">
+  <a href="ybcs9e0g7kqzwi75.html">09.样本重叠率的相关问题</a>
+</li><li class="filter-item" data-search-text="10.如何从文献里找到其使用的GWAS数据？">
+  <a href="dvlrftlzmwhno7av.html">10.如何从文献里找到其使用的GWAS数据？</a>
+</li><li class="filter-item" data-search-text="11.pval -log10转换注意">
+  <a href="cfrt522wqa7k9v56.html">11.pval -log10转换注意</a>
+</li><li class="filter-item" data-search-text="12.数据标准化">
+  <a href="szfv01l9azl2bhvn.html">12.数据标准化</a>
+</li><li class="filter-item" data-search-text="13.LD环境的准备">
+  <a href="rhnk2rr6vze469gf.html">13.LD环境的准备</a>
+</li><li class="filter-item" data-search-text="XX.MendelR可用数据来源">
+  <a href="an6awimp01322vgh.html">XX.MendelR可用数据来源</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：数据准备与处理</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><strong><span>打开此文档，务必全部仔细看完，认真学习，掌握数据清洗的秘籍</span></strong></p><a href="https://flash0926.yuque.com/attachments/yuque/0/2023/csv/26903514/1684408389466-8fdaa2f1-1306-4797-bd1a-1202d3115b96.csv" class="link-card" target="_blank" rel="noreferrer"><strong>localdoc</strong><span>localdoc</span></a><p><span>表头不一定都会相同，但是弄明白其含义，就能掌握所有GWAS修改成模板SNP表头的秘籍！</span></p><p><span>除了特别说明的格式，MendelR中使用的表头格式，都统一为模板snp的表头</span></p><p><u><span>注意，表头的顺序没有要求，不影响数据分析，有就行</span></u></p><p><span>👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇</span></p><p><span>代码包只识别文本文件，即直接用EmEditor打开后，能直接看到数据信息的，没有乱码的文件。</span></p><p><strong><span><u><span>只要是能用EmEditor打开的文件，都是能作为MendelR分析传入的文件数据。</span></u></span></strong></p><p><strong><span><u><span>不管后缀是txt,tsv,还是csv，还是没有后缀，还是后缀是其他千奇百怪的.raw等（后缀可以随便改，不影响数据本身）</span></u></span></strong></p><p><strong><u><span>更多详细的文件格式基础知识，可以打开这个文档查看：</span></u></strong><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/brhhnt/om27b467xcleo31d" class="link-card" target="_blank" rel="noreferrer"><strong>常见的文件格式</strong><span>引用链接</span><small>在做孟德尔分析的过程下，下载下来的文件格式多种多样，但其实就是两大类一、二进制文件一种是二进制格式的文件，这种格式包含各种压缩文件，以及需要对应软件才能打开的文件，比如excel二进制文件需要使用特定软件打开才能正确读取里面的数据在R语言里面也可以使用一些特定代码进行读取，但是不推荐因为除了在...</small></a></p><p><span>压缩文件就先解压，excel文件先excel打开再另存为csv文本文件。</span></p><p><span>👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆</span></p><p><span>EmEditor软件可以看这个链接：</span><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/otdnsb/gminqdlzvpgygmeg" class="link-card" target="_blank" rel="noreferrer"><strong>EmEditor安装激活与常用操作</strong><span>引用链接</span><small>官网：https://zh-cn.emeditor.com/安装包：链接：https://pan.baidu.com/s/135DktVTBRPZ8A9KaC8gb9g?pwd=7r9y 提取码：7r9y 打开大数据文件需要使用EmEditor提示不能使用，或者不能正常选择分割符的时候，可以去...</small></a></p><p><span>=============下面是每个表头的说明===================</span></p><h2><span>1.必要表头---这里的表头数据中一定要有</span></h2><p><span>注意大小写要完全一致！！！注意大小写要完全一致！！！注意大小写要完全一致！！！</span></p><p><span>SNP：rsid号(rs123456这种，没有的话查看课程中转换risd的方法)</span></p><p><span>effect allele/effect_allele：等位基因 A1（alt--effect allele--A1）具体要确认GWAS的数据描述，一般就是这样</span></p><p><u><span>​</span></u><br></p><p><span>other allele/other_allele：次要等位基因 A2</span></p><p><br></p><p><span>beta：beta效应值  = log(or) (别名effcet、b、beta)反正就是当前位点的效应值</span></p><p><span>（odds ratio 对应or值，可以转换成beta）</span></p><p><span>   (beta效应值是effect allele的效应值)</span></p><p><span>​</span><br></p><p><span>se：针对效应值的标准误（standard error、StdErr）</span></p><p><span>pval：统计学p值</span></p><p><span>​</span><br></p><p><span>特别注意，如果描述文件里说明了效应值是A1或者A2的，那么对应的等位基因就是effect allele</span></p><p><figure class="image-card"><a href="../assets/media/f5baa2a4b12975430ae9.png"><img src="../assets/media/f5baa2a4b12975430ae9.png" alt="image插图" loading="lazy"></a></figure></p><h2><span>2.非必要表头---这里的表头数据不一定要有</span></h2><p><span>eaf :等位基因频率（不一定要有，主要影响harmonise，和计算</span><a href="kbbl08mggn9v4vge.html"><span>F值</span></a><span>）</span></p><p><span>eaf=effect allele frequency = freq = alt_AF(allele frequency) </span></p><p><u><span>数据中效应值beta对应的基因就是效应等位基因，这也是判断effect allele重要依据</span></u></p><p><strong><span>特别注意：如果你自己整理的数据是有很多个暴露放到同个文件里的，需要用id列来区分</span></strong><strong><span>👈👈👈👈👈👈👈</span></strong></p><p><strong><span>分析代码需要用mr_common_batch等批量分析代码进行分析。</span></strong></p><p><span>id： 标注数据id的表头（多个数据放在同一个文件中，需要用这个id表头区分，代码会自动根据id切分数据进行分析），分析完后，对应id.exposure/id.outcome，本地数据缺少的话，自动用文件名</span></p><p><span>Phenotype：标注表型的表头，分析完后，对应结果中exposure/outcome表头的数据，缺少的话，自动exposure/outcome</span></p><p><strong><span>以上是大部分GWAS数据表头规律，正常判断需要结果数据下载时候的提供的描述确认，这个描述在下载的地方或者文章中提供，一般是readme文件，请确认好。</span></strong></p><p><span>总之，表头不能靠猜。</span></p><p><span>​</span><br></p><p><span>缺少beta、se、or值，可以查看以下文档，课程中也有视频介绍，请去查阅一下</span></p><p><a href="hzg5igd65t4zcbzs.html" class="link-card"><strong>04.本地数据beta,se,or互相转换，置信区间公式</strong><span>站内引用</span><small>公式直接来源beta/or, se, p, zscore换算总结帖转换前，需要按照模板SNP整理表头一、转换betalook_beta("文件名.csv")需要有表头or二、转换selook_se("文件名.csv")需要有表头 pval,beta 或者pval,or三、beta以及or值置...</small></a></p><p><span>​</span><br></p><h2><span>3.其他的列可以适当增加</span></h2><p><span>samplesize ： 样本量 可以用于计算F值（steiger、LDSC、共定位、smr方法都要求有这个，GWAS数据中没有的话，从GWAS的原下载地方去确定）</span></p><p><span>chr: 染色体（需要原数据带有，暂时还无法使用rsid反推chr和pos）需要纯数字，不能有其他的字符</span></p><p><span>pos：位点bp实际位置</span></p><p><u><span>（chr和pos主要用于共定位和药物靶点定位基因范围（药物靶点ivw没有这两个数据的话，程序也会自动补充））</span></u></p><p><span>​</span><br></p><h2><span>4.特别注意</span></h2><p><span>1.大文件数据预处理，请知晓常用的</span><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/brhhnt/om27b467xcleo31d" target="_blank" rel="noreferrer"><span>文件格式</span></a><span>，以及使用</span><a href="https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/brhhnt/gminqdlzvpgygmeg" class="link-card" target="_blank" rel="noreferrer"><strong>EmEditor安装激活与常用操作</strong><span>引用链接</span><small>官网：https://zh-cn.emeditor.com/安装包：链接：https://pan.baidu.com/s/135DktVTBRPZ8A9KaC8gb9g?pwd=7r9y 提取码：7r9y 打开大数据文件需要使用EmEditor提示不能使用，或者不能正常选择分割符的时候，可以去...</small></a><span>来修改表头，尽量减少代码的使用</span></p><p><span>​</span><br></p><p><span>2.如果没有rsid号，那就要确保数据中有chr:pos，即染色体号，和位点位置信息，chr:pos-&gt;rsid</span></p><p><span>然后参考rsid转换教程，转换出来rsid号后，再进行分析</span><a href="mhrxm56dwh0tx9i1.html" class="link-card"><strong>06.本地数据无rsid数据转换</strong><span>站内引用</span><small>转化rsid 的教程有很多本教程是一种通用的GWAS数据转换软件在之前做孟德尔分析的时候经常遇到没有rsid号的数据查看了网上的教程都没有考虑到个人电脑的内存，以及使用上的操作难度问题本软件由kim老师使用python代码独立开发，具有知识产权保护进行了多次的优化以及通用化，能够完成所有的GW...</small></a></p><p><span>​</span><br></p><p><span>3.如果没有samplesize，可以移步： </span><a href="kgduo4uakrgg0kzq.html" class="link-card"><strong>03.本地数据增加samplesize</strong><span>站内引用</span><small>samplesize不能直接使用数据计算，只能从GWAS数据下载的网站确定确定好samplesize后，使用以下方法进行添加，输入文件名和samplesize的值，自动生成一个新的本地文件1.如果是本地的暴露或者结局GWAS数据文件library(MendelR) #给本地的数据文件增加sam...</small></a></p><p><br></p><p><span>4.如果看到pval数据是经过-log10转换的，需要转换为原始pval</span></p><p><span>一般这种表头，都是写着 neg_log_10的，证明数据是-log(pval)，需要把原始的pval转换回来</span></p><p><a href="cfrt522wqa7k9v56.html" class="link-card"><strong>11.pval -log10转换注意</strong><span>站内引用</span><small>有些数据的pval会经过-log10(pval)转换，我们需要把原pval转换。公式是 pval_origin= 10^-pvalMendelR包提供了转换方法，注意需要把p值的表头改成pval，代码会自动判断这个表头是否需要转换，以及进行转换。convert_logp_to_pval("文件...</small></a></p><p><figure class="image-card"><a href="../assets/media/13cc4a64e0bcd03fafe0.png"><img src="../assets/media/13cc4a64e0bcd03fafe0.png" alt="image插图" loading="lazy"></a></figure></p><p><span>​</span><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="zxxcflxrz3sgwxl5.html"><em>上一篇</em><strong>干货-GWAS人群队列？详情信息？样本重叠？</strong></a><a class="nav-card" href="kgduo4uakrgg0kzq.html"><em>下一篇</em><strong>03.本地数据增加samplesize</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

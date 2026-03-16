@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不同snp个数对MR结果的影响 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="在进行孟德尔随机化分析时，SNP（单核苷酸多态性）的数量对结果的影响是非常重要的。以下是对不同SNP数量情况下的影响进行更详细的补充：当SNP数量等于1时：MR分析方法选择：当只有1个SNP时，通常只能使用wald_ratio方法进行分析，该方法可以提供单个SNP与被解释变量之间的因果关系估计。​…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>结果解读</span>
+  </div>
+  <h1 class="page-title">不同snp个数对MR结果的影响</h1>
+  <div class="article-meta">
+    <span>所属章节：结果解读</span>
+    <span>字数：1912</span>
+    <span>代码块：0</span>
+    <span>更新时间：2025-03-01</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>结果解读</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="mr分析结果解读">
+  <a href="poeybcagbdfisrcl.html">mr分析结果解读</a>
+</li><li class="filter-item" data-search-text="孟德尔结果展示OR值和beta值选择说明">
+  <a href="wdqg0hzm4awgfyih.html">孟德尔结果展示OR值和beta值选择说明</a>
+</li><li class="filter-item current" data-search-text="不同snp个数对MR结果的影响">
+  <a href="neyupg0gmhbfxrkh.html">不同snp个数对MR结果的影响</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="Power值计算教程-如何使用网页计算孟德尔随机化中的Power">
+  <a href="zkfd7vli6g12xk6i.html">Power值计算教程-如何使用网页计算孟德尔随机化中的Power</a>
+</li><li class="filter-item" data-search-text="批量分析结果解读">
+  <a href="kecrhyz42cp4qm0v.html">批量分析结果解读</a>
+</li><li class="filter-item" data-search-text="中介分析结果解读">
+  <a href="qyxd3t2dmo71thpa.html">中介分析结果解读</a>
+</li><li class="filter-item" data-search-text="多变量分析结果解读">
+  <a href="ihth35wfgck8krrx.html">多变量分析结果解读</a>
+</li><li class="filter-item" data-search-text="药物靶点的smr结果怎么看">
+  <a href="gefoiy8vvuc05wp0.html">药物靶点的smr结果怎么看</a>
+</li><li class="filter-item" data-search-text="批量分析时FDR矫正结果如何解读？">
+  <a href="xlhgmo646vga856g.html">批量分析时FDR矫正结果如何解读？</a>
+</li><li class="filter-item" data-search-text="方法学部分的权威参考文献引用 副本">
+  <a href="guczotux6imuqtko.html">方法学部分的权威参考文献引用 副本</a>
+</li><li class="filter-item" data-search-text="各种mr分析方法优缺点局限性详细解读">
+  <a href="erz57eflp6lpemoz.html">各种mr分析方法优缺点局限性详细解读</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：结果解读</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>在进行孟德尔随机化分析时，SNP（单核苷酸多态性）的数量对结果的影响是非常重要的。</span></p><p><span>以下是对不同SNP数量情况下的影响进行更详细的补充：</span></p><ol><li><strong><span>当SNP数量等于1时：</span></strong></li></ol><ul><li><span>MR分析方法选择：</span></li><li><span>当只有1个SNP时，通常只能使用wald_ratio方法进行分析，该方法可以提供单个SNP与被解释变量之间的因果关系估计。</span></li><li><span>​</span><br></li><li><span>敏感性分析：</span></li><li><span>MR-Egger截距测试：由于只有一个SNP，无法进行MR-Egger截距测试来检测水平多效性。</span></li><li><span>MR-PRESSO：同样，由于只有一个SNP，也无法使用MR-PRESSO方法来检测和纠正水平多效性。</span></li></ul><h5><span>SNP 不足三个时多效性的判断</span></h5><p><span>当 SNP 数量不足三个时，不能简单地认为没有多效性。多效性是指一个基因变异对多个表型产生影响的现象。在孟德尔随机化中，检测多效性通常依赖于多个工具变量（SNP），常用的方法（如 MR - Egger、Cochrane’s Q 检验等）需要多个 SNP 才能实施。</span></p><p><span>SNP 数量少可能导致无法准确检测多效性，而不是不存在多效性。少数 SNP 可能隐藏着多效性效应，但由于缺乏足够的数据点，无法通过常规的统计检验来发现。例如，单个 SNP 可能同时影响暴露因素和结局，只是由于样本量和 SNP 数量的限制，难以识别这种复杂的关系。</span></p><p><span>所以也有很多文章只纳入最终大于3个snp的结果。</span></p><p><span>​</span><br></p><ol><li><strong><span>当SNP数量等于2时：</span></strong></li></ol><ul><li><span>MR分析方法选择</span><span>：</span></li><li><span>当只有2个SNP时，通常只能使用IVW方法进行分析。IVW方法通过将不同SNP的估计结果进行加权平均来得出因果估计。</span></li><li><span>​</span><br></li><li><span>敏感性分析</span></li><li><span>MR-Egger截距测试：由于SNP数量有限，无法进行MR-Egger截距测试，因为该方法需要多个SNP来进行有效估计。</span></li><li><span>MR-PRESSO：同样，由于SNP数量有限，通常也无法使用MR-PRESSO方法来检测和纠正水平多效性。</span></li><li><span>​</span><br></li></ul><ol><li><strong><span>当SNP数量大于3时：</span></strong></li></ol><ul><li><span>MR分析方法选择</span><span>​</span><span>：</span></li><li><span>当有大于3个SNP时，可以选择多种方法进行因果推断，如IVW（Inverse Variance Weighted）、MR-Egger、Weighted Median、Weighted Mode等。这些方法可以提供不同的权衡和结果。</span></li><li><span>​</span><br></li><li><span>敏感性分析：</span></li><li><span>MR-Egger截距测试：MR-Egger方法可以用来检测水平多效性，即遗传变异与被解释变量之间的相关性是否受到共同因素的影响。</span></li><li><span>MR-PRESSO：MR-PRESSO方法可以用来检测和纠正可能存在的水平多效性，帮助排除可能的干扰因素对结果的影响。</span></li></ul><p><strong><span>注意：</span></strong></p><p><strong><span>由于snp个数少于3个时候，MR结果不全，因此有的文章会把snp少于3个的结果直接剔除或者不进行敏感性分析</span></strong></p><p><span>​</span><br></p><p><span>如果要删除snp小于3的结果，在统计分析部分这样写“</span><span>When the number of available SNPs was less than three, limiting the scope of comprehensive Mendelian Randomization (MR) analysis, these results were excluded from the analysis to ensure robustness and reliability of the findings. This approach was taken to maintain the integrity of the MR analysis and to focus on results derived from a sufficient number of SNPs for meaningful causal inference."</span><span>”</span></p><p><span>​</span><br></p><p><span>如果要保留snp小于3的结果，没有敏感性分析结果，具体写法可学习下面这2个文献：</span></p><p><span>文献1：Harrison S, Davies AR, Dickson M, Tyrrell J, Green MJ, Katikireddi SV, Campbell D, Munafò M, Dixon P, Jones HE, Rice F, Davies NM, Howe LD. The causal effects of health conditions and risk factors on social and socioeconomic outcomes: Mendelian randomization in UK Biobank. Int J Epidemiol. 2020 Oct 1;49(5):1661-1681. doi: 10.1093/ije/dyaa114. PMID: 32808034; PMCID: PMC7746412.</span></p><p><span> 原文是这样写的：“</span><span>Osteoarthritis was excluded from the sensitivity Mendelian randomization analysis as there were fewer than three GWAS-significant SNPs in the osteoarthritis GWAS.</span><span>”</span></p><p><span>​</span><br></p><p><span>文献2：Harrison S, Davies AR, Dickson M, Tyrrell J, Green MJ, Katikireddi SV, Campbell D, Munafò M, Dixon P, Jones HE, Rice F, Davies NM, Howe LD. The causal effects of health conditions and risk factors on social and socioeconomic outcomes: Mendelian randomization in UK Biobank. Int J Epidemiol. 2020 Oct 1;49(5):1661-1681. doi: 10.1093/ije/dyaa114. PMID: 32808034; PMCID: PMC7746412.</span></p><p><span> 原文是这样写的：“</span><span>Cholesterol was excluded from the sensitivity Mendelian randomization analysis as there were fewer than three GWAS-significant SNPs in the cholesterol GWAS</span><span>.”</span></p><p><span>​</span><br></p><p><strong><span>学员提问：wald ratio一个snp的蛋白存在异质性，如何使用ivw的随机效应模型呢？</span></strong></p><p><span>回答：首先只有一个snp的时候，是不能用IVW方法的。直接用</span><strong><span>wald ratio的结果即可。</span></strong></p><p><span>IVW（Inverse - Variance Weighted）随机效应模型通常用于处理多个工具变量（SNP）的情况，当存在异质性时，随机效应模型可以考虑不同 SNP 效应估计值之间的变异。但当只有一个 SNP 时，传统意义上的 IVW 随机效应模型无法直接应用，因为随机效应模型的基础是对多个效应估计值的变异进行建模，只需要看</span><strong><span>Wald 比值法的结果</span></strong><span>。不过，你可以考虑以下几种替代策略：</span></p><h4><span>1. 寻找更多的 SNP</span></h4><p><span>这是最理想的解决办法。可以通过查阅相关文献、公共数据库（如 GWAS Catalog）等，寻找与暴露因素相关的其他 SNP。确保这些 SNP 满足孟德尔随机化的三个核心假设：</span></p><ul><li><strong><span>关联性假设</span></strong><span>：SNP 与暴露因素显著相关。</span></li><li><strong><span>独立性假设</span></strong><span>：SNP 与混杂因素无关。</span></li><li><strong><span>排他性假设</span></strong><span>：SNP 仅通过暴露因素影响结局，不存在其他直接影响结局的路径。</span></li></ul><h4><span>2. 采用 </span><strong><span>Wald 比值法</span></strong><span>​</span></h4><ul><li><strong><span>Wald 比值法</span></strong><span>：既然已经有一个 SNP，Wald 比值法是一种简单直接的分析方法。它通过 SNP 与暴露因素的关联估计值和 SNP 与结局的关联估计值的比值来估计因果效应。公式为：</span><span>Wald 比值</span><span>=</span><span>β</span><span>Y</span><span>∣</span><span>Z</span><span>β</span><span>X</span><span>∣</span><span>Z</span><span>Wald </span><span>比值</span><span>=</span><em><span>β</span></em><em><span>X</span></em><span>∣</span><em><span>Z</span></em><em><span>β</span></em><em><span>Y</span></em><span>∣</span><em><span>Z</span></em><span>，其中</span><span> </span><span>β</span><span>Y</span><span>∣</span><span>Z</span><em><span>β</span></em><em><span>Y</span></em><span>∣</span><em><span>Z</span></em><span> </span><span>是 SNP 与结局的回归系数，</span><span>β</span><span>X</span><span>∣</span><span>Z</span><em><span>β</span></em><em><span>X</span></em><span>∣</span><em><span>Z</span></em><span> </span><span>是 SNP 与暴露的回归系数。</span></li><li><strong><span>敏感性分析</span></strong><span>：虽然单个 SNP 无法进行多 SNP 的敏感性分析，但可以通过改变分析的样本范围、调整混杂因素等方式进行敏感性分析，以评估结果的稳健性。</span></li></ul><h4><span>3. 综合其他证据</span></h4><p><span>如果无法找到更多的 SNP，可以结合其他类型的证据来支持因果推断。例如，生物学机制研究、实验研究结果等。这些额外的证据可以增强单个 SNP 分析结果的可信度。</span></p><p><span>​</span><br></p><p><span>综上所述，SNP的数量在孟德尔随机化分析中起着至关重要的作用。</span></p><p><span>较多的SNP数量可以提供更多的选择和更可靠的结果，而较少的SNP数量则会限制可用的方法和分析的深度。</span></p><p><span>因此，在进行孟德尔随机化分析时，研究人员需要根据具体情况选择合适的方法，并注意不同SNP数量对结果的影响。</span></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="wdqg0hzm4awgfyih.html"><em>上一篇</em><strong>孟德尔结果展示OR值和beta值选择说明</strong></a><a class="nav-card" href="zkfd7vli6g12xk6i.html"><em>下一篇</em><strong>Power值计算教程-如何使用网页计算孟德尔随机化中的Power</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

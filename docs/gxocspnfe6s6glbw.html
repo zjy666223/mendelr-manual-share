@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>00.OpenGWAS项目Token申请流程 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="根据IEU GWAS 数据库官方通知，该数据库的数据提取分析模式在2024年5月1号，调整成Token验证模式主要为了解决问题：（1）用户无限制的使用，服务器负载过高；（2）用户堵塞，502错误码的返回官方通知，如果您不进行Token申请并验证，OpenGWAS(IEU)将无法提取数据。配置完可能…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>数据准备与处理</span>
+  </div>
+  <h1 class="page-title">00.OpenGWAS项目Token申请流程</h1>
+  <div class="article-meta">
+    <span>所属章节：数据准备与处理</span>
+    <span>字数：1464</span>
+    <span>代码块：1</span>
+    <span>更新时间：2025-10-19</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>数据准备与处理</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="针对IEU在线数据服务的问题的全方位解决方案">
+  <a href="nvtcexkgrhs5tvv8.html">针对IEU在线数据服务的问题的全方位解决方案</a>
+</li><li class="filter-item current" data-search-text="00.OpenGWAS项目Token申请流程">
+  <a href="gxocspnfe6s6glbw.html">00.OpenGWAS项目Token申请流程</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="紧急！IEU升级账号等级登记！">
+  <a href="mh8g24itfeepx9qz.html">紧急！IEU升级账号等级登记！</a>
+</li><li class="filter-item" data-search-text="0. 必看！常见GWAS数据来源汇总目录">
+  <a href="oipyh10uyxzuovce.html">0. 必看！常见GWAS数据来源汇总目录</a>
+</li><li class="filter-item" data-search-text="1.GWAS Catalog">
+  <a href="rst7w7hcm4kti3mg.html">1.GWAS Catalog</a>
+</li><li class="filter-item" data-search-text="2.UKB 2018Round2英国生物银行的汇总数据集">
+  <a href="fso9suo1zwkk9w0e.html">2.UKB 2018Round2英国生物银行的汇总数据集</a>
+</li><li class="filter-item" data-search-text="3.ieu--opengwas--mrbase收录的在线数据">
+  <a href="bd6kgzqs7bxvek9g.html">3.ieu--opengwas--mrbase收录的在线数据</a>
+</li><li class="filter-item" data-search-text="4.芬兰数据库超详细介绍以及重叠率计算">
+  <a href="akuhdb5c4lb6s6a1.html">4.芬兰数据库超详细介绍以及重叠率计算</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R12数据库!">
+  <a href="ltxzn4udtlge3rxi.html">光速获取芬兰R12数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R11数据库!">
+  <a href="qrbnfh8t1bgl21md.html">光速获取芬兰R11数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R10数据库!">
+  <a href="tr0t1gs7bdtxivcq.html">光速获取芬兰R10数据库!</a>
+</li><li class="filter-item" data-search-text="5.MiBioGen肠道菌群">
+  <a href="vqowppo1w81fowab.html">5.MiBioGen肠道菌群</a>
+</li><li class="filter-item" data-search-text="6.UKB的35个血尿标志物">
+  <a href="stqshobilao148i9.html">6.UKB的35个血尿标志物</a>
+</li><li class="filter-item" data-search-text="7.The Within Family Consortium">
+  <a href="gwotcny75txn86r5.html">7.The Within Family Consortium</a>
+</li><li class="filter-item" data-search-text="8.血细胞联盟">
+  <a href="ltbg5duhfioika16.html">8.血细胞联盟</a>
+</li><li class="filter-item" data-search-text="9.Stroke数据库">
+  <a href="iyxbwll1zf1zv6sz.html">9.Stroke数据库</a>
+</li><li class="filter-item" data-search-text="10.高血压数据库">
+  <a href="kg8taz9tx3grgyq9.html">10.高血压数据库</a>
+</li><li class="filter-item" data-search-text="11.不同白细胞、红细胞GWAS">
+  <a href="nz9o70x8pxbnqklx.html">11.不同白细胞、红细胞GWAS</a>
+</li><li class="filter-item" data-search-text="12.房颤数据库">
+  <a href="qwh6cutmpht1uqhm.html">12.房颤数据库</a>
+</li><li class="filter-item" data-search-text="云上GWAS数据详细信息说明">
+  <a href="bd0lu9aeu108adl0.html">云上GWAS数据详细信息说明</a>
+</li><li class="filter-item" data-search-text="干货-GWAS人群队列？详情信息？样本重叠？">
+  <a href="zxxcflxrz3sgwxl5.html">干货-GWAS人群队列？详情信息？样本重叠？</a>
+</li><li class="filter-item" data-search-text="02.本地数据模板SNP表头">
+  <a href="bgfy40bu3b3x7ykm.html">02.本地数据模板SNP表头</a>
+</li><li class="filter-item" data-search-text="03.本地数据增加samplesize">
+  <a href="kgduo4uakrgg0kzq.html">03.本地数据增加samplesize</a>
+</li><li class="filter-item" data-search-text="04.本地数据beta,se,or互相转换，置信区间公式">
+  <a href="hzg5igd65t4zcbzs.html">04.本地数据beta,se,or互相转换，置信区间公式</a>
+</li><li class="filter-item" data-search-text="05.本地数据无eaf补充">
+  <a href="rk0z9q37ey5qpad9.html">05.本地数据无eaf补充</a>
+</li><li class="filter-item" data-search-text="06.本地数据无rsid数据转换">
+  <a href="mhrxm56dwh0tx9i1.html">06.本地数据无rsid数据转换</a>
+</li><li class="filter-item" data-search-text="07.使用代码改表头">
+  <a href="gb2z99wy8icc1qua.html">07.使用代码改表头</a>
+</li><li class="filter-item" data-search-text="08.IEU上下载的VCF文件转换">
+  <a href="mzkfbwqgogphc127.html">08.IEU上下载的VCF文件转换</a>
+</li><li class="filter-item" data-search-text="09.样本重叠率的相关问题">
+  <a href="ybcs9e0g7kqzwi75.html">09.样本重叠率的相关问题</a>
+</li><li class="filter-item" data-search-text="10.如何从文献里找到其使用的GWAS数据？">
+  <a href="dvlrftlzmwhno7av.html">10.如何从文献里找到其使用的GWAS数据？</a>
+</li><li class="filter-item" data-search-text="11.pval -log10转换注意">
+  <a href="cfrt522wqa7k9v56.html">11.pval -log10转换注意</a>
+</li><li class="filter-item" data-search-text="12.数据标准化">
+  <a href="szfv01l9azl2bhvn.html">12.数据标准化</a>
+</li><li class="filter-item" data-search-text="13.LD环境的准备">
+  <a href="rhnk2rr6vze469gf.html">13.LD环境的准备</a>
+</li><li class="filter-item" data-search-text="XX.MendelR可用数据来源">
+  <a href="an6awimp01322vgh.html">XX.MendelR可用数据来源</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：数据准备与处理</span>
+        <span class="pill gold">代码块 1</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><strong><span>根据IEU GWAS 数据库官方通知，该数据库的数据提取分析模式在2024年5月1号，调整成Token验证模式</span></strong></p><p><strong><span>主要为了解决问题：（1）用户无限制的使用，服务器负载过高；（2）用户堵塞，502错误码的返回</span></strong></p><p><strong><span>官方通知，如果您不进行Token申请并验证，OpenGWAS(IEU)将无法提取数据。</span></strong></p><p><br></p><p><strong><span>配置完可能还会有各种问题，针对这些问题总结了部分可行的解决方案，大家可以点开文档仔细看看。</span></strong></p><p><a href="nvtcexkgrhs5tvv8.html" class="link-card"><strong>针对IEU在线数据服务的问题的全方位解决方案</strong><span>站内引用</span><small>一、前言IEU在线数据库不稳定的情况，自2023年6月开始出现后，到2024年4月，一直都处于经常性502状态，这段时间IEU的后台服务器一直无人维护，使用异常艰难，所以医工科研团队想尽办法解决各种IEU服务导致的问题（就像打怪兽一样，出来一个，消灭一个），开创性的开发了团队独有的，且中国唯一...</small></a><span> </span><span>👈👈👈👈👈👈👈</span></p><p><span>​</span><br></p><p><strong><span>特别注意：IEU的token配置完，提取数据方面也不会很顺畅。</span></strong></p><p><strong><span>（意思是和以前不用配置token的时代一样，还是会经常性反复502 503）</span></strong></p><p><span>特别的，出现以下提示，重新配置新的token解决。</span></p><p><figure class="image-card"><a href="../assets/media/048b104ed9b6e9411617.png"><img src="../assets/media/048b104ed9b6e9411617.png" alt="空的返回插图" loading="lazy"></a></figure></p><p><strong><span>请注意：</span></strong><strong><span>Token会失效的</span></strong><strong><span>，配置好后，</span></strong><strong><span>一旦发现提取不了数据了</span></strong><strong><span>，也</span></strong><strong><span>不用等14天过期时间</span></strong><strong><span>，直接按照下面流程再配置一个新的token。</span></strong></p><p><strong><span>常见问题，请移步文档后面。</span></strong></p><p><br></p><p><strong><span>步骤分三个：</span></strong><strong><span>👉</span></strong><strong><span>打开网页登录--</span></strong><strong><span>👉</span></strong><strong><span>申请Token--</span></strong><strong><span>👉</span></strong><strong><span>MendelR代码包配置</span></strong></p><h2><span>1.打开下方的地址，进行邮箱登录，推荐使用微软的邮箱登录</span></h2><p><a href="https://api.opengwas.io/profile/" target="_blank" rel="noreferrer"><span>https://api.opengwas.io/</span></a></p><p><strong><span>登录的时候如果服务器报错，请更换登录方式或用其他邮箱，下面的</span></strong><strong><span>github方式（github打不开的话，自行翻墙）</span></strong></p><p><u><span>​</span></u><br></p><p><figure class="image-card"><a href="../assets/media/77895688a7c1e4891665.png"><img src="../assets/media/77895688a7c1e4891665.png" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="../assets/media/4c8038300a794fc84d25.jpeg"><img src="../assets/media/4c8038300a794fc84d25.jpeg" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="../assets/media/36a8cf8d8bb101a6764e.png"><img src="../assets/media/36a8cf8d8bb101a6764e.png" alt="image插图" loading="lazy"></a></figure></p><h2><span>2.登录完成后，申请token</span></h2><p><figure class="image-card"><a href="../assets/media/e6e4f35f09bc4e47351e.png"><img src="../assets/media/e6e4f35f09bc4e47351e.png" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>重要：申请后，记得</span></strong><strong><span>升级成正式用户</span></strong><strong><span>，否则只有100积分，无法正常使用的</span></strong><span>。</span></p><p><strong><span>重要：申请后，记得</span></strong><strong><span>升级成正式用户</span></strong><strong><span>，否则只有100积分，无法正常使用的</span></strong><span>。</span></p><p><strong><span>重要：申请后，记得</span></strong><strong><span>升级成正式用户</span></strong><strong><span>，否则只有100积分，无法正常使用的</span></strong><span>。</span></p><blockquote><p><strong><span>注意必看※</span></strong><span>👉👉👉</span><span>申请Token后，记得一定一定要 登记一次个人信息，</span><strong><span>升级成正式用户，</span></strong><span>详细看这个文档：</span><strong><span>※※※</span></strong><a href="mh8g24itfeepx9qz.html" class="link-card"><strong>紧急！IEU升级账号等级登记！</strong><span>站内引用</span><small>紧急通知：IEU数据库后台于2024年11月11日更新了新的认证步骤。需要更新个人信息，才可以恢复到标准等级Standard tier。否则只有100积分，根本无法使用。按照00.OpenGWAS项目Token申请流程 申请好token之后，必须要完成一次个人信息登记。登录到https://a...</small></a><strong><span>※※※</span></strong></p></blockquote><p><figure class="image-card"><a href="../assets/media/2f77d6397269dc64c249.png"><img src="../assets/media/2f77d6397269dc64c249.png" alt="image插图" loading="lazy"></a></figure><strong><span>注：复制token后记得及时保存，离开这个页面后，无法再次复制，要重新Reset</span></strong></p><p><strong><span>注：这里也可以查看当前自己的剩余额度，如果超过则无法提取数据。需要等ieu后台10分钟自动刷新。</span></strong></p><p><strong><span>注：Token是会失效的，每14天上去更新一次，有时候发现提取不了数据了，也可以更新Token重新配置试试。</span></strong></p><p><strong><span>注：这个期限14天不准的，有可能配置一两次就开始提取不了数据了，需要重新配置解决。</span></strong></p><p><strong><span>常见错误</span></strong></p><p><strong><span> </span></strong></p><h2><span>3.使用MendelR进行token配置</span></h2><p><span>👉</span><span>新申请的token  或者   </span><span>👉</span><span>过期后重新更新token后，都需要再  </span><span>👉</span><span>运行代码  进行配置。</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+config_ieu_token("自己的token") 
+#填网页上自己的token 
+#注意不要丢掉双引号 
+#注意新申请或过期后重新申请 都需要再运行次代码</code></pre></figure><p><span>配置正确的话，会</span><strong><span>提示配置成功（请看下图）</span></strong><span>，并显示自己邮箱的个人信息，配置失败会返回401错误码，请检查自己的token是否正确。</span></p><p><span>注意：直接</span><strong><span>将token复制给代码，按照下面的方式传入</span></strong></p><p><strong><span>注意：不要放到文件中传文件名给代码执行，放文件中只是为了备忘。</span></strong></p><p><figure class="image-card"><a href="../assets/media/51b6fc43ee374d82851a.png"><img src="../assets/media/51b6fc43ee374d82851a.png" alt="image插图" loading="lazy"></a></figure></p><h2><span>4.关于OpenGWAS新增Token验证方式的计费模式讲解</span></h2><p><figure class="image-card"><a href="../assets/media/c9ce21b590d6730816fd.png"><img src="../assets/media/c9ce21b590d6730816fd.png" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>100000积分每10分钟（额度是免费的）</span></strong></p><p><u><span>额度会</span></u><strong><u><span>每10分钟刷新</span></u></strong><u><span>一次，如果</span></u><strong><u><span>在10分钟内超过了额度上限，将会直接无法提取数据</span></u></strong><u><span>。</span></u></p><p><strong><span>（10分钟内限定额度，超了就得等重新ieu后台自动刷新额度后才能继续使用）</span></strong></p><p><span>关于每个接口的收费详解（讲解最重要的两个接口，提取显著性数据（暴露），提取关联性数据（结局））：</span></p><p><span>这里为了方便描述，计费的单位为1积分</span></p><p><span>1.提取显著性数据，并clump（暴露数据）</span></p><p><span>功能：提取显著性数据，并clump（暴露数据）</span></p><p><span>根据id的数量进行计费，比如我当前请求的数据是N个id</span></p><p><span>1.如果使用预clump的数据，则花费N积分（预clump的意思是，IEU后台的服务器本身有部分已经做过clump的数据，clump是最耗费服务器资源的步骤，这里</span><strong><span>接口默认是使用的，但是有部分数据可能没有clump过</span></strong><span>）</span></p><p><span>2.如果提取的数据，不进行clump，则花费Nx10个积分</span></p><p><span>3.如果提取的数据，不是使用预clump的，则需要花费Nx30个积分</span></p><p><span>2.提取关联性数据（结局数据）</span></p><p><span>1.非代理提取，提取的id个数/提取的rs个数中，取最大值</span></p><p><span>2.代理提取，在上述规则1上乘5</span></p><p><strong><span>​</span></strong><br></p><h2><span>5.常见问题</span></h2><p><figure class="image-card"><a href="../assets/media/166671bdfbae908913f3.png"><img src="../assets/media/166671bdfbae908913f3.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><strong><span>登录服务器后台报错。可以更换成github的方式登录。</span></strong></p><p><strong><span>IEU这个Token的网站也有登录不上的bug。</span></strong></p><p><strong><span>换个邮箱 换其他的登录方式 比如github（github需要完成登录并注册账号，请自行处理。）</span></strong></p><p><figure class="image-card"><a href="../assets/media/600bb8f62c6f60c20e2b.png"><img src="../assets/media/600bb8f62c6f60c20e2b.png" alt="image插图" loading="lazy"></a></figure></p><p><figure class="image-card"><a href="../assets/media/9d3ebb7c309b66f940f8.png"><img src="../assets/media/9d3ebb7c309b66f940f8.png" alt="image插图" loading="lazy"></a></figure></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="nvtcexkgrhs5tvv8.html"><em>上一篇</em><strong>针对IEU在线数据服务的问题的全方位解决方案</strong></a><a class="nav-card" href="mh8g24itfeepx9qz.html"><em>下一篇</em><strong>紧急！IEU升级账号等级登记！</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

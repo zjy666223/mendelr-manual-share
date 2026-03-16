@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03.本地数据增加samplesize · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="samplesize不能直接使用数据计算，只能从GWAS数据下载的网站确定确定好samplesize后，使用以下方法进行添加，输入文件名和samplesize的值，自动生成一个新的本地文件1.如果是本地的暴露或者结局GWAS数据文件rlibrary(MendelR) #给本地的数据文件增加samp…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>数据准备与处理</span>
+  </div>
+  <h1 class="page-title">03.本地数据增加samplesize</h1>
+  <div class="article-meta">
+    <span>所属章节：数据准备与处理</span>
+    <span>字数：392</span>
+    <span>代码块：2</span>
+    <span>更新时间：2024-10-25</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>数据准备与处理</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="针对IEU在线数据服务的问题的全方位解决方案">
+  <a href="nvtcexkgrhs5tvv8.html">针对IEU在线数据服务的问题的全方位解决方案</a>
+</li><li class="filter-item" data-search-text="00.OpenGWAS项目Token申请流程">
+  <a href="gxocspnfe6s6glbw.html">00.OpenGWAS项目Token申请流程</a>
+</li><li class="filter-item" data-search-text="紧急！IEU升级账号等级登记！">
+  <a href="mh8g24itfeepx9qz.html">紧急！IEU升级账号等级登记！</a>
+</li><li class="filter-item" data-search-text="0. 必看！常见GWAS数据来源汇总目录">
+  <a href="oipyh10uyxzuovce.html">0. 必看！常见GWAS数据来源汇总目录</a>
+</li><li class="filter-item" data-search-text="1.GWAS Catalog">
+  <a href="rst7w7hcm4kti3mg.html">1.GWAS Catalog</a>
+</li><li class="filter-item" data-search-text="2.UKB 2018Round2英国生物银行的汇总数据集">
+  <a href="fso9suo1zwkk9w0e.html">2.UKB 2018Round2英国生物银行的汇总数据集</a>
+</li><li class="filter-item" data-search-text="3.ieu--opengwas--mrbase收录的在线数据">
+  <a href="bd6kgzqs7bxvek9g.html">3.ieu--opengwas--mrbase收录的在线数据</a>
+</li><li class="filter-item" data-search-text="4.芬兰数据库超详细介绍以及重叠率计算">
+  <a href="akuhdb5c4lb6s6a1.html">4.芬兰数据库超详细介绍以及重叠率计算</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R12数据库!">
+  <a href="ltxzn4udtlge3rxi.html">光速获取芬兰R12数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R11数据库!">
+  <a href="qrbnfh8t1bgl21md.html">光速获取芬兰R11数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R10数据库!">
+  <a href="tr0t1gs7bdtxivcq.html">光速获取芬兰R10数据库!</a>
+</li><li class="filter-item" data-search-text="5.MiBioGen肠道菌群">
+  <a href="vqowppo1w81fowab.html">5.MiBioGen肠道菌群</a>
+</li><li class="filter-item" data-search-text="6.UKB的35个血尿标志物">
+  <a href="stqshobilao148i9.html">6.UKB的35个血尿标志物</a>
+</li><li class="filter-item" data-search-text="7.The Within Family Consortium">
+  <a href="gwotcny75txn86r5.html">7.The Within Family Consortium</a>
+</li><li class="filter-item" data-search-text="8.血细胞联盟">
+  <a href="ltbg5duhfioika16.html">8.血细胞联盟</a>
+</li><li class="filter-item" data-search-text="9.Stroke数据库">
+  <a href="iyxbwll1zf1zv6sz.html">9.Stroke数据库</a>
+</li><li class="filter-item" data-search-text="10.高血压数据库">
+  <a href="kg8taz9tx3grgyq9.html">10.高血压数据库</a>
+</li><li class="filter-item" data-search-text="11.不同白细胞、红细胞GWAS">
+  <a href="nz9o70x8pxbnqklx.html">11.不同白细胞、红细胞GWAS</a>
+</li><li class="filter-item" data-search-text="12.房颤数据库">
+  <a href="qwh6cutmpht1uqhm.html">12.房颤数据库</a>
+</li><li class="filter-item" data-search-text="云上GWAS数据详细信息说明">
+  <a href="bd0lu9aeu108adl0.html">云上GWAS数据详细信息说明</a>
+</li><li class="filter-item" data-search-text="干货-GWAS人群队列？详情信息？样本重叠？">
+  <a href="zxxcflxrz3sgwxl5.html">干货-GWAS人群队列？详情信息？样本重叠？</a>
+</li><li class="filter-item" data-search-text="02.本地数据模板SNP表头">
+  <a href="bgfy40bu3b3x7ykm.html">02.本地数据模板SNP表头</a>
+</li><li class="filter-item current" data-search-text="03.本地数据增加samplesize">
+  <a href="kgduo4uakrgg0kzq.html">03.本地数据增加samplesize</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="04.本地数据beta,se,or互相转换，置信区间公式">
+  <a href="hzg5igd65t4zcbzs.html">04.本地数据beta,se,or互相转换，置信区间公式</a>
+</li><li class="filter-item" data-search-text="05.本地数据无eaf补充">
+  <a href="rk0z9q37ey5qpad9.html">05.本地数据无eaf补充</a>
+</li><li class="filter-item" data-search-text="06.本地数据无rsid数据转换">
+  <a href="mhrxm56dwh0tx9i1.html">06.本地数据无rsid数据转换</a>
+</li><li class="filter-item" data-search-text="07.使用代码改表头">
+  <a href="gb2z99wy8icc1qua.html">07.使用代码改表头</a>
+</li><li class="filter-item" data-search-text="08.IEU上下载的VCF文件转换">
+  <a href="mzkfbwqgogphc127.html">08.IEU上下载的VCF文件转换</a>
+</li><li class="filter-item" data-search-text="09.样本重叠率的相关问题">
+  <a href="ybcs9e0g7kqzwi75.html">09.样本重叠率的相关问题</a>
+</li><li class="filter-item" data-search-text="10.如何从文献里找到其使用的GWAS数据？">
+  <a href="dvlrftlzmwhno7av.html">10.如何从文献里找到其使用的GWAS数据？</a>
+</li><li class="filter-item" data-search-text="11.pval -log10转换注意">
+  <a href="cfrt522wqa7k9v56.html">11.pval -log10转换注意</a>
+</li><li class="filter-item" data-search-text="12.数据标准化">
+  <a href="szfv01l9azl2bhvn.html">12.数据标准化</a>
+</li><li class="filter-item" data-search-text="13.LD环境的准备">
+  <a href="rhnk2rr6vze469gf.html">13.LD环境的准备</a>
+</li><li class="filter-item" data-search-text="XX.MendelR可用数据来源">
+  <a href="an6awimp01322vgh.html">XX.MendelR可用数据来源</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：数据准备与处理</span>
+        <span class="pill gold">代码块 2</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>samplesize不能直接使用数据计算，只能从GWAS数据下载的网站确定</span></p><p><span>确定好samplesize后，使用以下方法进行添加，输入文件名和samplesize的值，自动生成一个新的本地文件</span></p><p><span>1.如果是本地的暴露或者结局GWAS数据文件</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+#给本地的数据文件增加samplesize 这个123456需要改成自己gwas的具体数值
+add_samplesize("文件名.csv", 123456) 
+
+
+#如果是多个文件 全部放到工作目录中 确认好文件后缀 例如.csv 尽量同一个后缀
+#目录中不要放任何其他文件
+setwd("D:/data") #假如准备好了这样一个目录 将工作目录设置过去
+for(file in list.files(pattern=".csv")){
+  add_samplesize(file, 123456) 
+}
+#原理就是读取该目录中的文件列表 for循环调用一下代码添加样本量</code></pre></figure><p><br></p><p><span>2.如果是在线数据，在mr_common方法增加对应的参数</span></p><p><span>在线数据没法直接操作自己本地的数据，只能在代码中增加参数</span></p><p><span>此方法只能用于mr_common</span></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">mr_common("暴露", "结局", exposure_samplesize=10000) #比如暴露的samplesize
+mr_common("暴露", "结局", outcome_samplesize=10000) #比如结局的samplesize
+mr_common("暴露", "结局", 
+          exposure_samplesize=10000,
+          outcome_samplesize=10000) #暴露和结局都需要补充</code></pre></figure><p><br></p><p><span>steiger需要eaf和samplesize的数据，如果不想麻烦添加数据，可以选择关闭，增加参数即可，steiger=F</span></p><p><span>比如，下方的示例代码，关闭steiger功能</span></p><p><span>mr_common("暴露", "结局", steiger=F)</span></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="bgfy40bu3b3x7ykm.html"><em>上一篇</em><strong>02.本地数据模板SNP表头</strong></a><a class="nav-card" href="hzg5igd65t4zcbzs.html"><em>下一篇</em><strong>04.本地数据beta,se,or互相转换，置信区间公式</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

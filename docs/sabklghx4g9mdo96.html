@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01复现文章代码 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="惊了，四行代码复现一篇两样本！！！filefilerlibrary(MendelR) mr_common(&quot;ebi-a-GCST004131&quot;, &quot;ieu-b-85&quot;, p2=0, find_proxy = T) #IBD mr_common(&quot;ebi-a-GCST004132&quot;, &quot;ieu-b-…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>其他</span>
+  </div>
+  <h1 class="page-title">01复现文章代码</h1>
+  <div class="article-meta">
+    <span>所属章节：其他</span>
+    <span>字数：260</span>
+    <span>代码块：1</span>
+    <span>更新时间：2024-05-28</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>其他</h3>
+    <ul class="section-nav"><li class="filter-item current" data-search-text="01复现文章代码">
+  <a href="sabklghx4g9mdo96.html">01复现文章代码</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="02维生素D与下腰痛复现">
+  <a href="nbcbggaeu5o0e296.html">02维生素D与下腰痛复现</a>
+</li><li class="filter-item" data-search-text="MR投稿期刊推荐">
+  <a href="mg80bm50r1wxbkuq.html">MR投稿期刊推荐</a>
+</li><li class="filter-item" data-search-text="如何判断选题是否可以实现">
+  <a href="mq2zg0nylpeufd1e.html">如何判断选题是否可以实现</a>
+</li><li class="filter-item" data-search-text="MendelR榨干性能版本更新">
+  <a href="ieslz9scv0putuov.html">MendelR榨干性能版本更新</a>
+</li><li class="filter-item" data-search-text="关于R 4.3以上识别不了本地文件">
+  <a href="yvsu74mzms7b0ne2.html">关于R 4.3以上识别不了本地文件</a>
+</li><li class="filter-item" data-search-text="干货分享-如何批量下载Catalog数据">
+  <a href="uzy9sf1h6puh7452.html">干货分享-如何批量下载Catalog数据</a>
+</li><li class="filter-item" data-search-text="关于MendelR结果与自己写代码结果不一致的问题解读">
+  <a href="xnvv5lusvr76g14h.html">关于MendelR结果与自己写代码结果不一致的问题解读</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：其他</span>
+        <span class="pill gold">代码块 1</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>惊了，四行代码复现一篇两样本！！！</span></p><p><a href="https://flash0926.yuque.com/attachments/yuque/0/2024/pdf/26903514/1704684959434-823c9390-08a6-49be-b850-842e15648916.pdf" class="link-card" target="_blank" rel="noreferrer"><strong>file</strong><span>file</span></a></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+mr_common("ebi-a-GCST004131", "ieu-b-85", p2=0, find_proxy = T) #IBD
+mr_common("ebi-a-GCST004132", "ieu-b-85", p2=0, find_proxy = T) #CD
+mr_common("ebi-a-GCST004133", "ieu-b-85", p2=0, find_proxy = T) #UC</code></pre></figure><p><strong><span>注意文章开了代理find_proxy=T，没有过滤与结局强相关工具变量p2=0</span></strong></p><p><strong><span>GWAS数据ID描述搞反</span></strong></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1704685030821-96eb1f0c-b12b-4dd5-a326-ab85bd71d104.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_61%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1704685030821-96eb1f0c-b12b-4dd5-a326-ab85bd71d104.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_61%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1716885181498-9670dcd2-c2b7-4f31-9a6d-2e275dd8c0f1.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_37%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1716885181498-9670dcd2-c2b7-4f31-9a6d-2e275dd8c0f1.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_37%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>注意：文章用了有异质性选择ivw的随机效应模型的方法</span></p><p><span>​</span><br></p><p><span>经严格对比</span><u><span>工具变量个数</span></u><span>，以及</span><u><span>工具变量的具体数值（rsid、beta、se、pval）</span></u></p><p><span>1.工具变量所有信息一致，mregger结果一致，但是ivw/samplemode结果不一致。</span></p><p><span>2.考虑到weigthed mode 和 weighted median底层有随机算法，每次结果都不一致，所以不用对照这个结果。</span></p><p><span>经鉴定，</span><u><strong><span>文章结果具体数值错误</span></strong></u><span>。</span></p><p><span>​</span><br></p><p><span>有兴趣的同学，可以比对其文章提供的附件，和代码包跑出来的04工具变量文件的具体数据。</span></p><p><span>​</span><br></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="km0nlunhp5gexpep.html"><em>上一篇</em><strong>文章代码包引用说明</strong></a><a class="nav-card" href="nbcbggaeu5o0e296.html"><em>下一篇</em><strong>02维生素D与下腰痛复现</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

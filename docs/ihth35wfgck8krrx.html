@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多变量分析结果解读 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="多变量结果只是在两样本的基础上，纳入的别的暴露相关的SNP数据，解读原理和mr分析结果解读站内引用本文档是mr_common结果解读：1.中介请移步https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/fh8cil/qyxd3t2dmo71th…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>结果解读</span>
+  </div>
+  <h1 class="page-title">多变量分析结果解读</h1>
+  <div class="article-meta">
+    <span>所属章节：结果解读</span>
+    <span>字数：885</span>
+    <span>代码块：0</span>
+    <span>更新时间：2025-05-05</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>结果解读</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="mr分析结果解读">
+  <a href="poeybcagbdfisrcl.html">mr分析结果解读</a>
+</li><li class="filter-item" data-search-text="孟德尔结果展示OR值和beta值选择说明">
+  <a href="wdqg0hzm4awgfyih.html">孟德尔结果展示OR值和beta值选择说明</a>
+</li><li class="filter-item" data-search-text="不同snp个数对MR结果的影响">
+  <a href="neyupg0gmhbfxrkh.html">不同snp个数对MR结果的影响</a>
+</li><li class="filter-item" data-search-text="Power值计算教程-如何使用网页计算孟德尔随机化中的Power">
+  <a href="zkfd7vli6g12xk6i.html">Power值计算教程-如何使用网页计算孟德尔随机化中的Power</a>
+</li><li class="filter-item" data-search-text="批量分析结果解读">
+  <a href="kecrhyz42cp4qm0v.html">批量分析结果解读</a>
+</li><li class="filter-item" data-search-text="中介分析结果解读">
+  <a href="qyxd3t2dmo71thpa.html">中介分析结果解读</a>
+</li><li class="filter-item current" data-search-text="多变量分析结果解读">
+  <a href="ihth35wfgck8krrx.html">多变量分析结果解读</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="药物靶点的smr结果怎么看">
+  <a href="gefoiy8vvuc05wp0.html">药物靶点的smr结果怎么看</a>
+</li><li class="filter-item" data-search-text="批量分析时FDR矫正结果如何解读？">
+  <a href="xlhgmo646vga856g.html">批量分析时FDR矫正结果如何解读？</a>
+</li><li class="filter-item" data-search-text="方法学部分的权威参考文献引用 副本">
+  <a href="guczotux6imuqtko.html">方法学部分的权威参考文献引用 副本</a>
+</li><li class="filter-item" data-search-text="各种mr分析方法优缺点局限性详细解读">
+  <a href="erz57eflp6lpemoz.html">各种mr分析方法优缺点局限性详细解读</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：结果解读</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>多变量结果只是在两样本的基础上，纳入的别的暴露相关的SNP数据，解读原理和</span><a href="poeybcagbdfisrcl.html" class="link-card"><strong>mr分析结果解读</strong><span>站内引用</span><small>本文档是mr_common结果解读：1.中介请移步https://flash0926.yuque.com/org-wiki-flash0926-kivyu0/fh8cil/qyxd3t2dmo71thpa2.多变量请移步https://flash0926.yuque.com/org-wiki-...</small></a><span>类似</span></p><p><span>直接看输出结果中mr分析方法的结果输出，结合课程理论讨论结果。</span></p><p><span>​</span><br></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163467923-75a0ce2b-dfd9-4257-90e3-332dacd4ec00.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_17%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163467923-75a0ce2b-dfd9-4257-90e3-332dacd4ec00.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_17%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>0.1多个暴露跑分析时，提取出来的符合条件的SNP的数据</span></p><p><span>0.2通过0.1文件提取出来的结局的SNP交集数据</span></p><p><span>0.3 0.1和0.2 多个暴露分别harmonise_data后，最终用于多变量分析的数据</span></p><p><span>​</span><br></p><p><span>1~4结果为4中mr分析结果，主要还是看ivw，其他方法相互补充</span></p><p><strong><span>这里的结果和两样本的解读方法一样，</span></strong><strong><span>只是纳入的暴露工具变量数据是进行过其他暴露矫正的</span></strong></p><p><span>多变量提取数据的方法 原理请移步：</span><a href="wwhc5qbqb6v4x3ee.html" class="link-card"><strong>多变量分析方法</strong><span>站内引用</span><small>多变量分析支持在线和本地数据的共同分析，本地GWAS文件，请参照模板SNP修改数据表头mr_multi_common(c("ieu-a-2", "ieu-b-2"), "ebi-a-GCST011081")结果解读请移步：https://flash0926.yuque.com/org-wiki...</small></a></p><a href="https://player.bilibili.com/player.html?bvid=BV1mM4y1a72f&amp;autoplay=0" class="link-card" target="_blank" rel="noreferrer"><strong>thirdparty</strong><span>外部内容</span></a><p><br></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163691963-ac30ddab-a955-4575-b7b1-7362fee50bd0.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_12%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163691963-ac30ddab-a955-4575-b7b1-7362fee50bd0.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_12%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>1.1 ivw结果，各自看纳入其他暴露矫正后的mr分析结果</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163715386-3c15d593-c6ce-4483-8698-67c1266dc972.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_30%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163715386-3c15d593-c6ce-4483-8698-67c1266dc972.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_30%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>Description of approach: Stephen Burgess, Simon G Thompson. Multivariable Mendelian Randomization: the use of pleiotropic genetic variants to estimate causal effects. American Journal of Epidemiology 2015; 181(4):251-260. doi: 10.1093/aje/kwu283.</span></p><p><span>Description of inverse-variance weighted method: Stephen Burgess, Frank Dudbridge, Simon G Thompson. Re: "Multivariable Mendelian randomization: the use of pleiotropic genetic variants to estimate causal effects." American Journal of Epidemiology 2015; 181(4):290-291. doi: 10.1093/aje/kwv017.</span></p><p><span>Use for mediation analysis: Stephen Burgess, Deborah J Thompson, Jessica MB Rees, Felix R Day, John R Perry, Ken K Ong. Dissecting causal pathways using Mendelian randomization with summarized genetic data: Application to age at menarche and risk of breast cancer. Genetics 2017; 207(2):481-487. doi: 10.1534/genetics.117.300191.</span></p><p><span>1.2ivw异质性Q Test检验，pval&gt;0.05则没有异质性</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163753360-75bfd33f-ee73-427c-8c62-1bf370bded46.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_13%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163753360-75bfd33f-ee73-427c-8c62-1bf370bded46.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_13%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>2.1 egger 结果 和 ivw 同理</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163784731-18676540-101e-4f9d-bb8e-0577c67a8a51.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_32%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163784731-18676540-101e-4f9d-bb8e-0577c67a8a51.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_32%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>Jessica Rees, Angela Wood, Stephen Burgess. Extending the MR?Egger method for multivariable Mendelian randomization to correct for both measured and unmeasured pleiotropy. Statistics in Medicine 2017; 36(29): 4705-4718. doi: 10.1002/sim.7492.</span></p><p><span>2.2 egger 异质性Q Test检验 ，pval&gt;0.05则没有异质性</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163818952-546d4f99-be7d-499c-9f31-7cdd996ed741.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_19%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163818952-546d4f99-be7d-499c-9f31-7cdd996ed741.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_19%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>2.3 egger intercept  水平多效性结果 pval&gt;0.05则没有水平多效性</span></p><p><span>​</span><br></p><p><span>3.1 为lasso结果</span></p><p><span>经过纳入系数惩罚方法后，再次分析的ivw值</span></p><p><span>Andrew J Grant, Stephen Burgess. Pleiotropy robust methods for multivariable Mendelian randomization. arXiv 2020; 2008.11997</span></p><p><span>4.2median结果 和 ivw同理，也是一种mr分析方法</span></p><p><span>This is implemented by multivariable weighted quantile regression, with the quantile set to 0.5 (the median).</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163891912-6757c690-1219-4897-8296-598420705529.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_32%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2023/png/26903514/1691163891912-6757c690-1219-4897-8296-598420705529.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_32%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><br></p><p><span>5.0.MVMR包strength_mvmr计算F值结果（不是必要的内容）</span></p><p><span>MVMR包strength_mvmr报告的F值计算方法，要求每个暴露的F值大于10</span></p><p><span>文献：</span></p><p><span>Sanderson, E., et al., An examination of multivariable Mendelian randomization in the single-sample and two-sample summary data settings. International Journal of Epidemiology, 2018, 48, 3, 713-727. Available from: </span><a href="https://doi.org/10.1093/ije/dyy262" target="_blank" rel="noreferrer"><span>doi:10.1093/ije/dyy262</span></a></p><p><br></p><p><br></p><p><span>以上四种mvmr分析方法，主要看ivw，如果pval&lt;0.05，则证明在纳入其他暴露因素后，还是显著的暴露</span></p><p><br></p><p><br></p><p><span>为了检测异质性，可以使用IVW异质性Q检验。这个检验的原假设是所有基因的效应大小是一致的，如果p值小于0.05，就可以拒绝原假设，即存在异质性。</span></p><p><span>​</span><br></p><p><span>如果在IVW异质性Q检验中，p值小于0.05，表示存在异质性。在这种情况下，你可以考虑使用其他方法来处理异质性，例如使用加权中位数方法（Weighted Median）或MR-Egger方法。这些方法可以在存在异质性的情况下提供更可靠的因果估计。</span></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>最理想的结果，ivw和egger均没有异质性，暴露F值大于10（不是必要的，如果不大于10，不要放文章），然后根据实际结果讨论</span></p><p><span>​</span><br></p><p><span>MR-BMA 上新，基于贝叶斯方法的多变量MR，待更新...</span></p><p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6946691/" target="_blank" rel="noreferrer"><span>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6946691/</span></a></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1719137370558-c97517cc-1401-4c7d-ae66-52114de5bca3.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_27%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1719137370558-c97517cc-1401-4c7d-ae66-52114de5bca3.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_27%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="qyxd3t2dmo71thpa.html"><em>上一篇</em><strong>中介分析结果解读</strong></a><a class="nav-card" href="gefoiy8vvuc05wp0.html"><em>下一篇</em><strong>药物靶点的smr结果怎么看</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

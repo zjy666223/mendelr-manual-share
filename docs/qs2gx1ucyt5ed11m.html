@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024.02.22-9.2.25更新详细记录 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="一、更新的MR方法：（1）ConMix，全称contamination mixture，近期多个高分孟德尔随机化文章均使用了该方法.Contamination mixture method 擅长分析数百个工具变量，可以在没有无效工具的情况下提供因果估计值。——2020年1月，《Nature com…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>版本更新记录</span>
+  </div>
+  <h1 class="page-title">2024.02.22-9.2.25更新详细记录</h1>
+  <div class="article-meta">
+    <span>所属章节：版本更新记录</span>
+    <span>字数：1008</span>
+    <span>代码块：0</span>
+    <span>更新时间：2024-03-04</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>版本更新记录</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="2025.08.02-9.2.38更新详情">
+  <a href="tcbdtx4a66nnfxgd.html">2025.08.02-9.2.38更新详情</a>
+</li><li class="filter-item" data-search-text="2024.11.27-9.2.37更新详情">
+  <a href="mv2lgp6d7zvsfgrz.html">2024.11.27-9.2.37更新详情</a>
+</li><li class="filter-item" data-search-text="2024.04.05-9.2.30更新详情">
+  <a href="cxwkfmb9n9a5ec6o.html">2024.04.05-9.2.30更新详情</a>
+</li><li class="filter-item" data-search-text="2024.04.02-9.2.29 更新详情">
+  <a href="dnlzxq804eckou1n.html">2024.04.02-9.2.29 更新详情</a>
+</li><li class="filter-item" data-search-text="2024.03.12-9.2.28更新详情">
+  <a href="udpaei2o2d9ml2hs.html">2024.03.12-9.2.28更新详情</a>
+</li><li class="filter-item" data-search-text="2024.02.26-9.2.27更新详细记录">
+  <a href="iixmye5ktmob4quc.html">2024.02.26-9.2.27更新详细记录</a>
+</li><li class="filter-item" data-search-text="2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级">
+  <a href="nka88433ln0vzxas.html">2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级</a>
+</li><li class="filter-item current" data-search-text="2024.02.22-9.2.25更新详细记录">
+  <a href="qs2gx1ucyt5ed11m.html">2024.02.22-9.2.25更新详细记录</a><span class="badge">当前</span>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：版本更新记录</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><strong><span>一、更新的MR方法：</span></strong></p><p><strong><span>（1）</span></strong><strong><span>ConMix，全称contamination mixture，近期多个高分孟德尔随机化文章均使用了该方法.</span></strong></p><p><span>Contamination mixture method 擅长分析数百个工具变量，可以在没有无效工具的情况下提供因果估计值。——</span><span>2020年1月，《</span><span>Nature communications</span><span>》</span><span>（IF=16.6）</span><span>刊载了题为：</span><span>A robust and efficient method for Mendelian randomization with hundreds of genetic variants </span><span>的研究论文中认为该方法有助于确定具有相似因果估计的遗传变异组，这些遗传变异组可能代表了风险因素影响结果的不同机制。其次，在存在无效IVs的情况下，它稳健且有效地执行MR。与其他稳健的方法相比，它在一系列现实场景中具有最低的均方误差(mean squared error)。</span></p><p><strong><span>（2）Robust adjusted profile score (MR-RAPS)：该方法允许纳入些弱工具变量，通过这些弱工具变量对孟德尔随机化进行稳健统计估计。</span></strong></p><p><span>该方法可以作为增加工作量的补充，结果与IVW结果相近，可以丰富文章内容，具体内容可仿照下文“</span><span>MR - RAPS考虑了特殊的多效性，可以为许多弱工具变量的MR分析提供稳健的推断</span><span>”。</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1708591329574-f9e6dc27-3862-4f6b-b0a7-66165323e0cc.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1708591329574-f9e6dc27-3862-4f6b-b0a7-66165323e0cc.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>（3）Debiased inverse-variance weighted method(dIVW)是去偏反方差加权法消除了IVW方法的弱仪器偏差，在许多弱仪器下具有更强的鲁棒性。</span></strong></p><p><span>Ting Ye, Jun Shao, Hyunseung Kang (2021). Debiased Inverse-Variance Weighted Estimator in Two-Sample Summary-Data Mendelian Randomization. The Annals of Statistics, 49(4), 2079-2100. Also available at </span><a href="https://arxiv.org/abs/1911.09802" target="_blank" rel="noreferrer"><span>Debiased Inverse-Variance Weighted Estimator in Two-Sample Summary-Data Mendelian Randomization</span></a></p><p><strong><span>以上三个方法均可以直接利用代码包，增加该方法名称后快速完成分析</span></strong></p><p><span>使用mr_method_list() 查看具体可用mr分析方法，使用method_list 设置mr分析方法</span></p><p><span>library</span><span>(</span><span>MendelR</span><span>)</span></p><p><span>mr_method_list</span><span>() </span><span>#查看具体由哪些mr分析方法 按照格式传入参数即可</span></p><p><span>#传入到method_list参数</span></p><p><span>mr_common</span><span>(</span><span>"</span><span>ieu-a-2"</span><span>, </span><span>"</span><span>ieu-b-2"</span><span>, </span><span>p1</span><span>=</span><span>5e-8</span><span>, </span><span>p2</span><span>=</span><span>5e-5</span><span>, </span><span>r2</span><span>=</span><span>0.001</span><span>, </span><span>kb</span><span>=</span><span>10000</span><span>, </span></p><p><span>method_list</span><span>=</span><span>c</span><span>(</span><span>"mr_ivw", "mr_conmix",“mr_raps","mr_divw"</span><span>))</span></p><p><span>​</span><br></p><p><strong><span>二、满足东南亚人群的MR分析，适合避开欧洲人群的MR分析，实现弯道超车</span></strong></p><p><span>随着孟德尔随机化分析的日渐火热，已经有不少学员开始另辟蹊径，寻找更容易发表</span><span>SCI</span><span>的角度！</span></p><p><span>​</span><br></p><p><span>其中利用亚洲人的数据库做横断面研究或队列研究</span><span>+</span><span>亚洲人群的孟德尔随机化分析！值得大家学习和效仿！</span></p><p><span>​</span><br></p><p><span>首先，竞争小，该方向的相关</span><span>SCI</span><span>较少，其次，具有创新性，且在一众的欧洲人群的孟德尔随机化分析文章中更容易脱颖而出！最后，该方向对亚洲人群的相关疾病具有较好的指导性！</span></p><p><span>​</span><br></p><p><span>为了更好的帮助大家分析，医工科研的孟德尔随机化分析代码包也更新开发了适合亚洲人群分析的</span><span>MR</span><span>功能！</span></p><p><span>​</span><br></p><p><span>满足东亚人群的MR分析，适合避开欧洲人群的MR分析，实现弯道超车</span></p><p><span>在MendelR代码包中，增加了pop参数，学员可以通过此参数设置成东亚等人群，进行连锁不平衡了，为大家进行亚洲人群的MR分析提供便捷方法。</span></p><p><span>代码如下：</span></p><p><span>​</span><br></p><p><span>两样本层面的代码分析：</span></p><p><span>library</span><span>(</span><span>MendelR</span><span>)</span></p><p><span>mr_common("</span><span>暴露</span><span>", "</span><span>结局</span><span>", pop = "EAS")</span></p><p><span>​</span><br></p><p><span>一键中介分析功能：</span></p><p><span>library</span><span>(</span><span>MendelR</span><span>)</span></p><p><span>mr_intermediary("</span><span>暴露</span><span>", "</span><span>中介</span><span>", "</span><span>结局</span><span>", </span></p><p><span>pop_e_2_o = "EAS", pop_e_2_i = "EAS", pop_i_2_o = "EAS")</span></p><p><span>​</span><br></p><p><strong><span>除此之外，本代码包的其他的一键分析，也有pop参数，可以针对非欧洲人群的数据进行连锁不平衡哦！</span></strong></p><p><br></p><p><strong><span><br></span></strong><strong><span> </span></strong></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="nka88433ln0vzxas.html"><em>上一篇</em><strong>2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

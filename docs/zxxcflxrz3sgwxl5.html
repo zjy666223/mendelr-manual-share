@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>干货-GWAS人群队列？详情信息？样本重叠？ · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="前言：许多同学在入门孟德尔随机化，学习了很多常见数据库之后，还是无法理清各种数据的真实来源。1.无法找到数据的详情信息，数据的队列信息到底哪里可以找得到2.两个数据测序人群是否属于同个队列，是否存在样本重叠在本文中，将给大家彻底理清各种数据库之间的差异以及关联。让大家在做MR分析时，能够对数据库有…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>数据准备与处理</span>
+  </div>
+  <h1 class="page-title">干货-GWAS人群队列？详情信息？样本重叠？</h1>
+  <div class="article-meta">
+    <span>所属章节：数据准备与处理</span>
+    <span>字数：2486</span>
+    <span>代码块：2</span>
+    <span>更新时间：2024-09-25</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>数据准备与处理</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="针对IEU在线数据服务的问题的全方位解决方案">
+  <a href="nvtcexkgrhs5tvv8.html">针对IEU在线数据服务的问题的全方位解决方案</a>
+</li><li class="filter-item" data-search-text="00.OpenGWAS项目Token申请流程">
+  <a href="gxocspnfe6s6glbw.html">00.OpenGWAS项目Token申请流程</a>
+</li><li class="filter-item" data-search-text="紧急！IEU升级账号等级登记！">
+  <a href="mh8g24itfeepx9qz.html">紧急！IEU升级账号等级登记！</a>
+</li><li class="filter-item" data-search-text="0. 必看！常见GWAS数据来源汇总目录">
+  <a href="oipyh10uyxzuovce.html">0. 必看！常见GWAS数据来源汇总目录</a>
+</li><li class="filter-item" data-search-text="1.GWAS Catalog">
+  <a href="rst7w7hcm4kti3mg.html">1.GWAS Catalog</a>
+</li><li class="filter-item" data-search-text="2.UKB 2018Round2英国生物银行的汇总数据集">
+  <a href="fso9suo1zwkk9w0e.html">2.UKB 2018Round2英国生物银行的汇总数据集</a>
+</li><li class="filter-item" data-search-text="3.ieu--opengwas--mrbase收录的在线数据">
+  <a href="bd6kgzqs7bxvek9g.html">3.ieu--opengwas--mrbase收录的在线数据</a>
+</li><li class="filter-item" data-search-text="4.芬兰数据库超详细介绍以及重叠率计算">
+  <a href="akuhdb5c4lb6s6a1.html">4.芬兰数据库超详细介绍以及重叠率计算</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R12数据库!">
+  <a href="ltxzn4udtlge3rxi.html">光速获取芬兰R12数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R11数据库!">
+  <a href="qrbnfh8t1bgl21md.html">光速获取芬兰R11数据库!</a>
+</li><li class="filter-item" data-search-text="光速获取芬兰R10数据库!">
+  <a href="tr0t1gs7bdtxivcq.html">光速获取芬兰R10数据库!</a>
+</li><li class="filter-item" data-search-text="5.MiBioGen肠道菌群">
+  <a href="vqowppo1w81fowab.html">5.MiBioGen肠道菌群</a>
+</li><li class="filter-item" data-search-text="6.UKB的35个血尿标志物">
+  <a href="stqshobilao148i9.html">6.UKB的35个血尿标志物</a>
+</li><li class="filter-item" data-search-text="7.The Within Family Consortium">
+  <a href="gwotcny75txn86r5.html">7.The Within Family Consortium</a>
+</li><li class="filter-item" data-search-text="8.血细胞联盟">
+  <a href="ltbg5duhfioika16.html">8.血细胞联盟</a>
+</li><li class="filter-item" data-search-text="9.Stroke数据库">
+  <a href="iyxbwll1zf1zv6sz.html">9.Stroke数据库</a>
+</li><li class="filter-item" data-search-text="10.高血压数据库">
+  <a href="kg8taz9tx3grgyq9.html">10.高血压数据库</a>
+</li><li class="filter-item" data-search-text="11.不同白细胞、红细胞GWAS">
+  <a href="nz9o70x8pxbnqklx.html">11.不同白细胞、红细胞GWAS</a>
+</li><li class="filter-item" data-search-text="12.房颤数据库">
+  <a href="qwh6cutmpht1uqhm.html">12.房颤数据库</a>
+</li><li class="filter-item" data-search-text="云上GWAS数据详细信息说明">
+  <a href="bd0lu9aeu108adl0.html">云上GWAS数据详细信息说明</a>
+</li><li class="filter-item current" data-search-text="干货-GWAS人群队列？详情信息？样本重叠？">
+  <a href="zxxcflxrz3sgwxl5.html">干货-GWAS人群队列？详情信息？样本重叠？</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="02.本地数据模板SNP表头">
+  <a href="bgfy40bu3b3x7ykm.html">02.本地数据模板SNP表头</a>
+</li><li class="filter-item" data-search-text="03.本地数据增加samplesize">
+  <a href="kgduo4uakrgg0kzq.html">03.本地数据增加samplesize</a>
+</li><li class="filter-item" data-search-text="04.本地数据beta,se,or互相转换，置信区间公式">
+  <a href="hzg5igd65t4zcbzs.html">04.本地数据beta,se,or互相转换，置信区间公式</a>
+</li><li class="filter-item" data-search-text="05.本地数据无eaf补充">
+  <a href="rk0z9q37ey5qpad9.html">05.本地数据无eaf补充</a>
+</li><li class="filter-item" data-search-text="06.本地数据无rsid数据转换">
+  <a href="mhrxm56dwh0tx9i1.html">06.本地数据无rsid数据转换</a>
+</li><li class="filter-item" data-search-text="07.使用代码改表头">
+  <a href="gb2z99wy8icc1qua.html">07.使用代码改表头</a>
+</li><li class="filter-item" data-search-text="08.IEU上下载的VCF文件转换">
+  <a href="mzkfbwqgogphc127.html">08.IEU上下载的VCF文件转换</a>
+</li><li class="filter-item" data-search-text="09.样本重叠率的相关问题">
+  <a href="ybcs9e0g7kqzwi75.html">09.样本重叠率的相关问题</a>
+</li><li class="filter-item" data-search-text="10.如何从文献里找到其使用的GWAS数据？">
+  <a href="dvlrftlzmwhno7av.html">10.如何从文献里找到其使用的GWAS数据？</a>
+</li><li class="filter-item" data-search-text="11.pval -log10转换注意">
+  <a href="cfrt522wqa7k9v56.html">11.pval -log10转换注意</a>
+</li><li class="filter-item" data-search-text="12.数据标准化">
+  <a href="szfv01l9azl2bhvn.html">12.数据标准化</a>
+</li><li class="filter-item" data-search-text="13.LD环境的准备">
+  <a href="rhnk2rr6vze469gf.html">13.LD环境的准备</a>
+</li><li class="filter-item" data-search-text="XX.MendelR可用数据来源">
+  <a href="an6awimp01322vgh.html">XX.MendelR可用数据来源</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：数据准备与处理</span>
+        <span class="pill gold">代码块 2</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><h3><span>前言：</span></h3><p><span>许多同学在入门孟德尔随机化，学习了很多常见数据库之后，还是无法理清各种数据的真实来源。</span></p><p><span>1.无法找到数据的详情信息，数据的队列信息到底哪里可以找得到</span></p><p><span>2.两个数据测序人群是否属于同个队列，是否存在样本重叠</span></p><p><span>在本文中，将给大家彻底理清各种数据库之间的差异以及关联。让大家在做MR分析时，能够对数据库有更加清晰的了解。</span></p><p><strong><span>关键词：数据库、Catalog、IEU、云上GWAS、样本重叠、两样本、人群队列</span></strong></p><h3><span>数据分类思维导图：</span></h3><p><span>常用数据库的网址，基本上都可以从这个网址上找到。</span><a href="oipyh10uyxzuovce.html" class="link-card"><strong>0. 必看！常见GWAS数据来源汇总目录</strong><span>站内引用</span><small>1.GWAS Catlog2.UKB 2018Round2英国生物银行的汇总数据集3.ieu--opengwas--mrbase收录的在线数据4.芬兰数据库以及重叠率计算云上GWAS数据库-汇总了非常多的数据00.云上GWAS的介绍其他专用数据库：EGG：早期生长联盟数据，包含出生体重，出生头...</small></a></p><p><span>大家有各种各样的数据来源，也可以在这个文档内评论留言，如果觉得还不错，还可以点个赞。</span></p><p><span>在线和本地的定义，是指做MR的时候，是否需要下载到本地才能分析。</span></p><p><span>注意：本地数据库里的数据，如果在在线数据库无法找到具体的id。则需要通过数据提供的官网，汇总下载文档，文章数据来源等地方，找到下载链接，进行下载，本地清洗后，才可以进行MR分析。</span></p><figure class="image-card"><a href="../assets/media/d22ddce0f5f3e957cefa.jpeg"><img src="../assets/media/d22ddce0f5f3e957cefa.jpeg" alt="boardboard" loading="lazy"></a></figure><h3><span>在线数据库的特性</span></h3><p><span>各种来源的本地数据</span></p><p><span>根据一定的规范进行数据清洗</span></p><p><span>提供大容量存储空间，存储到服务器数据库中</span></p><p><span>提供数据提取接口，满足MR以及各种分析业务逻辑的需求。</span></p><p><span>这种数据库的构建，都是需要大量的人力及服务器成本才可以实现。</span></p><h3><span>汇总数据库横向比较：</span></h3><p><span>汇总数据库指：汇总了很多不同来源的数据（catalog、ukb、芬兰等），自己不创造数据的数据库。</span></p><div class="table-scroll"><table><colgroup><col><col><col><col></colgroup><tbody><tr><td></td><td><p><span>Catalog</span></p></td><td><p><span>云上GWAS</span></p></td><td><p><span>IEU</span></p></td></tr><tr><td><p><span>可在线提取</span></p></td><td><p><span>×</span></p></td><td><p><span>√</span></p></td><td><p><span>√</span></p></td></tr><tr><td><p><span>数据更新频率</span></p></td><td><p><span>最高</span></p></td><td><p><span>较高</span></p></td><td><p><span>慢</span></p></td></tr><tr><td><p><span>数据新旧程度</span></p></td><td><p><span>很新</span></p></td><td><p><span>较新</span></p></td><td><p><span>陈旧</span></p></td></tr><tr><td><p><span>数据量</span></p></td><td><p><span>巨大</span></p></td><td><p><span>多</span></p></td><td><p><span>少量</span></p></td></tr><tr><td><p><span>提取或者下载速度</span></p></td><td><p><span>ftp下载慢，处理费时间</span></p></td><td><p><span>巨快，直接秒级提取</span></p></td><td><p><span>一般，各种502错误，需要配置token（token有bug，提取数据可能会丢失）</span></p></td></tr></tbody></table></div><h3><span>怎么选择数据：</span></h3><p><span>如果一个表型的数据，有多个数据来源，那应该如何选择？</span></p><p><span>医工科研团队总结了选择数据的优先级，大家可以参考，也可以注入自己的理解。</span></p><p><span>文章的期刊影响因子&gt;数据发表的年限&gt;数据samplesize样本量==数据case病例组数量</span></p><p><span>最终要回归到做出来的MR结果，毕竟结果不好都是空话。</span></p><h3><span>确认详情信息：</span></h3><h4><span>1.各机构自己构建的数据库：</span></h4><p><span>如果是各机构组织自己构建的数据库，一般都会有官网。</span></p><p><span>比如UKB数据库，芬兰数据库等，都会有提供相应的官网。</span></p><p><span>医工科研团队特别提供了常见数据库的使用教程，如果需要的，可以从孟德尔修炼手册-数据准备与处理-常见GWAS数据目录中找到。</span></p><p><span>我们会详细介绍常见的数据库是怎么下载数据的，以及怎么查看对应的表型信息。</span><a href="oipyh10uyxzuovce.html" class="link-card"><strong>0. 必看！常见GWAS数据来源汇总目录</strong><span>站内引用</span><small>1.GWAS Catlog2.UKB 2018Round2英国生物银行的汇总数据集3.ieu--opengwas--mrbase收录的在线数据4.芬兰数据库以及重叠率计算云上GWAS数据库-汇总了非常多的数据00.云上GWAS的介绍其他专用数据库：EGG：早期生长联盟数据，包含出生体重，出生头...</small></a></p><h4><span>2.各种文章的提供的数据</span></h4><p><span>这种数据，可以直接从原文的队列介绍中，找到人群队列信息。</span></p><p><span>更多的测序信息，调整的协变量等信息，则需要进一步查看原文获得。</span></p><p><span>也可以看相关的引用文章，参考和模仿别人是怎么写的。</span></p><h4><span>3.在线数据库IEU</span></h4><p><span>当前的IEU在线数据库，是入门MR的首选在线数据库。它的优点就是在很早之前就提供了相应的接口包，可以快速的完成MR分析。缺点就是数据比较旧了，具体的介绍可以看这个文档</span><a href="bd6kgzqs7bxvek9g.html" class="link-card"><strong>3.ieu--opengwas--mrbase收录的在线数据</strong><span>站内引用</span><small>写在前面：目前IEU数据库，提供了ieugwasr包（TwoSampleMR包底层数据获取接口）的提取数据接口，所以成为了众多孟德尔随机化分析初学者的首选数据库优点：1.汇总了常用的ukb，finn芬兰，met代谢组，eqtlGen，catalog部分数据，这些数据提取起来比较方便2.提供的简...</small></a></p><p><span>重点解释一下这个数据库的成分，可以通过数据id的前缀直接判断数据来源。</span></p><p><span>具体的描述</span></p><p><figure class="image-card"><a href="../assets/media/ecc2492d35a148cb7b8a.png"><img src="../assets/media/ecc2492d35a148cb7b8a.png" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>bbj</span></strong><span> 日本生物银行东亚的数据。</span></p><p><strong><span>ebi-a</span></strong><span>前缀的数据，统一来源是Catalog。</span></p><p><strong><span>eqtl-a </span></strong><span>来源eqtlGEN的全血数据。</span></p><p><strong><span>finn-b </span></strong><span>是芬兰R5的数据，目前芬兰数据已经是R11了。</span></p><p><strong><span>ieu-a ieu-b</span></strong><span> 是IEU组织早期收集的数据，可以点进去找到PMID查看数据信息。</span></p><p><strong><span>met-</span></strong><span> 是代谢组的信息。</span></p><p><strong><span>prot- </span></strong><span>是蛋白组的信息。</span></p><p><span>其他编号开头的，如果是ukb、ubm开头的，则是ukb队列（固定的那50W人群）。</span></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>特别注意：</span></p><p><span>如果需要确认ebi-a的人群队列信息，是需要去看原文的。</span></p><p><span>比如这个id的例子，点进去详情后，可以看到PMID，也可以看到GCST的id号，是可以利用去Catalog找到原始的数据文章，然后从文章中找到具体的队列信息。</span></p><p><span>如果在线分析受阻，下载本地数据的话，可以直接找到对应gcst号，去catalog上直接下载，自己清洗后进行本地分析。具体的教程，也可以看这个文档</span><a href="rst7w7hcm4kti3mg.html" class="link-card"><strong>1.GWAS Catalog</strong><span>站内引用</span><small>零、网站基本使用操作以下教程，如果网页无法正常打开、显示，需要先搭梯子翻墙。https://www.ebi.ac.uk/gwas/home点击Summary statictics进入后，可以查看catalog上包含的数据详情https://www.ebi.ac.uk/gwas/download...</small></a></p><p><figure class="image-card"><a href="../assets/media/21653a29be5fd9a86692.png"><img src="../assets/media/21653a29be5fd9a86692.png" alt="image插图" loading="lazy"></a></figure></p><p><span>有些数据没有提供pmid的，需要下载的话，只能下载vcf文件，然后进行转换。</span></p><p><span>除了常用的代码转换，医工科研团队特别研发了一个</span><strong><span>零代码基本零内存</span></strong><span>的转化软件。</span></p><p><span>具体的操作，可以看这个文档：</span><a href="mzkfbwqgogphc127.html" class="link-card"><strong>08.IEU上下载的VCF文件转换</strong><span>站内引用</span><small>推荐使用零代码转换工具：链接：链接：https://pan.baidu.com/s/1mVW98I5qaCvefYzH6wgqCA?pwd=8888 提取码：8888 --来自百度网盘超级会员V10的分享零代码软件，不需要有任何的编程基础，傻瓜式点点点操作，转换完成后，直接用MendelR包就...</small></a></p><h4><span>4.云上GWAS</span></h4><p><span>云上GWAS和IEU类似，是一个中国团队制作的在线数据库。它的优点就是数据特别新，囊括近年来新发表的数据。</span></p><p><figure class="image-card"><a href="../assets/media/cd74d6c09a68cae4dd4d.png"><img src="../assets/media/cd74d6c09a68cae4dd4d.png" alt="image插图" loading="lazy"></a></figure></p><p><span>其数据详情确认，可以从pmid，或者ID编号与数据来源中可以找到。</span></p><p><figure class="image-card"><a href="../assets/media/788cde6ec87a212a3caa.png"><img src="../assets/media/788cde6ec87a212a3caa.png" alt="image插图" loading="lazy"></a></figure></p><p><strong><span>特别注意：云上GWAS不提供原始数据的下载，所有的服务，仅限于提供接口提取用于MR分析的数据。如果需要完整的本地数据，自行找到分页中源数据链接，找到原始数据的下载链接下载。</span></strong></p><p><span>更多详细的数据信息可以点开链接查看：</span></p><p><span>公众号推文：</span><a href="https://mp.weixin.qq.com/s/yMPXszxTtI7DVjhcvfbXNg" class="link-card" target="_blank" rel="noreferrer"><strong>云上GWAS数据数据详情及使用说明！</strong><span>引用链接</span><small>云上GWAS数据数据详情及使用说明！</small></a></p><p><span>修炼手册链接：</span><a href="bd0lu9aeu108adl0.html" class="link-card"><strong>云上GWAS数据详细信息说明</strong><span>站内引用</span><small>云上GWAS数据包含了2023-2024年各大官方网站发表的高质量GWAS数据！如果您使用云上GWAS数据库，均可一键提取直接分析数据，无需反复下载，折磨自己和电脑！时间就是资源，效率就是抢发SCI的关键！海量最新GWAS数据+ 便捷高效的获取方式= 快速产出高质量研究成果！下面是医工科研团队...</small></a></p><h4><span>5.IEU和云上的接口横向对比</span></h4><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">exposure_data = TwoSampleMR::extract_instruments("ieu-a-2", p1=5e-8, r2=0.001, kb=10000)
+outcome_data = TwoSampleMR::extract_outcome_data(exposure_data$SNP, "ieu-b-2")</code></pre></figure><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">exposure_data = FastGWASR::extract_tophist_iv("ukb-saige-994", pval=5e-8, r2=0.001, kb=10000)
+outcome_data = FastGWASR::extract_outcome_data("finngen_R11_AB1_ACTINOMYCOSIS", exposure_data$SNP)</code></pre></figure><p><span>云上支持多个id传入，批量提取，具体可以看这个接口文档：</span><a href="https://www.medicineitlab.com/archives/fastgwasruse" class="link-card" target="_blank" rel="noreferrer"><strong>02.FastGWASR的使用</strong><span>引用链接</span><small>FastGWASR接口使用说明 一、如何获取自己的积分 除了可以直接在网站上查自己的积分（网站会有点延迟）外，可以直接使用代码包进行获取 library(FastAuthR) library(FastGWASR) get_score() #获取自己的积分 二、FastGWASR的使用 注意：使用对</small></a></p><p><span>MendelR内嵌云上的功能，直接填id即可直接提取。</span><a href="aeidg23111k4i660.html" class="link-card"><strong>03.云上GWAS通用实操方法</strong><span>站内引用</span><small>切换到模式三后，MendelR可以通过云上GWAS的具体id进行数据提取并分析使用前，请先激活云上GWAS的功能：01.如何激活云上GWAS云上GWAS数据网页端：https://gwas.medicineitlab.com/视频：https://player.bilibili.com/pla...</small></a></p><p><span>MendelR批量分析则用mr_common_batch，各组数据批量则看对应的文档。</span><a href="ey8by96nb8cva4yr.html" class="link-card"><strong>04.云上GWAS数据库批量分析方法</strong><span>站内引用</span><small>https://player.bilibili.com/player.html?bvid=BV195411e7Yo&amp;amp;autoplay=0一个属于自己中国人的数据库汇总网站，且提供了接口快速获取数据只要你会代码操作，高质量数据如何出高质量SCI不在话下孟德尔随机化分析是以GWAS数据为基础的因果...</small></a></p><p><a href="eohbsgho1bi116ka.html" class="link-card"><strong>05.云上GWAS两个批量数据的分析方法</strong><span>站内引用</span><small>单个批量数据的分析方法可以看这个文档：04.云上GWAS数据库批量分析方法那如果我有两个批量数据怎么分析呢？其实就是单个批量分析的基础上稍微改写一下，就可以实现啦~1.首先构造两个批量数据的id列表这里的代码作用，匹配了1400代谢物和179脂质代谢物的id列表可以按照自己的需求从云上GWAS...</small></a></p><p><span>总而言之，就是构造id列表，传给一键分析代码来使用。</span></p><h3><span>确认样本重叠</span></h3><p><strong><span>两样本两样本，着重突出就是暴露和结局分别来自两个样本队列，没有重叠。</span></strong></p><p><strong><span>样本重叠---暴露和结局的两个人群样本，有个体是重叠的。</span></strong></p><p><strong><span>即同一个人张三，分别出现在暴露和结局中了。</span></strong></p><p><strong><span>​</span></strong><br></p><p><strong><span>注意：这里所说的样本重叠是指，暴露和结局之间的重叠。暴露与暴露，结局与结局，没有这样的限制。</span></strong></p><p><strong><span>​</span></strong><br></p><p><span>有些文章完全不理会样本是否重叠，是否造成假阳性的存在。</span></p><p><span>用两个完全重叠的数据，做两样本MR分析。做到单样本不是单样本(单样本的算法不同的)，两样本不是两样本。</span></p><p><span>其中最有可能重叠的是UKB的数据，因为UKB的50W人队列，除了一些组织leelab，panukb发布了专属的数据库之外，很多机构组织也申请了UKB的个体数据，制作了GWAS，上传到Catalog或者其他地方。</span></p><p><span>所以我们在选择用数据做MR分析之前，一定一定要先去看看数据的人群队列。以免做到最后才发现数据有问题，被审稿人质疑。</span></p><h3><span>样本重叠解决方案</span></h3><h4><span>1.不要使用有样本重叠的数据</span></h4><p><span>用两个来自不同数据库的数据，或者换个说法，两个数据上的测序人群没有重叠。</span></p><p><span>这里很好理解，也是最科学的方式，直接完全避免出现假阳性。</span></p><h4><span>2.计算样本重叠带来的偏倚</span></h4><p><span>公众号推文链接：</span><a href="https://mp.weixin.qq.com/s/EhLCTWM4sM5GtxJ9CTs5gw" class="link-card" target="_blank" rel="noreferrer"><strong>孟德尔随机化——样本重叠率的相关问题</strong><span>引用链接</span></a></p><p><span>修炼手册链接：</span><a href="ybcs9e0g7kqzwi75.html" class="link-card"><strong>09.样本重叠率的相关问题</strong><span>站内引用</span><small>两样本孟德尔分析时如果出现了暴露和结局有一定的重叠情况则称为子样本孟德尔随机化（Subsample Mendelian randomization），因此这种情况需要计算或者估计样本重叠的大小和可能的偏移，尽量不要用有重叠的数据8.5.2 Subsample Mendelian randomi...</small></a></p><h4><span>3.使用MRlap来查看样本重叠是否有结果上的偏倚</span></h4><p><span>修炼手册链接：</span><a href="ggcx9qoyhzsr1dgc.html" class="link-card"><strong>解决样本重叠MRlap与批量MRlap</strong><span>站内引用</span><small>待MendelR版本更新到10.0支持本地数据，支持大量数据的批量分析一、环境准备library(MendelR) prepare_MRlap() #准备环境代码只需要执行一次准备好后分别检查是否安装MRlapPro包成功，LD文件夹是否在工作目录下。前者用于计算MRlap的主要功能，后者主要...</small></a></p><p><span>​</span><br></p><p><span>​</span><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="qwh6cutmpht1uqhm.html"><em>上一篇</em><strong>12.房颤数据库</strong></a><a class="nav-card" href="bgfy40bu3b3x7ykm.html"><em>下一篇</em><strong>02.本地数据模板SNP表头</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

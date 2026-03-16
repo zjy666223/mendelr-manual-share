@@ -1,3 +1,6 @@
-# MendelR Manual Share
+# 孟德尔随机化修炼手册 分享站
 
-A shareable static index site generated from the public Yuque book overview for the Mendelian randomization manual.
+- 页面入口：index.html
+- 正文页数：217
+- 引用：医工科研-孟德尔随机化
+- 生成方式：运行 `python3 build_site.py` 会重新抓取语雀公开正文并生成多页面静态站点。

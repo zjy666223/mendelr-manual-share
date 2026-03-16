@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>留一图LeaveOneOut · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="故名思意，这个方法是逐个剔除单个SNP，然后重新做MR分析这个图主要是IVW的方法Y轴对应 每个剔除的rsid号，和all不剔除的ivw 方法X轴对应 ivw具体数值，黑点和红点是beta效应值，线段代表beta值得置信区间​这个方法主要是检查每个工具变量，是否对整体mr结果有严重的偏倚影响最低标…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>图表呈现</span>
+  </div>
+  <h1 class="page-title">留一图LeaveOneOut</h1>
+  <div class="article-meta">
+    <span>所属章节：图表呈现</span>
+    <span>字数：190</span>
+    <span>代码块：0</span>
+    <span>更新时间：2023-10-11</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>图表呈现</h3>
+    <ul class="section-nav"><li class="filter-item current" data-search-text="留一图LeaveOneOut">
+  <a href="bd8n7pytx19gbm3u.html">留一图LeaveOneOut</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="000.FastPlotR的安装以及常见问题">
+  <a href="ag7sl2ymp3yoz0wo.html">000.FastPlotR的安装以及常见问题</a>
+</li><li class="filter-item" data-search-text="001.一键GET Scatter散点趋势图">
+  <a href="kw6mq9u88w3umkq0.html">001.一键GET Scatter散点趋势图</a>
+</li><li class="filter-item" data-search-text="002.一键GET leaveoneout 散点误差图">
+  <a href="vl14qy26bccxhdn0.html">002.一键GET leaveoneout 散点误差图</a>
+</li><li class="filter-item" data-search-text="003.一键GET 火山图">
+  <a href="hy5g20s38975pma9.html">003.一键GET 火山图</a>
+</li><li class="filter-item" data-search-text="004.一键GET 适用phewas的曼哈顿散点图">
+  <a href="ga1r34a7b3wm5923.html">004.一键GET 适用phewas的曼哈顿散点图</a>
+</li><li class="filter-item" data-search-text="005.一键GET GWAS曼哈顿图">
+  <a href="gvsw3xz6dtls0cvl.html">005.一键GET GWAS曼哈顿图</a>
+</li><li class="filter-item" data-search-text="006.热图/环状热图">
+  <a href="xf55dckqi2hnodpm.html">006.热图/环状热图</a>
+</li><li class="filter-item" data-search-text="007.一键GET 精美共定位散点图">
+  <a href="xmgy9lf6z8l6fmpz.html">007.一键GET 精美共定位散点图</a>
+</li><li class="filter-item" data-search-text="008. 3D 散点曼哈顿图">
+  <a href="sggam2194hbqsecw.html">008. 3D 散点曼哈顿图</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：图表呈现</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>故名思意，这个方法是逐个剔除单个SNP，然后重新做MR分析</span></p><p><span>这个图主要是IVW的方法</span></p><p><span>Y轴对应  每个剔除的rsid号，和all不剔除的ivw 方法</span></p><p><span>X轴对应 ivw具体数值，黑点和红点是beta效应值，线段代表beta值得置信区间</span></p><p><span>​</span><br></p><p><span>这个方法主要是检查每个工具变量，是否对整体mr结果有严重的偏倚影响</span></p><p><span>最低标准，黑点和红点在 0这个线的一侧</span></p><p><span>最高标准，黑点红点和所有的线段都在0的同侧</span></p><p><span>如果某个rsid对mr结果有严重影响，可以选择去除，增加结果的稳健性</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2023/png/26903514/1697003904472-adf45123-d47d-45c3-badd-4b1ec68bbfc3.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2023/png/26903514/1697003904472-adf45123-d47d-45c3-badd-4b1ec68bbfc3.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="erz57eflp6lpemoz.html"><em>上一篇</em><strong>各种mr分析方法优缺点局限性详细解读</strong></a><a class="nav-card" href="ag7sl2ymp3yoz0wo.html"><em>下一篇</em><strong>000.FastPlotR的安装以及常见问题</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

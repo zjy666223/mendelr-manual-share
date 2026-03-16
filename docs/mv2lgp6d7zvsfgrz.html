@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024.11.27-9.2.37更新详情 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="rlibrary(MendelR) mr_update() #更新完成后 需要重启RStudio增加了IEU积分超过限制后，自动等待刷新的机制，防止IEU封禁IP增加了IEU每次提取数据时，提示当前剩下的积分。增加了批量MRlap功能，解决需要解决样本重叠MRlap与批量MRlap站内引用待Men…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>版本更新记录</span>
+  </div>
+  <h1 class="page-title">2024.11.27-9.2.37更新详情</h1>
+  <div class="article-meta">
+    <span>所属章节：版本更新记录</span>
+    <span>字数：265</span>
+    <span>代码块：1</span>
+    <span>更新时间：2024-11-27</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>版本更新记录</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="2025.08.02-9.2.38更新详情">
+  <a href="tcbdtx4a66nnfxgd.html">2025.08.02-9.2.38更新详情</a>
+</li><li class="filter-item current" data-search-text="2024.11.27-9.2.37更新详情">
+  <a href="mv2lgp6d7zvsfgrz.html">2024.11.27-9.2.37更新详情</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="2024.04.05-9.2.30更新详情">
+  <a href="cxwkfmb9n9a5ec6o.html">2024.04.05-9.2.30更新详情</a>
+</li><li class="filter-item" data-search-text="2024.04.02-9.2.29 更新详情">
+  <a href="dnlzxq804eckou1n.html">2024.04.02-9.2.29 更新详情</a>
+</li><li class="filter-item" data-search-text="2024.03.12-9.2.28更新详情">
+  <a href="udpaei2o2d9ml2hs.html">2024.03.12-9.2.28更新详情</a>
+</li><li class="filter-item" data-search-text="2024.02.26-9.2.27更新详细记录">
+  <a href="iixmye5ktmob4quc.html">2024.02.26-9.2.27更新详细记录</a>
+</li><li class="filter-item" data-search-text="2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级">
+  <a href="nka88433ln0vzxas.html">2024.02.23-9.2.26更新详细记录 药物靶点SMR功能升级</a>
+</li><li class="filter-item" data-search-text="2024.02.22-9.2.25更新详细记录">
+  <a href="qs2gx1ucyt5ed11m.html">2024.02.22-9.2.25更新详细记录</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：版本更新记录</span>
+        <span class="pill gold">代码块 1</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR)
+mr_update() 
+#更新完成后 需要重启RStudio</code></pre></figure><ol><li><span>增加了IEU积分超过限制后，</span><strong><span>自动等待刷新的机制</span></strong><span>，防止IEU封禁IP</span></li></ol><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1732721783802-949d2f7e-cd1f-4369-9317-2e1e8c379249.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_51%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1732721783802-949d2f7e-cd1f-4369-9317-2e1e8c379249.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_51%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><ol><li><span>增加了IEU每次提取数据时，</span><strong><span>提示当前剩下的积分</span></strong><span>。</span></li></ol><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1732721827458-e17b3696-d691-482c-bb83-7a7878c3a369.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_53%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1732721827458-e17b3696-d691-482c-bb83-7a7878c3a369.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_53%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><ol><li><span>增加了</span><strong><span>批量MRlap</span></strong><span>功能，解决需要</span><a href="ggcx9qoyhzsr1dgc.html" class="link-card"><strong>解决样本重叠MRlap与批量MRlap</strong><span>站内引用</span><small>待MendelR版本更新到10.0支持本地数据，支持大量数据的批量分析一、环境准备library(MendelR) prepare_MRlap() #准备环境代码只需要执行一次准备好后分别检查是否安装MRlapPro包成功，LD文件夹是否在工作目录下。前者用于计算MRlap的主要功能，后者主要...</small></a></li><li><span>增加了共定位的批量分析功能：</span><a href="cq9vx7wr2lfe1ih5.html" class="link-card"><strong>共定位一：QTL-GWAS（针对QTL是SMR格式数据的方法）</strong><span>站内引用</span><small>此方法涉及基因靶点，需要药物靶点的相关知识以及权限才能使用。做这个之前，先复现药靶课程的文章，能够正常运行SMR功能，才看下面的内容。一定要按要求，准备好依赖包：共定位数据和环境准备特别注意：此方法是针对SMR格式的数据，进行共定位。特别注意：此方法是针对SMR格式的数据，进行共定位。特别注意...</small></a><a href="zneyxxhxdugznqce.html" class="link-card"><strong>共定位二：通用GWAS-GWAS</strong><span>站内引用</span><small>共定位需要按要求准备好依赖包：共定位数据和环境准备一、数据准备两个GWAS数据，gwas可以是任意的暴露，包括pqtl(pqtl只是蛋白表达GWAS，根本还是gwas数据格式，改成模板SNP来执行就行)如果是smr中的besd格式，移步：共定位一：eQTL-GWAS如果都是在线数据，直接输入i...</small></a></li></ol><p><span>暴露是smr格式的，可以多个基因同时传入</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1732721862490-1b6320b8-2f32-4ea5-b4df-3081d71fe6b2.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_37%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1732721862490-1b6320b8-2f32-4ea5-b4df-3081d71fe6b2.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_37%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><span>暴露是模板SNP格式文本数据的，可以for循环传入</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/26903514/1732721912455-5da996b4-44c4-450e-b321-2c1c0278cf7e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_31%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/26903514/1732721912455-5da996b4-44c4-450e-b321-2c1c0278cf7e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_31%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><ol><li><span>多线程分析已完全完善，可查看文档自行开启测试</span><a href="ieslz9scv0putuov.html" class="link-card"><strong>MendelR榨干性能10.0版本更新</strong><span>站内引用</span><small>孟德尔随机化最难的一步是选题，最重要的一步也是选题，很多时候需要花费大量的时间才能选到一个好题，不过，有可能会被别人抢发的，因为你做分析花费的时间太多了，将大量的时间浪费在没有太多必要的分析上。选到了好题，剩下的就是看速度的，而不是看你内容多不多，图够不够漂亮，因为先发表为王才是硬道理。无论是...</small></a></li><li><span>优化了各种分析流水线代码的性能</span></li><li><span>增加了代码包中各种参数检查功能，以免学员操作失误</span></li><li><span>增加了若干的中文提示，方便学员快速查找查找并解决问题</span></li></ol><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="tcbdtx4a66nnfxgd.html"><em>上一篇</em><strong>2025.08.02-9.2.38更新详情</strong></a><a class="nav-card" href="cxwkfmb9n9a5ec6o.html"><em>下一篇</em><strong>2024.04.05-9.2.30更新详情</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

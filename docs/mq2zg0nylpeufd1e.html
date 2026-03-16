@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何判断选题是否可以实现 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="孟德尔随机化（Mendelian Randomization，MR）是一种统计方法，它使用基因变异作为工具变量，以确定潜在的因果关系。然而，进行MR研究需要大量的基因数据，比如全基因组关联研究（GWAS）数据。​在你开始研究之前，你需要考虑以下两个问题：这个选题是否已经被做过？在进行任何科学研究之…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>其他</span>
+  </div>
+  <h1 class="page-title">如何判断选题是否可以实现</h1>
+  <div class="article-meta">
+    <span>所属章节：其他</span>
+    <span>字数：592</span>
+    <span>代码块：0</span>
+    <span>更新时间：2024-05-16</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>其他</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="01复现文章代码">
+  <a href="sabklghx4g9mdo96.html">01复现文章代码</a>
+</li><li class="filter-item" data-search-text="02维生素D与下腰痛复现">
+  <a href="nbcbggaeu5o0e296.html">02维生素D与下腰痛复现</a>
+</li><li class="filter-item" data-search-text="MR投稿期刊推荐">
+  <a href="mg80bm50r1wxbkuq.html">MR投稿期刊推荐</a>
+</li><li class="filter-item current" data-search-text="如何判断选题是否可以实现">
+  <a href="mq2zg0nylpeufd1e.html">如何判断选题是否可以实现</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="MendelR榨干性能版本更新">
+  <a href="ieslz9scv0putuov.html">MendelR榨干性能版本更新</a>
+</li><li class="filter-item" data-search-text="关于R 4.3以上识别不了本地文件">
+  <a href="yvsu74mzms7b0ne2.html">关于R 4.3以上识别不了本地文件</a>
+</li><li class="filter-item" data-search-text="干货分享-如何批量下载Catalog数据">
+  <a href="uzy9sf1h6puh7452.html">干货分享-如何批量下载Catalog数据</a>
+</li><li class="filter-item" data-search-text="关于MendelR结果与自己写代码结果不一致的问题解读">
+  <a href="xnvv5lusvr76g14h.html">关于MendelR结果与自己写代码结果不一致的问题解读</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：其他</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>孟德尔随机化（Mendelian Randomization，MR）是一种统计方法，它使用基因变异作为工具变量，以确定潜在的因果关系。然而，进行MR研究需要大量的基因数据，比如全基因组关联研究（GWAS）数据。</span></p><p><span>​</span><br></p><p><span>在你开始研究之前，你需要考虑以下两个问题：</span></p><ol><li><strong><span>这个选题是否已经被做过？</span></strong></li></ol><p><span>在进行任何科学研究之前，都需要进行文献调研以确定你的研究是否具有新颖性。你可以通过在线数据库，如PubMed，查找是否有关于你的选题的已发表的MR研究。如果你的选题已经被研究过，你可能需要调整你的研究问题或者找到一个新的角度来进行研究。</span></p><ol><li><strong><span>是否有对应的GWAS数据？</span></strong></li></ol><p><span>MR研究需要大量的GWAS数据。你需要确定是否有足够的数据来进行你的研究。你可以在公开的数据库，如GWAS Catalog，查找是否有关于你的选题的GWAS数据。如果没有，这个选题就无法实现，那就需要更换研究方法，或者更换选题。</span></p><p><span>​</span><br></p><p><strong><span>关于是否有对应的GWAS数据，在这里总结一些快速确认的方法</span></strong></p><p><span>1.从各大公开数据库，去找有没有关于自己选题的GWAS数据。经过长期在MR领域的耕耘，医工科研团队已经总结了一些非常常见的公开数据库</span><a href="oipyh10uyxzuovce.html" class="link-card"><strong>常见GWAS数据来源汇总目录</strong><span>站内引用</span><small>1.GWAS Catlog2.UKB 2018Round2英国生物银行的汇总数据集3.ieu--opengwas--mrbase收录的在线数据4.芬兰数据库以及重叠率计算其他专用数据库：EGG：早期生长联盟数据，包含出生体重，出生头围等CKDGEN: 包含慢性肾病、MA、eGFR等GLGC: ...</small></a><span>，大家在选题之前，也可以在这些数据库中查找相应的数据。</span></p><p><br></p><p><span>2.在pubmed上搜索相应的选题的数据的MR文章。看看是否可以从前人的研究中找到别人使用的数据，在这里也有一个详细的文档，</span><a href="dvlrftlzmwhno7av.html" class="link-card"><strong>10.如何从文献里找到其使用的GWAS数据？</strong><span>站内引用</span><small>详细例子1：从文献Causal link between thyroid function and schizophrenia: a two-sample Mendelian randomization study查找使用的数据库资源如何找到上文中使用到的甲状腺功能的GWAS数据？1.查看文章...</small></a><span>关于如果从别人的文章中找到其数据下载源。</span></p><p><br></p><p><span>一旦确认了有可用的GWAS数据，然后也没有别人发过的选题，就可以进入分析阶段，准备文章数据了。</span></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>​</span><br></p><p><span>​</span><br></p><p><br></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="mg80bm50r1wxbkuq.html"><em>上一篇</em><strong>MR投稿期刊推荐</strong></a><a class="nav-card" href="ieslz9scv0putuov.html"><em>下一篇</em><strong>MendelR榨干性能版本更新</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

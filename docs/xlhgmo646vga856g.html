@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>批量分析时FDR矫正结果如何解读？ · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="在进行孟德尔随机化分析时，如果使用FDR或者Bonferroni进行多重矫正后依然是阴性，这并不意味着研究结果没有价值。以下是可能的处理方案：1. 理解和应用多重矫正方法：FDR和Bonferroni校正都是在多次比较中控制假阳性错误率的方法。尽管这两种校正方法不是必须的，但是为了避免审稿人的质疑…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>结果解读</span>
+  </div>
+  <h1 class="page-title">批量分析时FDR矫正结果如何解读？</h1>
+  <div class="article-meta">
+    <span>所属章节：结果解读</span>
+    <span>字数：1629</span>
+    <span>代码块：0</span>
+    <span>更新时间：2025-05-13</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>结果解读</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="mr分析结果解读">
+  <a href="poeybcagbdfisrcl.html">mr分析结果解读</a>
+</li><li class="filter-item" data-search-text="孟德尔结果展示OR值和beta值选择说明">
+  <a href="wdqg0hzm4awgfyih.html">孟德尔结果展示OR值和beta值选择说明</a>
+</li><li class="filter-item" data-search-text="不同snp个数对MR结果的影响">
+  <a href="neyupg0gmhbfxrkh.html">不同snp个数对MR结果的影响</a>
+</li><li class="filter-item" data-search-text="Power值计算教程-如何使用网页计算孟德尔随机化中的Power">
+  <a href="zkfd7vli6g12xk6i.html">Power值计算教程-如何使用网页计算孟德尔随机化中的Power</a>
+</li><li class="filter-item" data-search-text="批量分析结果解读">
+  <a href="kecrhyz42cp4qm0v.html">批量分析结果解读</a>
+</li><li class="filter-item" data-search-text="中介分析结果解读">
+  <a href="qyxd3t2dmo71thpa.html">中介分析结果解读</a>
+</li><li class="filter-item" data-search-text="多变量分析结果解读">
+  <a href="ihth35wfgck8krrx.html">多变量分析结果解读</a>
+</li><li class="filter-item" data-search-text="药物靶点的smr结果怎么看">
+  <a href="gefoiy8vvuc05wp0.html">药物靶点的smr结果怎么看</a>
+</li><li class="filter-item current" data-search-text="批量分析时FDR矫正结果如何解读？">
+  <a href="xlhgmo646vga856g.html">批量分析时FDR矫正结果如何解读？</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="方法学部分的权威参考文献引用 副本">
+  <a href="guczotux6imuqtko.html">方法学部分的权威参考文献引用 副本</a>
+</li><li class="filter-item" data-search-text="各种mr分析方法优缺点局限性详细解读">
+  <a href="erz57eflp6lpemoz.html">各种mr分析方法优缺点局限性详细解读</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：结果解读</span>
+        <span class="pill gold">代码块 0</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><p><span>在进行孟德尔随机化分析时，如果使用FDR或者Bonferroni进行多重矫正后依然是阴性，这并不意味着研究结果没有价值。以下是可能的处理方案：</span></p><h3><span>1. 理解和应用多重矫正方法：</span></h3><p><span>FDR和Bonferroni校正都是在多次比较中控制假阳性错误率的方法。尽管这两种校正方法不是必须的，但是为了避免审稿人的质疑，最好进行这两种多重矫正。这两种方法都需要在存在多个暴露或者多个结局的情况下使用。</span></p><p><span>​</span><br></p><p><span> </span><strong><span>   - Bonferroni校正：</span></strong><span>这种矫正方法非常严格。它的基本思想是将显著性水平除以比较次数。</span></p><p><span>例如，如果有一个暴露和两个结局，那么显著性水平将是0.05/1/2=0.025。只有当p值小于0.025时，我们才认为存在统计学差异。在进行Bonferroni矫正后，只有当p值小于0.025时，结果才被认为具有统计学意义。如果p值在0.025到0.05之间，则结果被认为是suggestive。如果p值大于0.05，则结果被认为没有统计学意义。</span></p><p><span>​</span><br></p><p><strong><span>    - FDR校正：</span></strong><span>相比于Bonferroni校正，FDR校正相对较为宽松，因此更容易得到阳性结果。</span></p><p><span>在R语言中，可以使用p.adjust函数进行FDR矫正。矫正后的p值被称为q值。如果q值小于0.05，那么我们就认为结果具有统计学意义。</span></p><p><span>总之，严格要求的话，用校正后的才是阳性结果！！！！！！！！！！！！</span><span><br></span><span>b站上也有关于多重矫正的内容，个人觉得讲的比较好，可以去看看 （</span><span>fMRI小知识:什么是多重比较校正？怎么计算FDR,FWE?一条死鱼的脑激活</span><span>）</span></p><p><figure class="image-card"><a href="https://cdn.nlark.com/yuque/0/2024/png/35523102/1714309611039-fa69386b-21ab-43be-8dc9-220915980abf.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_13%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" target="_blank" rel="noreferrer"><img src="https://cdn.nlark.com/yuque/0/2024/png/35523102/1714309611039-fa69386b-21ab-43be-8dc9-220915980abf.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_13%2Ctext_5Yy75bel56eR56CUd3g6ZHJjaGVyaXNoMDkyNg%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image插图" loading="lazy"></a></figure></p><p><a href="https://mp.weixin.qq.com/s/ZuXyAWtLd6GknVDnrLC1TA" target="_blank" rel="noreferrer"><span>https://mp.weixin.qq.com/s/ZuXyAWtLd6GknVDnrLC1TA</span></a><span><br></span><span>还有目前有些文章，是先对gwas中的pval进行fdr矫正，然后纳入的暴露工具变量改成fdr_pval&lt;0.05，再去进行mr分析，大家有个印象了解一下就行。</span></p><h3><span>2. 处理多重矫正后的结果：</span></h3><p><span>在进行多重矫正后，可能会出现几种不同的情况，我们需要根据具体情况来处理结果。</span></p><h4><span> 情景一：FDR有少量阳性，但P值有多个阳性。</span></h4><p><span>在这种情况下，我们需要如实报告结果，并进行分类讨论。首先，我们需要讨论FDR阳性的结果，然后再讨论非阳性的结果。</span></p><p><span>讨论的顺序可以是：讨论部分总结的一段，主要讨论那几个FDR阳性的结果，讨论保护性因素（p&lt;0.05且OR&lt;1的结果），讨论危害性因素（p&lt;0.05且OR&gt;1的结果），讨论研究的优点和缺点，最后进行总结。</span></p><p><span>例如文章《The causal relationship between immune cells and ankylosing spondylitis: a bidirectional Mendelian randomization study》</span><span><br></span><span>结果部分：Results After FDR correction, two immunophenotypes were found to be signifcantly associated with AS risk: CD14−CD16+monocyte (OR, 0.669; 95% CI, 0.544~0.823; P=1.46× 10−4; PFDR=0.043)</span></p><h4><span>情景二：在FDR矫正后无阳性结果。</span></h4><p><span>在这种情况下，虽然FDR阴性，但是P值阳性仍然有讨论的意义。我们可以在方法学部分写明我们使用了FDR矫正来控制多重比较的假阳性错误，然后在结果部分指出，在FDR矫正后，没有结果具有统计学意义。但是，那些未经调整的p值较低的结果仍然值得一提。</span></p><p><span>例1：这个文章《Causal role of immune cells in generalized anxiety disorder: Mendelian randomization study》</span><span><br></span><span>方法学部分写：To control for false positive results during multiple hypothesis testing, we adopted a false discovery rate (FDR) to control for statistical bias due to multiple comparisons.</span><span><br></span><span>结果部分: After FDR correction, GAD had no statistically significant effect on immunophenotypes. Several phenotypes with unadjusted low P-values are worth mentioning, including decreased xx levels on 结局（b=-0.289, 95%CI=0.044~0.194, P=0.002）</span></p><p><span>​</span><br></p><p><span>例子2：在方法部分用了FDR或者Bonferroni方法，但是讨论的时候还是按照没校正的时候P&lt;0.05的结果作为阳性结果展开讨论的,如文献《Exploring causal correlations between inflammatory cytokines and systemic lupus erythematosus: A Mendelian randomization-DOI 10.3389/fimmu.2022.98572》</span></p><h4><span> 情景三：直接忽略FDR矫正结果</span></h4><p><span>由于FDR阴性，但是P值阳性，其未在方法学部分写FDR矫正，在结果部分直接写P值，讨论也是直接写P值的。在这种情况下，我们可以直接讨论p值阳性的结果，不需要提及FDR矫正。</span></p><p><span>例如文章《Causal association of immune cells and polycystic ovarian syndrome: a Mendelian randomization study》</span></p><h4><span>情景四：</span><span>选择分类进行FDR矫正，当减少比较次数的时候更容易出阳性结果（多用）</span></h4><p><span>如果是肠道菌群或其他可细分的批量分析，可使用Bonferroni方法根据每个分类水平下的细菌数量分别建立不同分类水平上的多个检验显着性阈值</span></p><p><span>参考文献《Association between gut microbiota and gastrointestinal cancer: a two-sample bi-directional Mendelian randomization study-DOI 10.3389/fmicb.2023.1181328》</span></p><p><span>分类矫正FDR文档：</span><a href="geua8x2umbb7hbxu.html" class="link-card"><strong>FDR校正和Bonferroni校正</strong><span>站内引用</span><small>矫正不一定要做，但是为了避免懂的审稿人质疑，最好做一下这两个校正都需要在多个暴露或者多个结局的时候使用，即文章纳入了多个数据进行分析讨论==========================================Bonferroni：矫正较为严格直接0.05/纳入的暴露数量/纳入的结局...</small></a></p><h4><span>情景五：选择不走常规路的多重校正方法：</span></h4><p><span>参考这个文献 </span></p><p><a href="https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-020-01778-5" target="_blank" rel="noreferrer"><span>https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-020-01778-5</span></a><span> All statistical analyses were conducted using R version 3.6.3 (R Foundation for Statistical Computing, Vienna, Austria) using the Two-Sample MR package [27]. P values &lt; 0.05 were considered statistically significant. In multiple testing, an adjusted P value after Bonferroni correction (P &lt; 0.05/N, N = the number of testing methods) was considered statistically significant.这篇文章中的矫正性检验是用0.05除以检查方法的个数，是一区的9分文章，也就是我们研究里用了4-5种MR分析方法，其认为统计学的界值设置为0.05/4=0.0125，只要P《0.0125就是有意义的 ，以此来进行讨论</span></p><p><span>​</span><br></p><p><span>总的来说，当FDR或Bonferroni矫正后依然是阴性时，我们不应该直接放弃结果，而是应该根据具体情况来处理和讨论结果。这些阴性结果同样具有科学价值，可以帮助我们更好地理解研究领域的真实情况。以上情况可供大家参考学习。</span></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="gefoiy8vvuc05wp0.html"><em>上一篇</em><strong>药物靶点的smr结果怎么看</strong></a><a class="nav-card" href="guczotux6imuqtko.html"><em>下一篇</em><strong>方法学部分的权威参考文献引用 副本</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

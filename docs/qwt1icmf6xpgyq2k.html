@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02.MendelR更新方法 · 孟德尔随机化修炼手册</title>
+  <meta name="description" content="提示更新的时候才需要执行更新代码，更新完成后务必重启一下RStudio更新方式有几种，选择其中一种更新，凡是提示更新的时候，请执行更新代码rpackageVersion(&quot;MendelR&quot;) 1.使用MendelR更新rlibrary(MendelR) #这个是引用R包 才能使用相关功能 mr_u…">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+  <div class="eyebrow">正文页</div>
+  <div class="breadcrumbs">
+    <a href="../index.html">手册首页</a>
+    <span>/</span>
+    <span>安装与更新</span>
+  </div>
+  <h1 class="page-title">02.MendelR更新方法</h1>
+  <div class="article-meta">
+    <span>所属章节：安装与更新</span>
+    <span>字数：177</span>
+    <span>代码块：3</span>
+    <span>更新时间：2023-12-29</span>
+  </div>
+</header>
+    <div class="layout">
+      <aside class="panel">
+  <h2>本节目录</h2>
+  <p class="sidebar-note">当前页面所在章节会完整展开，方便继续顺着手册读下去。下面的搜索只过滤这一节的条目。</p>
+  <input class="search" type="search" placeholder="筛选本节条目..." data-search-input data-search-target=".filter-item">
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>安装与更新</h3>
+    <ul class="section-nav"><li class="filter-item" data-search-text="01.MendelR安装和激活方法">
+  <a href="lu6m6katfthhu45h.html">01.MendelR安装和激活方法</a>
+</li><li class="filter-item current" data-search-text="02.MendelR更新方法">
+  <a href="qwt1icmf6xpgyq2k.html">02.MendelR更新方法</a><span class="badge">当前</span>
+</li><li class="filter-item" data-search-text="03.MendelR示例工程">
+  <a href="vfgk5662ngd6d3oi.html">03.MendelR示例工程</a>
+</li></ul>
+  </div>
+  <div class="mini-card" style="margin-top:14px;">
+    <h3>章节一览</h3>
+    <ul class="section-nav"><li><a href="../index.html#section-1">未分组</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-2">介绍</a><span class="count">9 条</span></li>
+<li><a href="../index.html#section-3">基础入门</a><span class="count">14 条</span></li>
+<li><a href="../index.html#section-4">安装与更新</a><span class="count">3 条</span></li>
+<li><a href="../index.html#section-5">数据准备与处理</a><span class="count">34 条</span></li>
+<li><a href="../index.html#section-6">代码分析</a><span class="count">128 条</span></li>
+<li><a href="../index.html#section-7">结果解读</a><span class="count">11 条</span></li>
+<li><a href="../index.html#section-8">图表呈现</a><span class="count">10 条</span></li>
+<li><a href="../index.html#section-9">引用参考</a><span class="count">2 条</span></li>
+<li><a href="../index.html#section-10">其他</a><span class="count">8 条</span></li>
+<li><a href="../index.html#section-11">版本更新记录</a><span class="count">8 条</span></li></ul>
+  </div>
+</aside>
+      <main class="doc-page">
+  <article class="article-card">
+    <div class="article-head">
+      <div class="badge-row">
+        <span class="pill">章节：安装与更新</span>
+        <span class="pill gold">代码块 3</span>
+      </div>
+      <p class="intro">正文已经整理为站内页面，语雀内部引用也会直接跳转到本站对应页面。代码卡片已转换为便于阅读的代码块展示。</p>
+    </div>
+    <div class="article-body"><blockquote><p><span>提示更新的时候才需要执行更新代码，</span><span>更新完成后务必重启一下RStudio</span></p></blockquote><p><strong><span>更新方式有几种，选择其中一种更新，凡是提示更新的时候，请执行更新代码</span></strong></p><p><figure class="image-card"><a href="../assets/media/e88e543ef3dbbb1e77cd.png"><img src="../assets/media/e88e543ef3dbbb1e77cd.png" alt="image插图" loading="lazy"></a></figure></p><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">packageVersion("MendelR") </code></pre></figure><h1><span>1.使用MendelR更新</span></h1><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">library(MendelR) #这个是引用R包 才能使用相关功能
+mr_update()  #更新</code></pre></figure><h1><span>2.使用mrhelp更新</span></h1><figure class="code-block"><figcaption class="code-label">r</figcaption><pre><code class="language-r" data-lang="r">devtools::install_github("flash0926/mrhelp", force=TRUE) #强制安装mrhelp
+mrhelp::install_mr() #安装R</code></pre></figure><h1><span>3.下载MendelR压缩包更新</span></h1><p><span>windows系统：</span></p><p><a href="https://kimfiles.oss-cn-beijing.aliyuncs.com/MendelR.zip" target="_blank" rel="noreferrer"><span>https://kimfiles.oss-cn-beijing.aliyuncs.com/MendelR.zip</span></a></p><p><span>mac系统：</span></p><p><a href="https://kimfiles.oss-cn-beijing.aliyuncs.com/MendelR.tar.gz" target="_blank" rel="noreferrer"><span>https://kimfiles.oss-cn-beijing.aliyuncs.com/MendelR.tar.gz</span></a></p><p><span>下载后，使用代码包压缩包的形式安装</span></p><p><figure class="image-card"><a href="../assets/media/0051f2d95e14122ff1d3.png"><img src="../assets/media/0051f2d95e14122ff1d3.png" alt="image插图" loading="lazy"></a></figure></p><p><span>注：第三种方法需要先取消Packages中的勾选，否则会提示正在使用无法安装</span></p><p><figure class="image-card"><a href="../assets/media/57ad695bdfec5a1d411c.png"><img src="../assets/media/57ad695bdfec5a1d411c.png" alt="image插图" loading="lazy"></a></figure></p><p><br></p></div>
+  </article>
+  <div class="doc-nav"><a class="nav-card" href="lu6m6katfthhu45h.html"><em>上一篇</em><strong>01.MendelR安装和激活方法</strong></a><a class="nav-card" href="vfgk5662ngd6d3oi.html"><em>下一篇</em><strong>03.MendelR示例工程</strong></a></div>
+</main>
+    </div>
+    <section class="footer-note">
+  <p><strong>引用：</strong>医工科研-孟德尔随机化</p>
+  <small>该页面依据授权整理为站内阅读版，保留原手册内容结构、链接关系与代码示例，便于持续分享和检索。</small>
+</section>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>
